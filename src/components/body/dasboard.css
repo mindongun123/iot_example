@@ -1,0 +1,18 @@
+.row-item-sensor {
+    margin-top: 50px;
+}
+
+.item-sensor {
+    min-height: 180px;
+    padding: 10px;
+}
+
+.row-item-data
+{
+    margin-top: 30px;
+}
+
+.item-data {
+    min-height: 60vh;
+    padding: 10px;
+}
