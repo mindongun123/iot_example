@@ -1,0 +1,4002 @@
+[
+    {
+        "id": 1,
+        "temperature": 26,
+        "humidity": 84,
+        "light": 711,
+        "wind": 37,
+        "time": "2024-05-22 07:11:19"
+    },
+    {
+        "id": 2,
+        "temperature": 49,
+        "humidity": 37,
+        "light": 279,
+        "wind": 80,
+        "time": "2024-08-22 15:57:19"
+    },
+    {
+        "id": 3,
+        "temperature": 29,
+        "humidity": 55,
+        "light": 59,
+        "wind": 48,
+        "time": "2023-10-27 02:12:28"
+    },
+    {
+        "id": 4,
+        "temperature": 42,
+        "humidity": 12,
+        "light": 506,
+        "wind": 93,
+        "time": "2023-10-17 12:59:29"
+    },
+    {
+        "id": 5,
+        "temperature": 28,
+        "humidity": 42,
+        "light": 753,
+        "wind": 21,
+        "time": "2024-07-07 03:47:20"
+    },
+    {
+        "id": 6,
+        "temperature": 20,
+        "humidity": 52,
+        "light": 589,
+        "wind": 33,
+        "time": "2024-05-23 07:43:45"
+    },
+    {
+        "id": 7,
+        "temperature": 20,
+        "humidity": 19,
+        "light": 93,
+        "wind": 15,
+        "time": "2024-02-05 13:47:23"
+    },
+    {
+        "id": 8,
+        "temperature": 39,
+        "humidity": 84,
+        "light": 605,
+        "wind": 92,
+        "time": "2024-06-10 14:22:43"
+    },
+    {
+        "id": 9,
+        "temperature": 32,
+        "humidity": 6,
+        "light": 512,
+        "wind": 92,
+        "time": "2024-01-19 18:42:17"
+    },
+    {
+        "id": 10,
+        "temperature": 46,
+        "humidity": 42,
+        "light": 668,
+        "wind": 57,
+        "time": "2024-06-27 05:04:51"
+    },
+    {
+        "id": 11,
+        "temperature": 44,
+        "humidity": 28,
+        "light": 677,
+        "wind": 15,
+        "time": "2024-01-28 09:31:55"
+    },
+    {
+        "id": 12,
+        "temperature": 36,
+        "humidity": 69,
+        "light": 302,
+        "wind": 83,
+        "time": "2024-03-10 21:29:04"
+    },
+    {
+        "id": 13,
+        "temperature": 39,
+        "humidity": 98,
+        "light": 591,
+        "wind": 99,
+        "time": "2023-10-20 19:44:20"
+    },
+    {
+        "id": 14,
+        "temperature": 30,
+        "humidity": 18,
+        "light": 569,
+        "wind": 32,
+        "time": "2024-03-29 18:05:01"
+    },
+    {
+        "id": 15,
+        "temperature": 49,
+        "humidity": 11,
+        "light": 372,
+        "wind": 58,
+        "time": "2024-07-29 14:48:45"
+    },
+    {
+        "id": 16,
+        "temperature": 40,
+        "humidity": 94,
+        "light": 454,
+        "wind": 71,
+        "time": "2024-08-15 17:02:12"
+    },
+    {
+        "id": 17,
+        "temperature": 22,
+        "humidity": 94,
+        "light": 518,
+        "wind": 17,
+        "time": "2024-01-31 13:54:43"
+    },
+    {
+        "id": 18,
+        "temperature": 47,
+        "humidity": 59,
+        "light": 576,
+        "wind": 72,
+        "time": "2024-04-01 15:22:32"
+    },
+    {
+        "id": 19,
+        "temperature": 41,
+        "humidity": 58,
+        "light": 767,
+        "wind": 48,
+        "time": "2024-03-15 22:09:18"
+    },
+    {
+        "id": 20,
+        "temperature": 38,
+        "humidity": 61,
+        "light": 242,
+        "wind": 54,
+        "time": "2024-05-30 15:10:26"
+    },
+    {
+        "id": 21,
+        "temperature": 42,
+        "humidity": 32,
+        "light": 58,
+        "wind": 4,
+        "time": "2024-06-06 21:43:44"
+    },
+    {
+        "id": 22,
+        "temperature": 34,
+        "humidity": 13,
+        "light": 34,
+        "wind": 23,
+        "time": "2024-03-23 14:07:07"
+    },
+    {
+        "id": 23,
+        "temperature": 48,
+        "humidity": 82,
+        "light": 67,
+        "wind": 3,
+        "time": "2023-09-05 04:52:36"
+    },
+    {
+        "id": 24,
+        "temperature": 48,
+        "humidity": 50,
+        "light": 149,
+        "wind": 73,
+        "time": "2024-03-28 04:26:51"
+    },
+    {
+        "id": 25,
+        "temperature": 21,
+        "humidity": 52,
+        "light": 969,
+        "wind": 64,
+        "time": "2023-09-17 07:04:46"
+    },
+    {
+        "id": 26,
+        "temperature": 29,
+        "humidity": 12,
+        "light": 498,
+        "wind": 8,
+        "time": "2024-03-25 05:06:54"
+    },
+    {
+        "id": 27,
+        "temperature": 30,
+        "humidity": 12,
+        "light": 435,
+        "wind": 42,
+        "time": "2024-01-19 19:22:41"
+    },
+    {
+        "id": 28,
+        "temperature": 30,
+        "humidity": 8,
+        "light": 867,
+        "wind": 35,
+        "time": "2024-07-23 00:27:02"
+    },
+    {
+        "id": 29,
+        "temperature": 43,
+        "humidity": 61,
+        "light": 786,
+        "wind": 5,
+        "time": "2024-01-07 22:18:20"
+    },
+    {
+        "id": 30,
+        "temperature": 22,
+        "humidity": 24,
+        "light": 18,
+        "wind": 19,
+        "time": "2024-04-05 00:55:02"
+    },
+    {
+        "id": 31,
+        "temperature": 45,
+        "humidity": 90,
+        "light": 731,
+        "wind": 39,
+        "time": "2024-07-06 20:54:06"
+    },
+    {
+        "id": 32,
+        "temperature": 41,
+        "humidity": 37,
+        "light": 202,
+        "wind": 68,
+        "time": "2024-06-20 20:40:09"
+    },
+    {
+        "id": 33,
+        "temperature": 29,
+        "humidity": 3,
+        "light": 702,
+        "wind": 40,
+        "time": "2024-04-04 11:03:07"
+    },
+    {
+        "id": 34,
+        "temperature": 26,
+        "humidity": 20,
+        "light": 257,
+        "wind": 18,
+        "time": "2024-01-25 20:54:10"
+    },
+    {
+        "id": 35,
+        "temperature": 48,
+        "humidity": 18,
+        "light": 682,
+        "wind": 50,
+        "time": "2024-05-01 22:01:13"
+    },
+    {
+        "id": 36,
+        "temperature": 45,
+        "humidity": 5,
+        "light": 761,
+        "wind": 96,
+        "time": "2023-09-08 21:58:52"
+    },
+    {
+        "id": 37,
+        "temperature": 27,
+        "humidity": 46,
+        "light": 793,
+        "wind": 65,
+        "time": "2023-10-29 00:14:42"
+    },
+    {
+        "id": 38,
+        "temperature": 49,
+        "humidity": 5,
+        "light": 802,
+        "wind": 77,
+        "time": "2024-04-01 12:19:38"
+    },
+    {
+        "id": 39,
+        "temperature": 27,
+        "humidity": 38,
+        "light": 906,
+        "wind": 77,
+        "time": "2024-03-17 18:42:01"
+    },
+    {
+        "id": 40,
+        "temperature": 32,
+        "humidity": 13,
+        "light": 960,
+        "wind": 61,
+        "time": "2024-05-26 15:31:14"
+    },
+    {
+        "id": 41,
+        "temperature": 28,
+        "humidity": 52,
+        "light": 117,
+        "wind": 10,
+        "time": "2023-10-09 21:31:49"
+    },
+    {
+        "id": 42,
+        "temperature": 50,
+        "humidity": 5,
+        "light": 90,
+        "wind": 95,
+        "time": "2024-04-24 12:36:49"
+    },
+    {
+        "id": 43,
+        "temperature": 21,
+        "humidity": 65,
+        "light": 752,
+        "wind": 42,
+        "time": "2024-07-16 04:56:43"
+    },
+    {
+        "id": 44,
+        "temperature": 36,
+        "humidity": 68,
+        "light": 271,
+        "wind": 16,
+        "time": "2024-05-29 16:51:24"
+    },
+    {
+        "id": 45,
+        "temperature": 29,
+        "humidity": 52,
+        "light": 150,
+        "wind": 84,
+        "time": "2023-09-10 23:47:28"
+    },
+    {
+        "id": 46,
+        "temperature": 20,
+        "humidity": 28,
+        "light": 223,
+        "wind": 10,
+        "time": "2023-08-29 14:43:34"
+    },
+    {
+        "id": 47,
+        "temperature": 39,
+        "humidity": 75,
+        "light": 725,
+        "wind": 5,
+        "time": "2024-01-29 17:30:31"
+    },
+    {
+        "id": 48,
+        "temperature": 24,
+        "humidity": 20,
+        "light": 397,
+        "wind": 5,
+        "time": "2023-10-13 18:53:56"
+    },
+    {
+        "id": 49,
+        "temperature": 48,
+        "humidity": 100,
+        "light": 691,
+        "wind": 18,
+        "time": "2023-09-30 09:14:43"
+    },
+    {
+        "id": 50,
+        "temperature": 36,
+        "humidity": 62,
+        "light": 29,
+        "wind": 35,
+        "time": "2024-04-14 19:51:12"
+    },
+    {
+        "id": 51,
+        "temperature": 32,
+        "humidity": 12,
+        "light": 661,
+        "wind": 83,
+        "time": "2024-06-25 06:24:51"
+    },
+    {
+        "id": 52,
+        "temperature": 41,
+        "humidity": 67,
+        "light": 646,
+        "wind": 92,
+        "time": "2024-05-05 18:25:14"
+    },
+    {
+        "id": 53,
+        "temperature": 38,
+        "humidity": 14,
+        "light": 68,
+        "wind": 66,
+        "time": "2024-03-17 07:36:18"
+    },
+    {
+        "id": 54,
+        "temperature": 44,
+        "humidity": 88,
+        "light": 436,
+        "wind": 80,
+        "time": "2023-11-24 11:46:36"
+    },
+    {
+        "id": 55,
+        "temperature": 47,
+        "humidity": 58,
+        "light": 717,
+        "wind": 32,
+        "time": "2024-05-30 08:30:16"
+    },
+    {
+        "id": 56,
+        "temperature": 41,
+        "humidity": 72,
+        "light": 710,
+        "wind": 97,
+        "time": "2024-06-14 14:02:46"
+    },
+    {
+        "id": 57,
+        "temperature": 34,
+        "humidity": 97,
+        "light": 179,
+        "wind": 58,
+        "time": "2024-02-06 06:22:19"
+    },
+    {
+        "id": 58,
+        "temperature": 49,
+        "humidity": 85,
+        "light": 800,
+        "wind": 81,
+        "time": "2023-11-28 06:55:43"
+    },
+    {
+        "id": 59,
+        "temperature": 50,
+        "humidity": 20,
+        "light": 303,
+        "wind": 87,
+        "time": "2024-04-08 10:31:41"
+    },
+    {
+        "id": 60,
+        "temperature": 28,
+        "humidity": 57,
+        "light": 282,
+        "wind": 82,
+        "time": "2024-04-15 23:03:53"
+    },
+    {
+        "id": 61,
+        "temperature": 38,
+        "humidity": 8,
+        "light": 680,
+        "wind": 38,
+        "time": "2023-09-04 01:38:47"
+    },
+    {
+        "id": 62,
+        "temperature": 46,
+        "humidity": 74,
+        "light": 652,
+        "wind": 79,
+        "time": "2024-04-26 03:22:09"
+    },
+    {
+        "id": 63,
+        "temperature": 29,
+        "humidity": 88,
+        "light": 802,
+        "wind": 52,
+        "time": "2024-05-10 00:18:05"
+    },
+    {
+        "id": 64,
+        "temperature": 38,
+        "humidity": 90,
+        "light": 687,
+        "wind": 29,
+        "time": "2024-03-05 12:17:17"
+    },
+    {
+        "id": 65,
+        "temperature": 42,
+        "humidity": 89,
+        "light": 329,
+        "wind": 98,
+        "time": "2024-07-18 07:57:27"
+    },
+    {
+        "id": 66,
+        "temperature": 27,
+        "humidity": 81,
+        "light": 660,
+        "wind": 83,
+        "time": "2024-07-10 10:41:14"
+    },
+    {
+        "id": 67,
+        "temperature": 38,
+        "humidity": 33,
+        "light": 939,
+        "wind": 58,
+        "time": "2024-02-23 18:45:20"
+    },
+    {
+        "id": 68,
+        "temperature": 47,
+        "humidity": 82,
+        "light": 481,
+        "wind": 16,
+        "time": "2024-07-02 21:09:15"
+    },
+    {
+        "id": 69,
+        "temperature": 42,
+        "humidity": 31,
+        "light": 669,
+        "wind": 68,
+        "time": "2024-06-01 00:50:11"
+    },
+    {
+        "id": 70,
+        "temperature": 47,
+        "humidity": 14,
+        "light": 108,
+        "wind": 70,
+        "time": "2024-04-22 00:48:48"
+    },
+    {
+        "id": 71,
+        "temperature": 32,
+        "humidity": 10,
+        "light": 155,
+        "wind": 23,
+        "time": "2024-07-31 15:46:34"
+    },
+    {
+        "id": 72,
+        "temperature": 30,
+        "humidity": 95,
+        "light": 721,
+        "wind": 61,
+        "time": "2024-02-18 07:07:17"
+    },
+    {
+        "id": 73,
+        "temperature": 25,
+        "humidity": 65,
+        "light": 42,
+        "wind": 77,
+        "time": "2024-03-24 03:55:36"
+    },
+    {
+        "id": 74,
+        "temperature": 22,
+        "humidity": 49,
+        "light": 627,
+        "wind": 46,
+        "time": "2023-12-25 13:28:20"
+    },
+    {
+        "id": 75,
+        "temperature": 36,
+        "humidity": 44,
+        "light": 338,
+        "wind": 46,
+        "time": "2024-06-02 20:20:52"
+    },
+    {
+        "id": 76,
+        "temperature": 30,
+        "humidity": 24,
+        "light": 413,
+        "wind": 50,
+        "time": "2024-07-06 02:53:33"
+    },
+    {
+        "id": 77,
+        "temperature": 48,
+        "humidity": 76,
+        "light": 924,
+        "wind": 62,
+        "time": "2024-03-07 14:22:56"
+    },
+    {
+        "id": 78,
+        "temperature": 21,
+        "humidity": 74,
+        "light": 842,
+        "wind": 69,
+        "time": "2023-09-04 23:50:57"
+    },
+    {
+        "id": 79,
+        "temperature": 28,
+        "humidity": 45,
+        "light": 226,
+        "wind": 81,
+        "time": "2024-05-17 18:28:35"
+    },
+    {
+        "id": 80,
+        "temperature": 46,
+        "humidity": 69,
+        "light": 678,
+        "wind": 33,
+        "time": "2023-09-17 10:23:18"
+    },
+    {
+        "id": 81,
+        "temperature": 42,
+        "humidity": 54,
+        "light": 448,
+        "wind": 24,
+        "time": "2024-04-17 03:19:13"
+    },
+    {
+        "id": 82,
+        "temperature": 37,
+        "humidity": 30,
+        "light": 831,
+        "wind": 84,
+        "time": "2024-04-18 18:39:52"
+    },
+    {
+        "id": 83,
+        "temperature": 44,
+        "humidity": 73,
+        "light": 682,
+        "wind": 83,
+        "time": "2023-09-15 05:11:21"
+    },
+    {
+        "id": 84,
+        "temperature": 39,
+        "humidity": 65,
+        "light": 67,
+        "wind": 27,
+        "time": "2024-07-03 11:05:28"
+    },
+    {
+        "id": 85,
+        "temperature": 28,
+        "humidity": 41,
+        "light": 694,
+        "wind": 41,
+        "time": "2023-11-04 00:40:41"
+    },
+    {
+        "id": 86,
+        "temperature": 22,
+        "humidity": 34,
+        "light": 957,
+        "wind": 23,
+        "time": "2024-02-14 13:44:41"
+    },
+    {
+        "id": 87,
+        "temperature": 48,
+        "humidity": 67,
+        "light": 877,
+        "wind": 85,
+        "time": "2023-09-13 11:04:48"
+    },
+    {
+        "id": 88,
+        "temperature": 20,
+        "humidity": 64,
+        "light": 964,
+        "wind": 10,
+        "time": "2024-06-30 09:54:31"
+    },
+    {
+        "id": 89,
+        "temperature": 29,
+        "humidity": 91,
+        "light": 517,
+        "wind": 26,
+        "time": "2024-05-20 13:50:26"
+    },
+    {
+        "id": 90,
+        "temperature": 33,
+        "humidity": 56,
+        "light": 580,
+        "wind": 52,
+        "time": "2024-05-30 03:29:59"
+    },
+    {
+        "id": 91,
+        "temperature": 38,
+        "humidity": 81,
+        "light": 775,
+        "wind": 80,
+        "time": "2024-08-04 07:09:41"
+    },
+    {
+        "id": 92,
+        "temperature": 22,
+        "humidity": 16,
+        "light": 933,
+        "wind": 44,
+        "time": "2024-05-04 21:41:25"
+    },
+    {
+        "id": 93,
+        "temperature": 28,
+        "humidity": 35,
+        "light": 940,
+        "wind": 47,
+        "time": "2024-08-22 11:32:52"
+    },
+    {
+        "id": 94,
+        "temperature": 27,
+        "humidity": 7,
+        "light": 755,
+        "wind": 61,
+        "time": "2023-12-04 21:37:09"
+    },
+    {
+        "id": 95,
+        "temperature": 32,
+        "humidity": 53,
+        "light": 795,
+        "wind": 5,
+        "time": "2024-05-05 22:11:46"
+    },
+    {
+        "id": 96,
+        "temperature": 42,
+        "humidity": 46,
+        "light": 706,
+        "wind": 72,
+        "time": "2024-01-29 07:35:23"
+    },
+    {
+        "id": 97,
+        "temperature": 46,
+        "humidity": 31,
+        "light": 932,
+        "wind": 82,
+        "time": "2023-10-16 04:49:06"
+    },
+    {
+        "id": 98,
+        "temperature": 37,
+        "humidity": 24,
+        "light": 264,
+        "wind": 39,
+        "time": "2023-10-18 15:21:54"
+    },
+    {
+        "id": 99,
+        "temperature": 49,
+        "humidity": 50,
+        "light": 382,
+        "wind": 21,
+        "time": "2024-03-19 02:11:01"
+    },
+    {
+        "id": 100,
+        "temperature": 28,
+        "humidity": 33,
+        "light": 788,
+        "wind": 82,
+        "time": "2024-03-14 14:43:12"
+    },
+    {
+        "id": 101,
+        "temperature": 31,
+        "humidity": 42,
+        "light": 973,
+        "wind": 70,
+        "time": "2023-12-14 23:57:33"
+    },
+    {
+        "id": 102,
+        "temperature": 30,
+        "humidity": 29,
+        "light": 583,
+        "wind": 32,
+        "time": "2023-11-04 15:18:41"
+    },
+    {
+        "id": 103,
+        "temperature": 20,
+        "humidity": 62,
+        "light": 895,
+        "wind": 36,
+        "time": "2024-01-02 16:00:10"
+    },
+    {
+        "id": 104,
+        "temperature": 48,
+        "humidity": 81,
+        "light": 864,
+        "wind": 98,
+        "time": "2024-02-07 10:08:00"
+    },
+    {
+        "id": 105,
+        "temperature": 48,
+        "humidity": 71,
+        "light": 424,
+        "wind": 96,
+        "time": "2024-05-01 13:07:36"
+    },
+    {
+        "id": 106,
+        "temperature": 40,
+        "humidity": 4,
+        "light": 237,
+        "wind": 88,
+        "time": "2024-08-04 20:55:33"
+    },
+    {
+        "id": 107,
+        "temperature": 27,
+        "humidity": 62,
+        "light": 996,
+        "wind": 85,
+        "time": "2024-04-03 06:29:28"
+    },
+    {
+        "id": 108,
+        "temperature": 44,
+        "humidity": 83,
+        "light": 708,
+        "wind": 73,
+        "time": "2023-11-04 11:56:17"
+    },
+    {
+        "id": 109,
+        "temperature": 45,
+        "humidity": 87,
+        "light": 869,
+        "wind": 24,
+        "time": "2024-05-21 12:10:17"
+    },
+    {
+        "id": 110,
+        "temperature": 49,
+        "humidity": 56,
+        "light": 33,
+        "wind": 27,
+        "time": "2023-12-19 05:08:47"
+    },
+    {
+        "id": 111,
+        "temperature": 41,
+        "humidity": 13,
+        "light": 191,
+        "wind": 5,
+        "time": "2024-04-09 16:07:14"
+    },
+    {
+        "id": 112,
+        "temperature": 50,
+        "humidity": 1,
+        "light": 338,
+        "wind": 90,
+        "time": "2024-08-21 14:51:00"
+    },
+    {
+        "id": 113,
+        "temperature": 43,
+        "humidity": 9,
+        "light": 866,
+        "wind": 85,
+        "time": "2024-05-31 05:22:21"
+    },
+    {
+        "id": 114,
+        "temperature": 34,
+        "humidity": 48,
+        "light": 281,
+        "wind": 52,
+        "time": "2024-07-04 06:46:24"
+    },
+    {
+        "id": 115,
+        "temperature": 37,
+        "humidity": 71,
+        "light": 784,
+        "wind": 17,
+        "time": "2024-02-04 01:42:43"
+    },
+    {
+        "id": 116,
+        "temperature": 41,
+        "humidity": 1,
+        "light": 180,
+        "wind": 13,
+        "time": "2023-09-09 18:55:48"
+    },
+    {
+        "id": 117,
+        "temperature": 22,
+        "humidity": 31,
+        "light": 791,
+        "wind": 60,
+        "time": "2024-06-04 08:07:16"
+    },
+    {
+        "id": 118,
+        "temperature": 33,
+        "humidity": 4,
+        "light": 158,
+        "wind": 37,
+        "time": "2023-09-17 09:48:49"
+    },
+    {
+        "id": 119,
+        "temperature": 32,
+        "humidity": 71,
+        "light": 189,
+        "wind": 51,
+        "time": "2023-11-24 20:16:40"
+    },
+    {
+        "id": 120,
+        "temperature": 21,
+        "humidity": 92,
+        "light": 521,
+        "wind": 22,
+        "time": "2024-03-02 10:05:52"
+    },
+    {
+        "id": 121,
+        "temperature": 37,
+        "humidity": 100,
+        "light": 469,
+        "wind": 36,
+        "time": "2024-05-26 03:22:57"
+    },
+    {
+        "id": 122,
+        "temperature": 33,
+        "humidity": 65,
+        "light": 646,
+        "wind": 30,
+        "time": "2023-12-29 12:09:22"
+    },
+    {
+        "id": 123,
+        "temperature": 49,
+        "humidity": 27,
+        "light": 763,
+        "wind": 51,
+        "time": "2023-12-31 15:50:29"
+    },
+    {
+        "id": 124,
+        "temperature": 24,
+        "humidity": 29,
+        "light": 521,
+        "wind": 78,
+        "time": "2024-04-28 07:08:20"
+    },
+    {
+        "id": 125,
+        "temperature": 22,
+        "humidity": 72,
+        "light": 184,
+        "wind": 53,
+        "time": "2023-12-23 11:17:20"
+    },
+    {
+        "id": 126,
+        "temperature": 48,
+        "humidity": 33,
+        "light": 96,
+        "wind": 57,
+        "time": "2024-07-26 16:54:52"
+    },
+    {
+        "id": 127,
+        "temperature": 23,
+        "humidity": 66,
+        "light": 309,
+        "wind": 90,
+        "time": "2023-09-07 16:18:00"
+    },
+    {
+        "id": 128,
+        "temperature": 35,
+        "humidity": 96,
+        "light": 528,
+        "wind": 13,
+        "time": "2024-06-13 04:27:13"
+    },
+    {
+        "id": 129,
+        "temperature": 36,
+        "humidity": 34,
+        "light": 337,
+        "wind": 48,
+        "time": "2024-07-28 21:57:48"
+    },
+    {
+        "id": 130,
+        "temperature": 38,
+        "humidity": 86,
+        "light": 71,
+        "wind": 34,
+        "time": "2024-03-25 00:17:43"
+    },
+    {
+        "id": 131,
+        "temperature": 27,
+        "humidity": 42,
+        "light": 955,
+        "wind": 75,
+        "time": "2024-04-22 07:32:57"
+    },
+    {
+        "id": 132,
+        "temperature": 31,
+        "humidity": 7,
+        "light": 897,
+        "wind": 34,
+        "time": "2023-09-25 04:30:06"
+    },
+    {
+        "id": 133,
+        "temperature": 45,
+        "humidity": 95,
+        "light": 142,
+        "wind": 85,
+        "time": "2024-03-16 14:43:09"
+    },
+    {
+        "id": 134,
+        "temperature": 22,
+        "humidity": 15,
+        "light": 773,
+        "wind": 91,
+        "time": "2024-07-03 05:51:15"
+    },
+    {
+        "id": 135,
+        "temperature": 49,
+        "humidity": 37,
+        "light": 208,
+        "wind": 87,
+        "time": "2023-09-11 14:41:22"
+    },
+    {
+        "id": 136,
+        "temperature": 42,
+        "humidity": 92,
+        "light": 965,
+        "wind": 17,
+        "time": "2023-09-30 20:19:28"
+    },
+    {
+        "id": 137,
+        "temperature": 42,
+        "humidity": 80,
+        "light": 5,
+        "wind": 77,
+        "time": "2024-06-12 15:15:02"
+    },
+    {
+        "id": 138,
+        "temperature": 26,
+        "humidity": 16,
+        "light": 512,
+        "wind": 8,
+        "time": "2023-09-07 11:47:39"
+    },
+    {
+        "id": 139,
+        "temperature": 31,
+        "humidity": 22,
+        "light": 489,
+        "wind": 64,
+        "time": "2024-08-19 05:35:46"
+    },
+    {
+        "id": 140,
+        "temperature": 39,
+        "humidity": 22,
+        "light": 761,
+        "wind": 33,
+        "time": "2023-10-08 06:56:52"
+    },
+    {
+        "id": 141,
+        "temperature": 49,
+        "humidity": 4,
+        "light": 782,
+        "wind": 26,
+        "time": "2023-12-28 02:17:21"
+    },
+    {
+        "id": 142,
+        "temperature": 40,
+        "humidity": 24,
+        "light": 841,
+        "wind": 24,
+        "time": "2024-02-24 02:24:45"
+    },
+    {
+        "id": 143,
+        "temperature": 28,
+        "humidity": 87,
+        "light": 467,
+        "wind": 16,
+        "time": "2023-10-24 05:21:03"
+    },
+    {
+        "id": 144,
+        "temperature": 50,
+        "humidity": 80,
+        "light": 505,
+        "wind": 7,
+        "time": "2024-05-20 10:00:26"
+    },
+    {
+        "id": 145,
+        "temperature": 44,
+        "humidity": 100,
+        "light": 962,
+        "wind": 18,
+        "time": "2024-01-14 09:23:36"
+    },
+    {
+        "id": 146,
+        "temperature": 43,
+        "humidity": 45,
+        "light": 456,
+        "wind": 47,
+        "time": "2024-03-14 15:33:25"
+    },
+    {
+        "id": 147,
+        "temperature": 34,
+        "humidity": 65,
+        "light": 516,
+        "wind": 30,
+        "time": "2024-07-10 18:22:28"
+    },
+    {
+        "id": 148,
+        "temperature": 24,
+        "humidity": 56,
+        "light": 141,
+        "wind": 11,
+        "time": "2023-09-17 02:24:42"
+    },
+    {
+        "id": 149,
+        "temperature": 24,
+        "humidity": 2,
+        "light": 597,
+        "wind": 36,
+        "time": "2024-01-16 20:55:57"
+    },
+    {
+        "id": 150,
+        "temperature": 35,
+        "humidity": 77,
+        "light": 702,
+        "wind": 35,
+        "time": "2024-07-09 12:31:49"
+    },
+    {
+        "id": 151,
+        "temperature": 49,
+        "humidity": 32,
+        "light": 311,
+        "wind": 84,
+        "time": "2024-05-21 08:34:02"
+    },
+    {
+        "id": 152,
+        "temperature": 22,
+        "humidity": 81,
+        "light": 595,
+        "wind": 24,
+        "time": "2024-04-11 17:33:07"
+    },
+    {
+        "id": 153,
+        "temperature": 31,
+        "humidity": 72,
+        "light": 20,
+        "wind": 91,
+        "time": "2024-02-22 04:36:09"
+    },
+    {
+        "id": 154,
+        "temperature": 26,
+        "humidity": 10,
+        "light": 348,
+        "wind": 75,
+        "time": "2024-05-15 04:18:24"
+    },
+    {
+        "id": 155,
+        "temperature": 30,
+        "humidity": 39,
+        "light": 595,
+        "wind": 79,
+        "time": "2023-10-11 00:01:04"
+    },
+    {
+        "id": 156,
+        "temperature": 22,
+        "humidity": 34,
+        "light": 455,
+        "wind": 42,
+        "time": "2024-02-01 14:56:07"
+    },
+    {
+        "id": 157,
+        "temperature": 37,
+        "humidity": 97,
+        "light": 36,
+        "wind": 52,
+        "time": "2024-04-07 06:34:30"
+    },
+    {
+        "id": 158,
+        "temperature": 29,
+        "humidity": 37,
+        "light": 978,
+        "wind": 33,
+        "time": "2023-09-06 14:47:30"
+    },
+    {
+        "id": 159,
+        "temperature": 29,
+        "humidity": 38,
+        "light": 425,
+        "wind": 74,
+        "time": "2024-03-15 19:29:21"
+    },
+    {
+        "id": 160,
+        "temperature": 39,
+        "humidity": 29,
+        "light": 166,
+        "wind": 18,
+        "time": "2024-04-05 15:59:29"
+    },
+    {
+        "id": 161,
+        "temperature": 47,
+        "humidity": 82,
+        "light": 920,
+        "wind": 91,
+        "time": "2023-10-29 22:16:12"
+    },
+    {
+        "id": 162,
+        "temperature": 50,
+        "humidity": 34,
+        "light": 792,
+        "wind": 26,
+        "time": "2023-11-01 07:46:32"
+    },
+    {
+        "id": 163,
+        "temperature": 23,
+        "humidity": 33,
+        "light": 60,
+        "wind": 73,
+        "time": "2023-11-13 10:55:47"
+    },
+    {
+        "id": 164,
+        "temperature": 27,
+        "humidity": 3,
+        "light": 679,
+        "wind": 32,
+        "time": "2023-11-16 06:38:42"
+    },
+    {
+        "id": 165,
+        "temperature": 45,
+        "humidity": 99,
+        "light": 993,
+        "wind": 94,
+        "time": "2023-10-09 22:37:06"
+    },
+    {
+        "id": 166,
+        "temperature": 44,
+        "humidity": 12,
+        "light": 96,
+        "wind": 5,
+        "time": "2024-02-12 15:36:47"
+    },
+    {
+        "id": 167,
+        "temperature": 28,
+        "humidity": 29,
+        "light": 884,
+        "wind": 22,
+        "time": "2024-04-03 05:05:51"
+    },
+    {
+        "id": 168,
+        "temperature": 48,
+        "humidity": 74,
+        "light": 647,
+        "wind": 57,
+        "time": "2024-01-01 16:24:51"
+    },
+    {
+        "id": 169,
+        "temperature": 40,
+        "humidity": 40,
+        "light": 825,
+        "wind": 5,
+        "time": "2023-11-01 11:20:24"
+    },
+    {
+        "id": 170,
+        "temperature": 25,
+        "humidity": 1,
+        "light": 554,
+        "wind": 68,
+        "time": "2023-10-05 13:06:00"
+    },
+    {
+        "id": 171,
+        "temperature": 27,
+        "humidity": 15,
+        "light": 329,
+        "wind": 86,
+        "time": "2024-05-03 07:10:18"
+    },
+    {
+        "id": 172,
+        "temperature": 26,
+        "humidity": 45,
+        "light": 261,
+        "wind": 17,
+        "time": "2024-07-17 12:48:50"
+    },
+    {
+        "id": 173,
+        "temperature": 21,
+        "humidity": 21,
+        "light": 871,
+        "wind": 56,
+        "time": "2023-11-13 02:37:53"
+    },
+    {
+        "id": 174,
+        "temperature": 49,
+        "humidity": 70,
+        "light": 272,
+        "wind": 69,
+        "time": "2024-06-13 12:04:12"
+    },
+    {
+        "id": 175,
+        "temperature": 29,
+        "humidity": 66,
+        "light": 922,
+        "wind": 37,
+        "time": "2024-05-13 06:13:57"
+    },
+    {
+        "id": 176,
+        "temperature": 33,
+        "humidity": 49,
+        "light": 679,
+        "wind": 17,
+        "time": "2023-12-11 02:29:14"
+    },
+    {
+        "id": 177,
+        "temperature": 27,
+        "humidity": 14,
+        "light": 651,
+        "wind": 95,
+        "time": "2023-11-22 19:33:06"
+    },
+    {
+        "id": 178,
+        "temperature": 39,
+        "humidity": 37,
+        "light": 237,
+        "wind": 54,
+        "time": "2024-03-06 01:33:15"
+    },
+    {
+        "id": 179,
+        "temperature": 30,
+        "humidity": 68,
+        "light": 633,
+        "wind": 22,
+        "time": "2023-12-29 21:24:56"
+    },
+    {
+        "id": 180,
+        "temperature": 44,
+        "humidity": 17,
+        "light": 944,
+        "wind": 98,
+        "time": "2024-04-12 08:55:10"
+    },
+    {
+        "id": 181,
+        "temperature": 33,
+        "humidity": 3,
+        "light": 22,
+        "wind": 89,
+        "time": "2024-08-23 07:50:48"
+    },
+    {
+        "id": 182,
+        "temperature": 26,
+        "humidity": 88,
+        "light": 269,
+        "wind": 1,
+        "time": "2024-06-17 15:23:18"
+    },
+    {
+        "id": 183,
+        "temperature": 24,
+        "humidity": 44,
+        "light": 523,
+        "wind": 1,
+        "time": "2024-05-02 17:28:04"
+    },
+    {
+        "id": 184,
+        "temperature": 34,
+        "humidity": 27,
+        "light": 430,
+        "wind": 39,
+        "time": "2023-10-13 02:31:41"
+    },
+    {
+        "id": 185,
+        "temperature": 33,
+        "humidity": 74,
+        "light": 813,
+        "wind": 13,
+        "time": "2023-11-06 06:18:19"
+    },
+    {
+        "id": 186,
+        "temperature": 31,
+        "humidity": 60,
+        "light": 457,
+        "wind": 37,
+        "time": "2023-11-25 18:59:09"
+    },
+    {
+        "id": 187,
+        "temperature": 36,
+        "humidity": 81,
+        "light": 443,
+        "wind": 52,
+        "time": "2024-04-16 17:58:49"
+    },
+    {
+        "id": 188,
+        "temperature": 23,
+        "humidity": 68,
+        "light": 686,
+        "wind": 71,
+        "time": "2024-07-30 07:23:07"
+    },
+    {
+        "id": 189,
+        "temperature": 39,
+        "humidity": 12,
+        "light": 147,
+        "wind": 14,
+        "time": "2024-05-15 09:03:30"
+    },
+    {
+        "id": 190,
+        "temperature": 39,
+        "humidity": 49,
+        "light": 55,
+        "wind": 42,
+        "time": "2024-08-18 23:00:06"
+    },
+    {
+        "id": 191,
+        "temperature": 39,
+        "humidity": 77,
+        "light": 769,
+        "wind": 92,
+        "time": "2024-05-20 19:13:28"
+    },
+    {
+        "id": 192,
+        "temperature": 37,
+        "humidity": 39,
+        "light": 463,
+        "wind": 88,
+        "time": "2024-03-21 17:26:55"
+    },
+    {
+        "id": 193,
+        "temperature": 33,
+        "humidity": 85,
+        "light": 419,
+        "wind": 73,
+        "time": "2024-07-29 00:25:51"
+    },
+    {
+        "id": 194,
+        "temperature": 37,
+        "humidity": 45,
+        "light": 505,
+        "wind": 65,
+        "time": "2024-02-11 13:53:24"
+    },
+    {
+        "id": 195,
+        "temperature": 36,
+        "humidity": 56,
+        "light": 644,
+        "wind": 50,
+        "time": "2023-08-25 18:59:05"
+    },
+    {
+        "id": 196,
+        "temperature": 30,
+        "humidity": 95,
+        "light": 673,
+        "wind": 72,
+        "time": "2023-11-15 20:07:56"
+    },
+    {
+        "id": 197,
+        "temperature": 41,
+        "humidity": 44,
+        "light": 735,
+        "wind": 89,
+        "time": "2023-09-01 23:43:02"
+    },
+    {
+        "id": 198,
+        "temperature": 22,
+        "humidity": 16,
+        "light": 417,
+        "wind": 97,
+        "time": "2023-12-16 17:50:26"
+    },
+    {
+        "id": 199,
+        "temperature": 32,
+        "humidity": 3,
+        "light": 171,
+        "wind": 81,
+        "time": "2023-12-09 16:51:21"
+    },
+    {
+        "id": 200,
+        "temperature": 34,
+        "humidity": 53,
+        "light": 101,
+        "wind": 3,
+        "time": "2024-01-17 05:38:42"
+    },
+    {
+        "id": 201,
+        "temperature": 28,
+        "humidity": 81,
+        "light": 647,
+        "wind": 32,
+        "time": "2024-06-23 19:04:55"
+    },
+    {
+        "id": 202,
+        "temperature": 32,
+        "humidity": 22,
+        "light": 816,
+        "wind": 17,
+        "time": "2024-05-04 16:42:03"
+    },
+    {
+        "id": 203,
+        "temperature": 30,
+        "humidity": 40,
+        "light": 256,
+        "wind": 91,
+        "time": "2024-01-31 07:09:40"
+    },
+    {
+        "id": 204,
+        "temperature": 46,
+        "humidity": 10,
+        "light": 945,
+        "wind": 22,
+        "time": "2024-06-06 20:26:19"
+    },
+    {
+        "id": 205,
+        "temperature": 42,
+        "humidity": 57,
+        "light": 384,
+        "wind": 81,
+        "time": "2024-08-09 17:52:48"
+    },
+    {
+        "id": 206,
+        "temperature": 22,
+        "humidity": 95,
+        "light": 535,
+        "wind": 83,
+        "time": "2024-07-13 19:38:37"
+    },
+    {
+        "id": 207,
+        "temperature": 30,
+        "humidity": 7,
+        "light": 33,
+        "wind": 7,
+        "time": "2023-12-09 04:48:45"
+    },
+    {
+        "id": 208,
+        "temperature": 47,
+        "humidity": 86,
+        "light": 846,
+        "wind": 4,
+        "time": "2024-04-17 02:57:16"
+    },
+    {
+        "id": 209,
+        "temperature": 31,
+        "humidity": 57,
+        "light": 26,
+        "wind": 46,
+        "time": "2024-05-14 15:26:55"
+    },
+    {
+        "id": 210,
+        "temperature": 28,
+        "humidity": 71,
+        "light": 861,
+        "wind": 90,
+        "time": "2024-04-27 07:14:19"
+    },
+    {
+        "id": 211,
+        "temperature": 31,
+        "humidity": 96,
+        "light": 264,
+        "wind": 9,
+        "time": "2024-05-13 05:44:58"
+    },
+    {
+        "id": 212,
+        "temperature": 30,
+        "humidity": 97,
+        "light": 975,
+        "wind": 70,
+        "time": "2024-04-22 20:09:30"
+    },
+    {
+        "id": 213,
+        "temperature": 28,
+        "humidity": 77,
+        "light": 629,
+        "wind": 74,
+        "time": "2023-12-06 08:05:30"
+    },
+    {
+        "id": 214,
+        "temperature": 40,
+        "humidity": 65,
+        "light": 895,
+        "wind": 42,
+        "time": "2024-05-01 13:50:34"
+    },
+    {
+        "id": 215,
+        "temperature": 34,
+        "humidity": 33,
+        "light": 132,
+        "wind": 100,
+        "time": "2024-08-12 18:25:54"
+    },
+    {
+        "id": 216,
+        "temperature": 35,
+        "humidity": 18,
+        "light": 530,
+        "wind": 51,
+        "time": "2023-12-20 17:50:01"
+    },
+    {
+        "id": 217,
+        "temperature": 31,
+        "humidity": 51,
+        "light": 756,
+        "wind": 23,
+        "time": "2024-05-12 04:53:54"
+    },
+    {
+        "id": 218,
+        "temperature": 34,
+        "humidity": 27,
+        "light": 481,
+        "wind": 4,
+        "time": "2024-01-02 04:33:18"
+    },
+    {
+        "id": 219,
+        "temperature": 23,
+        "humidity": 38,
+        "light": 619,
+        "wind": 58,
+        "time": "2024-05-07 23:00:23"
+    },
+    {
+        "id": 220,
+        "temperature": 38,
+        "humidity": 36,
+        "light": 741,
+        "wind": 97,
+        "time": "2024-06-27 06:03:33"
+    },
+    {
+        "id": 221,
+        "temperature": 29,
+        "humidity": 100,
+        "light": 42,
+        "wind": 6,
+        "time": "2024-02-14 01:25:03"
+    },
+    {
+        "id": 222,
+        "temperature": 20,
+        "humidity": 25,
+        "light": 376,
+        "wind": 64,
+        "time": "2024-06-11 08:29:19"
+    },
+    {
+        "id": 223,
+        "temperature": 22,
+        "humidity": 70,
+        "light": 169,
+        "wind": 93,
+        "time": "2023-11-14 11:39:18"
+    },
+    {
+        "id": 224,
+        "temperature": 35,
+        "humidity": 55,
+        "light": 965,
+        "wind": 81,
+        "time": "2023-10-31 04:41:06"
+    },
+    {
+        "id": 225,
+        "temperature": 46,
+        "humidity": 35,
+        "light": 455,
+        "wind": 73,
+        "time": "2024-03-09 06:21:58"
+    },
+    {
+        "id": 226,
+        "temperature": 42,
+        "humidity": 22,
+        "light": 151,
+        "wind": 93,
+        "time": "2024-06-07 20:33:34"
+    },
+    {
+        "id": 227,
+        "temperature": 32,
+        "humidity": 49,
+        "light": 657,
+        "wind": 40,
+        "time": "2024-07-13 13:41:41"
+    },
+    {
+        "id": 228,
+        "temperature": 23,
+        "humidity": 34,
+        "light": 69,
+        "wind": 16,
+        "time": "2024-01-24 13:37:13"
+    },
+    {
+        "id": 229,
+        "temperature": 37,
+        "humidity": 90,
+        "light": 660,
+        "wind": 53,
+        "time": "2024-05-06 14:14:52"
+    },
+    {
+        "id": 230,
+        "temperature": 29,
+        "humidity": 54,
+        "light": 530,
+        "wind": 88,
+        "time": "2023-09-29 01:09:05"
+    },
+    {
+        "id": 231,
+        "temperature": 22,
+        "humidity": 76,
+        "light": 96,
+        "wind": 83,
+        "time": "2024-06-19 07:24:47"
+    },
+    {
+        "id": 232,
+        "temperature": 43,
+        "humidity": 56,
+        "light": 124,
+        "wind": 17,
+        "time": "2024-02-03 15:52:17"
+    },
+    {
+        "id": 233,
+        "temperature": 24,
+        "humidity": 71,
+        "light": 952,
+        "wind": 34,
+        "time": "2023-11-26 19:27:24"
+    },
+    {
+        "id": 234,
+        "temperature": 21,
+        "humidity": 73,
+        "light": 105,
+        "wind": 29,
+        "time": "2024-07-30 08:26:15"
+    },
+    {
+        "id": 235,
+        "temperature": 41,
+        "humidity": 90,
+        "light": 283,
+        "wind": 41,
+        "time": "2024-03-26 12:32:14"
+    },
+    {
+        "id": 236,
+        "temperature": 45,
+        "humidity": 49,
+        "light": 15,
+        "wind": 8,
+        "time": "2024-08-16 04:37:22"
+    },
+    {
+        "id": 237,
+        "temperature": 34,
+        "humidity": 44,
+        "light": 144,
+        "wind": 66,
+        "time": "2024-05-09 11:38:06"
+    },
+    {
+        "id": 238,
+        "temperature": 23,
+        "humidity": 11,
+        "light": 434,
+        "wind": 27,
+        "time": "2023-10-07 03:23:30"
+    },
+    {
+        "id": 239,
+        "temperature": 22,
+        "humidity": 27,
+        "light": 164,
+        "wind": 25,
+        "time": "2024-07-15 15:02:06"
+    },
+    {
+        "id": 240,
+        "temperature": 23,
+        "humidity": 98,
+        "light": 865,
+        "wind": 96,
+        "time": "2024-04-24 11:08:51"
+    },
+    {
+        "id": 241,
+        "temperature": 47,
+        "humidity": 50,
+        "light": 352,
+        "wind": 45,
+        "time": "2024-04-14 01:11:20"
+    },
+    {
+        "id": 242,
+        "temperature": 21,
+        "humidity": 7,
+        "light": 549,
+        "wind": 12,
+        "time": "2023-11-16 18:02:53"
+    },
+    {
+        "id": 243,
+        "temperature": 21,
+        "humidity": 50,
+        "light": 709,
+        "wind": 100,
+        "time": "2024-02-03 20:17:49"
+    },
+    {
+        "id": 244,
+        "temperature": 47,
+        "humidity": 17,
+        "light": 219,
+        "wind": 64,
+        "time": "2024-03-04 06:22:38"
+    },
+    {
+        "id": 245,
+        "temperature": 32,
+        "humidity": 3,
+        "light": 987,
+        "wind": 43,
+        "time": "2024-08-04 11:18:59"
+    },
+    {
+        "id": 246,
+        "temperature": 20,
+        "humidity": 38,
+        "light": 53,
+        "wind": 11,
+        "time": "2024-06-17 05:39:16"
+    },
+    {
+        "id": 247,
+        "temperature": 41,
+        "humidity": 3,
+        "light": 933,
+        "wind": 75,
+        "time": "2023-10-03 14:44:31"
+    },
+    {
+        "id": 248,
+        "temperature": 26,
+        "humidity": 92,
+        "light": 923,
+        "wind": 70,
+        "time": "2024-02-27 12:47:06"
+    },
+    {
+        "id": 249,
+        "temperature": 27,
+        "humidity": 81,
+        "light": 392,
+        "wind": 32,
+        "time": "2023-11-18 05:12:05"
+    },
+    {
+        "id": 250,
+        "temperature": 30,
+        "humidity": 25,
+        "light": 980,
+        "wind": 67,
+        "time": "2023-09-06 17:31:11"
+    },
+    {
+        "id": 251,
+        "temperature": 28,
+        "humidity": 96,
+        "light": 710,
+        "wind": 42,
+        "time": "2024-05-11 12:03:45"
+    },
+    {
+        "id": 252,
+        "temperature": 42,
+        "humidity": 71,
+        "light": 324,
+        "wind": 21,
+        "time": "2023-11-13 15:43:06"
+    },
+    {
+        "id": 253,
+        "temperature": 48,
+        "humidity": 90,
+        "light": 255,
+        "wind": 6,
+        "time": "2024-06-11 11:25:47"
+    },
+    {
+        "id": 254,
+        "temperature": 20,
+        "humidity": 70,
+        "light": 317,
+        "wind": 74,
+        "time": "2023-11-24 18:59:58"
+    },
+    {
+        "id": 255,
+        "temperature": 45,
+        "humidity": 57,
+        "light": 648,
+        "wind": 38,
+        "time": "2024-01-01 00:14:59"
+    },
+    {
+        "id": 256,
+        "temperature": 47,
+        "humidity": 33,
+        "light": 397,
+        "wind": 100,
+        "time": "2023-10-09 05:38:14"
+    },
+    {
+        "id": 257,
+        "temperature": 31,
+        "humidity": 57,
+        "light": 562,
+        "wind": 95,
+        "time": "2024-07-24 23:20:37"
+    },
+    {
+        "id": 258,
+        "temperature": 40,
+        "humidity": 71,
+        "light": 220,
+        "wind": 59,
+        "time": "2023-09-29 00:43:38"
+    },
+    {
+        "id": 259,
+        "temperature": 28,
+        "humidity": 18,
+        "light": 560,
+        "wind": 2,
+        "time": "2024-01-14 21:42:00"
+    },
+    {
+        "id": 260,
+        "temperature": 49,
+        "humidity": 96,
+        "light": 110,
+        "wind": 92,
+        "time": "2024-01-25 06:16:50"
+    },
+    {
+        "id": 261,
+        "temperature": 42,
+        "humidity": 97,
+        "light": 526,
+        "wind": 18,
+        "time": "2023-12-03 17:45:23"
+    },
+    {
+        "id": 262,
+        "temperature": 41,
+        "humidity": 82,
+        "light": 656,
+        "wind": 36,
+        "time": "2024-01-17 09:38:39"
+    },
+    {
+        "id": 263,
+        "temperature": 29,
+        "humidity": 26,
+        "light": 511,
+        "wind": 33,
+        "time": "2024-01-18 06:00:05"
+    },
+    {
+        "id": 264,
+        "temperature": 27,
+        "humidity": 65,
+        "light": 907,
+        "wind": 16,
+        "time": "2024-07-14 10:53:48"
+    },
+    {
+        "id": 265,
+        "temperature": 43,
+        "humidity": 61,
+        "light": 328,
+        "wind": 2,
+        "time": "2023-12-31 01:52:43"
+    },
+    {
+        "id": 266,
+        "temperature": 26,
+        "humidity": 57,
+        "light": 346,
+        "wind": 58,
+        "time": "2024-02-06 14:12:47"
+    },
+    {
+        "id": 267,
+        "temperature": 34,
+        "humidity": 67,
+        "light": 752,
+        "wind": 81,
+        "time": "2023-10-15 06:16:44"
+    },
+    {
+        "id": 268,
+        "temperature": 20,
+        "humidity": 71,
+        "light": 808,
+        "wind": 78,
+        "time": "2023-10-31 06:25:04"
+    },
+    {
+        "id": 269,
+        "temperature": 45,
+        "humidity": 58,
+        "light": 544,
+        "wind": 18,
+        "time": "2024-01-08 11:10:32"
+    },
+    {
+        "id": 270,
+        "temperature": 26,
+        "humidity": 23,
+        "light": 754,
+        "wind": 9,
+        "time": "2024-03-01 16:18:08"
+    },
+    {
+        "id": 271,
+        "temperature": 25,
+        "humidity": 14,
+        "light": 554,
+        "wind": 63,
+        "time": "2024-06-02 11:33:50"
+    },
+    {
+        "id": 272,
+        "temperature": 39,
+        "humidity": 60,
+        "light": 582,
+        "wind": 16,
+        "time": "2024-07-21 21:22:12"
+    },
+    {
+        "id": 273,
+        "temperature": 20,
+        "humidity": 70,
+        "light": 535,
+        "wind": 30,
+        "time": "2024-07-05 06:27:37"
+    },
+    {
+        "id": 274,
+        "temperature": 21,
+        "humidity": 24,
+        "light": 829,
+        "wind": 51,
+        "time": "2024-06-04 14:17:22"
+    },
+    {
+        "id": 275,
+        "temperature": 31,
+        "humidity": 93,
+        "light": 590,
+        "wind": 80,
+        "time": "2023-10-13 20:18:23"
+    },
+    {
+        "id": 276,
+        "temperature": 21,
+        "humidity": 72,
+        "light": 49,
+        "wind": 65,
+        "time": "2024-08-03 06:31:37"
+    },
+    {
+        "id": 277,
+        "temperature": 26,
+        "humidity": 98,
+        "light": 410,
+        "wind": 61,
+        "time": "2023-11-01 05:23:39"
+    },
+    {
+        "id": 278,
+        "temperature": 43,
+        "humidity": 71,
+        "light": 688,
+        "wind": 43,
+        "time": "2023-12-18 21:39:03"
+    },
+    {
+        "id": 279,
+        "temperature": 31,
+        "humidity": 9,
+        "light": 217,
+        "wind": 48,
+        "time": "2023-09-06 19:14:06"
+    },
+    {
+        "id": 280,
+        "temperature": 37,
+        "humidity": 92,
+        "light": 979,
+        "wind": 67,
+        "time": "2024-08-01 18:44:55"
+    },
+    {
+        "id": 281,
+        "temperature": 34,
+        "humidity": 58,
+        "light": 777,
+        "wind": 68,
+        "time": "2024-05-23 20:07:35"
+    },
+    {
+        "id": 282,
+        "temperature": 48,
+        "humidity": 36,
+        "light": 690,
+        "wind": 76,
+        "time": "2024-01-28 20:19:15"
+    },
+    {
+        "id": 283,
+        "temperature": 37,
+        "humidity": 64,
+        "light": 241,
+        "wind": 78,
+        "time": "2024-06-20 04:25:26"
+    },
+    {
+        "id": 284,
+        "temperature": 37,
+        "humidity": 61,
+        "light": 564,
+        "wind": 35,
+        "time": "2023-11-10 05:32:43"
+    },
+    {
+        "id": 285,
+        "temperature": 23,
+        "humidity": 76,
+        "light": 16,
+        "wind": 98,
+        "time": "2024-05-31 02:40:41"
+    },
+    {
+        "id": 286,
+        "temperature": 27,
+        "humidity": 81,
+        "light": 344,
+        "wind": 86,
+        "time": "2024-08-16 15:11:30"
+    },
+    {
+        "id": 287,
+        "temperature": 43,
+        "humidity": 71,
+        "light": 515,
+        "wind": 58,
+        "time": "2024-04-29 12:56:37"
+    },
+    {
+        "id": 288,
+        "temperature": 38,
+        "humidity": 10,
+        "light": 769,
+        "wind": 76,
+        "time": "2024-02-14 05:39:17"
+    },
+    {
+        "id": 289,
+        "temperature": 31,
+        "humidity": 65,
+        "light": 91,
+        "wind": 88,
+        "time": "2024-05-16 21:23:57"
+    },
+    {
+        "id": 290,
+        "temperature": 29,
+        "humidity": 30,
+        "light": 427,
+        "wind": 47,
+        "time": "2024-05-25 01:38:58"
+    },
+    {
+        "id": 291,
+        "temperature": 41,
+        "humidity": 84,
+        "light": 500,
+        "wind": 52,
+        "time": "2024-04-01 10:57:10"
+    },
+    {
+        "id": 292,
+        "temperature": 23,
+        "humidity": 51,
+        "light": 177,
+        "wind": 33,
+        "time": "2024-06-26 00:04:53"
+    },
+    {
+        "id": 293,
+        "temperature": 33,
+        "humidity": 51,
+        "light": 237,
+        "wind": 50,
+        "time": "2024-07-02 03:27:54"
+    },
+    {
+        "id": 294,
+        "temperature": 47,
+        "humidity": 19,
+        "light": 686,
+        "wind": 15,
+        "time": "2023-11-21 12:08:55"
+    },
+    {
+        "id": 295,
+        "temperature": 24,
+        "humidity": 53,
+        "light": 582,
+        "wind": 51,
+        "time": "2023-11-01 16:55:37"
+    },
+    {
+        "id": 296,
+        "temperature": 37,
+        "humidity": 12,
+        "light": 479,
+        "wind": 40,
+        "time": "2023-10-15 12:01:27"
+    },
+    {
+        "id": 297,
+        "temperature": 30,
+        "humidity": 71,
+        "light": 787,
+        "wind": 98,
+        "time": "2024-01-25 10:48:52"
+    },
+    {
+        "id": 298,
+        "temperature": 27,
+        "humidity": 44,
+        "light": 124,
+        "wind": 87,
+        "time": "2024-08-08 06:43:48"
+    },
+    {
+        "id": 299,
+        "temperature": 40,
+        "humidity": 32,
+        "light": 574,
+        "wind": 95,
+        "time": "2024-05-24 09:03:28"
+    },
+    {
+        "id": 300,
+        "temperature": 38,
+        "humidity": 21,
+        "light": 420,
+        "wind": 60,
+        "time": "2023-08-25 01:55:48"
+    },
+    {
+        "id": 301,
+        "temperature": 37,
+        "humidity": 64,
+        "light": 992,
+        "wind": 27,
+        "time": "2024-06-22 13:46:04"
+    },
+    {
+        "id": 302,
+        "temperature": 47,
+        "humidity": 49,
+        "light": 811,
+        "wind": 28,
+        "time": "2024-07-14 21:06:16"
+    },
+    {
+        "id": 303,
+        "temperature": 24,
+        "humidity": 97,
+        "light": 317,
+        "wind": 67,
+        "time": "2023-09-24 00:32:52"
+    },
+    {
+        "id": 304,
+        "temperature": 36,
+        "humidity": 1,
+        "light": 912,
+        "wind": 71,
+        "time": "2023-11-12 09:05:36"
+    },
+    {
+        "id": 305,
+        "temperature": 39,
+        "humidity": 81,
+        "light": 563,
+        "wind": 80,
+        "time": "2024-03-18 07:40:57"
+    },
+    {
+        "id": 306,
+        "temperature": 40,
+        "humidity": 53,
+        "light": 745,
+        "wind": 19,
+        "time": "2023-09-16 23:53:58"
+    },
+    {
+        "id": 307,
+        "temperature": 29,
+        "humidity": 86,
+        "light": 124,
+        "wind": 6,
+        "time": "2024-07-20 17:03:55"
+    },
+    {
+        "id": 308,
+        "temperature": 44,
+        "humidity": 35,
+        "light": 895,
+        "wind": 67,
+        "time": "2024-07-02 04:05:44"
+    },
+    {
+        "id": 309,
+        "temperature": 23,
+        "humidity": 46,
+        "light": 365,
+        "wind": 27,
+        "time": "2023-11-20 10:04:54"
+    },
+    {
+        "id": 310,
+        "temperature": 48,
+        "humidity": 25,
+        "light": 940,
+        "wind": 73,
+        "time": "2024-06-14 01:16:12"
+    },
+    {
+        "id": 311,
+        "temperature": 39,
+        "humidity": 47,
+        "light": 721,
+        "wind": 35,
+        "time": "2023-12-06 06:18:21"
+    },
+    {
+        "id": 312,
+        "temperature": 26,
+        "humidity": 54,
+        "light": 997,
+        "wind": 13,
+        "time": "2023-11-27 13:05:32"
+    },
+    {
+        "id": 313,
+        "temperature": 45,
+        "humidity": 70,
+        "light": 926,
+        "wind": 27,
+        "time": "2023-11-17 14:32:00"
+    },
+    {
+        "id": 314,
+        "temperature": 35,
+        "humidity": 13,
+        "light": 319,
+        "wind": 40,
+        "time": "2024-07-25 07:41:12"
+    },
+    {
+        "id": 315,
+        "temperature": 35,
+        "humidity": 9,
+        "light": 974,
+        "wind": 17,
+        "time": "2024-04-10 17:16:54"
+    },
+    {
+        "id": 316,
+        "temperature": 23,
+        "humidity": 62,
+        "light": 214,
+        "wind": 74,
+        "time": "2023-08-29 20:54:15"
+    },
+    {
+        "id": 317,
+        "temperature": 25,
+        "humidity": 49,
+        "light": 777,
+        "wind": 79,
+        "time": "2023-09-04 11:38:58"
+    },
+    {
+        "id": 318,
+        "temperature": 25,
+        "humidity": 39,
+        "light": 570,
+        "wind": 97,
+        "time": "2023-12-23 12:59:39"
+    },
+    {
+        "id": 319,
+        "temperature": 39,
+        "humidity": 9,
+        "light": 676,
+        "wind": 54,
+        "time": "2023-10-11 18:25:58"
+    },
+    {
+        "id": 320,
+        "temperature": 31,
+        "humidity": 20,
+        "light": 426,
+        "wind": 83,
+        "time": "2024-03-01 11:49:03"
+    },
+    {
+        "id": 321,
+        "temperature": 20,
+        "humidity": 76,
+        "light": 946,
+        "wind": 7,
+        "time": "2023-12-07 19:12:45"
+    },
+    {
+        "id": 322,
+        "temperature": 42,
+        "humidity": 86,
+        "light": 563,
+        "wind": 12,
+        "time": "2024-05-21 09:32:58"
+    },
+    {
+        "id": 323,
+        "temperature": 44,
+        "humidity": 81,
+        "light": 527,
+        "wind": 69,
+        "time": "2023-11-14 20:24:53"
+    },
+    {
+        "id": 324,
+        "temperature": 39,
+        "humidity": 48,
+        "light": 259,
+        "wind": 39,
+        "time": "2024-06-07 13:58:21"
+    },
+    {
+        "id": 325,
+        "temperature": 30,
+        "humidity": 44,
+        "light": 690,
+        "wind": 24,
+        "time": "2024-03-15 10:40:01"
+    },
+    {
+        "id": 326,
+        "temperature": 45,
+        "humidity": 55,
+        "light": 3,
+        "wind": 53,
+        "time": "2023-12-24 01:44:41"
+    },
+    {
+        "id": 327,
+        "temperature": 34,
+        "humidity": 61,
+        "light": 338,
+        "wind": 10,
+        "time": "2023-12-30 22:12:57"
+    },
+    {
+        "id": 328,
+        "temperature": 45,
+        "humidity": 13,
+        "light": 347,
+        "wind": 44,
+        "time": "2023-12-15 12:50:56"
+    },
+    {
+        "id": 329,
+        "temperature": 30,
+        "humidity": 23,
+        "light": 746,
+        "wind": 86,
+        "time": "2024-01-04 22:02:57"
+    },
+    {
+        "id": 330,
+        "temperature": 27,
+        "humidity": 9,
+        "light": 955,
+        "wind": 31,
+        "time": "2024-07-01 08:48:48"
+    },
+    {
+        "id": 331,
+        "temperature": 20,
+        "humidity": 41,
+        "light": 821,
+        "wind": 20,
+        "time": "2024-05-16 08:18:57"
+    },
+    {
+        "id": 332,
+        "temperature": 48,
+        "humidity": 8,
+        "light": 787,
+        "wind": 14,
+        "time": "2024-05-17 12:51:35"
+    },
+    {
+        "id": 333,
+        "temperature": 39,
+        "humidity": 64,
+        "light": 368,
+        "wind": 37,
+        "time": "2023-11-21 14:26:39"
+    },
+    {
+        "id": 334,
+        "temperature": 50,
+        "humidity": 27,
+        "light": 90,
+        "wind": 8,
+        "time": "2024-06-15 06:04:03"
+    },
+    {
+        "id": 335,
+        "temperature": 30,
+        "humidity": 36,
+        "light": 766,
+        "wind": 1,
+        "time": "2024-07-07 15:56:22"
+    },
+    {
+        "id": 336,
+        "temperature": 32,
+        "humidity": 93,
+        "light": 506,
+        "wind": 91,
+        "time": "2023-08-27 20:08:12"
+    },
+    {
+        "id": 337,
+        "temperature": 25,
+        "humidity": 36,
+        "light": 960,
+        "wind": 72,
+        "time": "2023-12-15 11:20:14"
+    },
+    {
+        "id": 338,
+        "temperature": 36,
+        "humidity": 61,
+        "light": 279,
+        "wind": 84,
+        "time": "2024-04-18 18:06:19"
+    },
+    {
+        "id": 339,
+        "temperature": 49,
+        "humidity": 67,
+        "light": 914,
+        "wind": 2,
+        "time": "2023-09-10 20:45:01"
+    },
+    {
+        "id": 340,
+        "temperature": 34,
+        "humidity": 71,
+        "light": 206,
+        "wind": 52,
+        "time": "2023-12-30 03:26:01"
+    },
+    {
+        "id": 341,
+        "temperature": 42,
+        "humidity": 4,
+        "light": 733,
+        "wind": 58,
+        "time": "2023-11-04 15:02:10"
+    },
+    {
+        "id": 342,
+        "temperature": 49,
+        "humidity": 49,
+        "light": 110,
+        "wind": 27,
+        "time": "2023-09-10 00:28:22"
+    },
+    {
+        "id": 343,
+        "temperature": 50,
+        "humidity": 42,
+        "light": 21,
+        "wind": 10,
+        "time": "2023-08-29 12:51:08"
+    },
+    {
+        "id": 344,
+        "temperature": 45,
+        "humidity": 1,
+        "light": 16,
+        "wind": 39,
+        "time": "2024-07-26 13:15:11"
+    },
+    {
+        "id": 345,
+        "temperature": 37,
+        "humidity": 45,
+        "light": 788,
+        "wind": 91,
+        "time": "2024-08-04 23:24:04"
+    },
+    {
+        "id": 346,
+        "temperature": 35,
+        "humidity": 65,
+        "light": 937,
+        "wind": 35,
+        "time": "2024-03-22 18:44:22"
+    },
+    {
+        "id": 347,
+        "temperature": 30,
+        "humidity": 4,
+        "light": 347,
+        "wind": 31,
+        "time": "2024-02-09 11:20:37"
+    },
+    {
+        "id": 348,
+        "temperature": 42,
+        "humidity": 34,
+        "light": 577,
+        "wind": 72,
+        "time": "2024-03-14 12:35:38"
+    },
+    {
+        "id": 349,
+        "temperature": 24,
+        "humidity": 36,
+        "light": 293,
+        "wind": 12,
+        "time": "2023-12-07 06:17:57"
+    },
+    {
+        "id": 350,
+        "temperature": 42,
+        "humidity": 56,
+        "light": 236,
+        "wind": 41,
+        "time": "2023-09-04 06:47:31"
+    },
+    {
+        "id": 351,
+        "temperature": 42,
+        "humidity": 4,
+        "light": 50,
+        "wind": 39,
+        "time": "2024-02-09 21:50:08"
+    },
+    {
+        "id": 352,
+        "temperature": 24,
+        "humidity": 51,
+        "light": 365,
+        "wind": 2,
+        "time": "2024-03-09 11:08:55"
+    },
+    {
+        "id": 353,
+        "temperature": 44,
+        "humidity": 79,
+        "light": 968,
+        "wind": 65,
+        "time": "2023-10-22 13:16:39"
+    },
+    {
+        "id": 354,
+        "temperature": 28,
+        "humidity": 34,
+        "light": 185,
+        "wind": 12,
+        "time": "2023-11-23 11:21:52"
+    },
+    {
+        "id": 355,
+        "temperature": 30,
+        "humidity": 83,
+        "light": 305,
+        "wind": 55,
+        "time": "2023-10-26 06:54:03"
+    },
+    {
+        "id": 356,
+        "temperature": 50,
+        "humidity": 57,
+        "light": 61,
+        "wind": 43,
+        "time": "2024-07-04 15:42:33"
+    },
+    {
+        "id": 357,
+        "temperature": 43,
+        "humidity": 22,
+        "light": 64,
+        "wind": 56,
+        "time": "2024-03-21 22:59:45"
+    },
+    {
+        "id": 358,
+        "temperature": 50,
+        "humidity": 42,
+        "light": 289,
+        "wind": 22,
+        "time": "2024-08-12 20:16:43"
+    },
+    {
+        "id": 359,
+        "temperature": 45,
+        "humidity": 55,
+        "light": 298,
+        "wind": 95,
+        "time": "2024-05-02 17:57:13"
+    },
+    {
+        "id": 360,
+        "temperature": 40,
+        "humidity": 9,
+        "light": 379,
+        "wind": 47,
+        "time": "2023-11-09 06:49:47"
+    },
+    {
+        "id": 361,
+        "temperature": 31,
+        "humidity": 82,
+        "light": 468,
+        "wind": 37,
+        "time": "2024-04-05 23:37:54"
+    },
+    {
+        "id": 362,
+        "temperature": 25,
+        "humidity": 12,
+        "light": 718,
+        "wind": 78,
+        "time": "2023-11-18 19:57:21"
+    },
+    {
+        "id": 363,
+        "temperature": 21,
+        "humidity": 6,
+        "light": 631,
+        "wind": 32,
+        "time": "2024-07-14 07:46:42"
+    },
+    {
+        "id": 364,
+        "temperature": 43,
+        "humidity": 62,
+        "light": 330,
+        "wind": 35,
+        "time": "2024-03-08 13:29:42"
+    },
+    {
+        "id": 365,
+        "temperature": 44,
+        "humidity": 47,
+        "light": 740,
+        "wind": 84,
+        "time": "2024-04-10 08:24:43"
+    },
+    {
+        "id": 366,
+        "temperature": 47,
+        "humidity": 64,
+        "light": 421,
+        "wind": 34,
+        "time": "2023-10-27 11:31:53"
+    },
+    {
+        "id": 367,
+        "temperature": 28,
+        "humidity": 32,
+        "light": 614,
+        "wind": 90,
+        "time": "2024-04-28 16:17:26"
+    },
+    {
+        "id": 368,
+        "temperature": 22,
+        "humidity": 8,
+        "light": 523,
+        "wind": 1,
+        "time": "2023-10-06 02:16:08"
+    },
+    {
+        "id": 369,
+        "temperature": 37,
+        "humidity": 11,
+        "light": 751,
+        "wind": 6,
+        "time": "2024-01-14 21:26:04"
+    },
+    {
+        "id": 370,
+        "temperature": 32,
+        "humidity": 92,
+        "light": 798,
+        "wind": 28,
+        "time": "2024-05-01 22:32:55"
+    },
+    {
+        "id": 371,
+        "temperature": 23,
+        "humidity": 10,
+        "light": 946,
+        "wind": 71,
+        "time": "2023-09-18 16:05:27"
+    },
+    {
+        "id": 372,
+        "temperature": 29,
+        "humidity": 80,
+        "light": 428,
+        "wind": 96,
+        "time": "2024-07-02 07:11:31"
+    },
+    {
+        "id": 373,
+        "temperature": 28,
+        "humidity": 23,
+        "light": 608,
+        "wind": 74,
+        "time": "2024-07-01 20:29:16"
+    },
+    {
+        "id": 374,
+        "temperature": 43,
+        "humidity": 70,
+        "light": 894,
+        "wind": 19,
+        "time": "2024-07-22 16:00:57"
+    },
+    {
+        "id": 375,
+        "temperature": 31,
+        "humidity": 53,
+        "light": 915,
+        "wind": 6,
+        "time": "2024-04-22 02:07:57"
+    },
+    {
+        "id": 376,
+        "temperature": 27,
+        "humidity": 10,
+        "light": 627,
+        "wind": 15,
+        "time": "2024-06-10 10:04:06"
+    },
+    {
+        "id": 377,
+        "temperature": 47,
+        "humidity": 23,
+        "light": 450,
+        "wind": 96,
+        "time": "2024-08-19 11:47:21"
+    },
+    {
+        "id": 378,
+        "temperature": 20,
+        "humidity": 14,
+        "light": 573,
+        "wind": 22,
+        "time": "2023-09-05 21:19:41"
+    },
+    {
+        "id": 379,
+        "temperature": 42,
+        "humidity": 97,
+        "light": 902,
+        "wind": 4,
+        "time": "2024-03-29 08:01:39"
+    },
+    {
+        "id": 380,
+        "temperature": 20,
+        "humidity": 60,
+        "light": 572,
+        "wind": 22,
+        "time": "2023-10-03 08:26:20"
+    },
+    {
+        "id": 381,
+        "temperature": 38,
+        "humidity": 80,
+        "light": 876,
+        "wind": 86,
+        "time": "2023-09-09 21:56:01"
+    },
+    {
+        "id": 382,
+        "temperature": 41,
+        "humidity": 59,
+        "light": 712,
+        "wind": 40,
+        "time": "2024-07-04 23:27:22"
+    },
+    {
+        "id": 383,
+        "temperature": 25,
+        "humidity": 38,
+        "light": 721,
+        "wind": 17,
+        "time": "2024-01-26 16:28:37"
+    },
+    {
+        "id": 384,
+        "temperature": 31,
+        "humidity": 57,
+        "light": 979,
+        "wind": 38,
+        "time": "2024-07-17 15:18:55"
+    },
+    {
+        "id": 385,
+        "temperature": 30,
+        "humidity": 90,
+        "light": 14,
+        "wind": 44,
+        "time": "2023-11-11 12:32:44"
+    },
+    {
+        "id": 386,
+        "temperature": 42,
+        "humidity": 27,
+        "light": 463,
+        "wind": 46,
+        "time": "2023-12-19 02:17:51"
+    },
+    {
+        "id": 387,
+        "temperature": 20,
+        "humidity": 16,
+        "light": 546,
+        "wind": 16,
+        "time": "2024-04-10 14:02:39"
+    },
+    {
+        "id": 388,
+        "temperature": 43,
+        "humidity": 31,
+        "light": 86,
+        "wind": 98,
+        "time": "2024-02-10 08:36:27"
+    },
+    {
+        "id": 389,
+        "temperature": 25,
+        "humidity": 100,
+        "light": 290,
+        "wind": 92,
+        "time": "2023-09-20 14:10:08"
+    },
+    {
+        "id": 390,
+        "temperature": 39,
+        "humidity": 9,
+        "light": 83,
+        "wind": 17,
+        "time": "2024-05-31 19:50:55"
+    },
+    {
+        "id": 391,
+        "temperature": 39,
+        "humidity": 88,
+        "light": 69,
+        "wind": 95,
+        "time": "2023-10-17 01:36:55"
+    },
+    {
+        "id": 392,
+        "temperature": 44,
+        "humidity": 7,
+        "light": 190,
+        "wind": 47,
+        "time": "2023-12-17 13:28:17"
+    },
+    {
+        "id": 393,
+        "temperature": 49,
+        "humidity": 8,
+        "light": 220,
+        "wind": 33,
+        "time": "2024-04-22 16:50:44"
+    },
+    {
+        "id": 394,
+        "temperature": 50,
+        "humidity": 15,
+        "light": 844,
+        "wind": 76,
+        "time": "2024-02-09 10:34:39"
+    },
+    {
+        "id": 395,
+        "temperature": 37,
+        "humidity": 61,
+        "light": 716,
+        "wind": 11,
+        "time": "2024-03-10 14:54:15"
+    },
+    {
+        "id": 396,
+        "temperature": 42,
+        "humidity": 77,
+        "light": 130,
+        "wind": 18,
+        "time": "2024-03-01 07:03:39"
+    },
+    {
+        "id": 397,
+        "temperature": 36,
+        "humidity": 44,
+        "light": 705,
+        "wind": 14,
+        "time": "2024-04-08 19:05:47"
+    },
+    {
+        "id": 398,
+        "temperature": 40,
+        "humidity": 40,
+        "light": 217,
+        "wind": 95,
+        "time": "2024-07-06 15:44:58"
+    },
+    {
+        "id": 399,
+        "temperature": 20,
+        "humidity": 89,
+        "light": 85,
+        "wind": 84,
+        "time": "2024-02-14 23:59:40"
+    },
+    {
+        "id": 400,
+        "temperature": 40,
+        "humidity": 50,
+        "light": 359,
+        "wind": 4,
+        "time": "2023-09-18 21:31:16"
+    },
+    {
+        "id": 401,
+        "temperature": 23,
+        "humidity": 69,
+        "light": 631,
+        "wind": 33,
+        "time": "2024-06-01 15:48:59"
+    },
+    {
+        "id": 402,
+        "temperature": 50,
+        "humidity": 13,
+        "light": 536,
+        "wind": 6,
+        "time": "2023-09-09 20:15:46"
+    },
+    {
+        "id": 403,
+        "temperature": 47,
+        "humidity": 8,
+        "light": 899,
+        "wind": 58,
+        "time": "2024-04-07 15:28:27"
+    },
+    {
+        "id": 404,
+        "temperature": 42,
+        "humidity": 38,
+        "light": 390,
+        "wind": 13,
+        "time": "2024-08-09 22:47:27"
+    },
+    {
+        "id": 405,
+        "temperature": 25,
+        "humidity": 53,
+        "light": 999,
+        "wind": 99,
+        "time": "2024-02-20 01:23:17"
+    },
+    {
+        "id": 406,
+        "temperature": 25,
+        "humidity": 51,
+        "light": 937,
+        "wind": 19,
+        "time": "2024-07-12 09:50:24"
+    },
+    {
+        "id": 407,
+        "temperature": 30,
+        "humidity": 2,
+        "light": 518,
+        "wind": 39,
+        "time": "2024-05-06 01:28:43"
+    },
+    {
+        "id": 408,
+        "temperature": 43,
+        "humidity": 74,
+        "light": 138,
+        "wind": 33,
+        "time": "2024-07-21 17:35:30"
+    },
+    {
+        "id": 409,
+        "temperature": 42,
+        "humidity": 76,
+        "light": 8,
+        "wind": 96,
+        "time": "2024-07-26 13:20:19"
+    },
+    {
+        "id": 410,
+        "temperature": 49,
+        "humidity": 21,
+        "light": 731,
+        "wind": 64,
+        "time": "2023-09-03 11:12:18"
+    },
+    {
+        "id": 411,
+        "temperature": 36,
+        "humidity": 60,
+        "light": 421,
+        "wind": 40,
+        "time": "2023-09-16 00:22:39"
+    },
+    {
+        "id": 412,
+        "temperature": 29,
+        "humidity": 17,
+        "light": 226,
+        "wind": 30,
+        "time": "2023-12-09 11:10:14"
+    },
+    {
+        "id": 413,
+        "temperature": 38,
+        "humidity": 68,
+        "light": 20,
+        "wind": 37,
+        "time": "2024-08-10 11:41:34"
+    },
+    {
+        "id": 414,
+        "temperature": 25,
+        "humidity": 55,
+        "light": 57,
+        "wind": 49,
+        "time": "2024-08-20 17:34:07"
+    },
+    {
+        "id": 415,
+        "temperature": 22,
+        "humidity": 74,
+        "light": 10,
+        "wind": 40,
+        "time": "2024-02-04 08:36:44"
+    },
+    {
+        "id": 416,
+        "temperature": 35,
+        "humidity": 6,
+        "light": 617,
+        "wind": 51,
+        "time": "2024-08-19 23:07:07"
+    },
+    {
+        "id": 417,
+        "temperature": 47,
+        "humidity": 47,
+        "light": 280,
+        "wind": 88,
+        "time": "2024-07-12 01:54:18"
+    },
+    {
+        "id": 418,
+        "temperature": 23,
+        "humidity": 76,
+        "light": 905,
+        "wind": 69,
+        "time": "2024-08-03 10:29:17"
+    },
+    {
+        "id": 419,
+        "temperature": 39,
+        "humidity": 26,
+        "light": 21,
+        "wind": 92,
+        "time": "2023-09-04 09:40:46"
+    },
+    {
+        "id": 420,
+        "temperature": 39,
+        "humidity": 54,
+        "light": 410,
+        "wind": 28,
+        "time": "2024-05-04 17:09:16"
+    },
+    {
+        "id": 421,
+        "temperature": 24,
+        "humidity": 22,
+        "light": 631,
+        "wind": 94,
+        "time": "2024-08-09 02:48:55"
+    },
+    {
+        "id": 422,
+        "temperature": 38,
+        "humidity": 40,
+        "light": 629,
+        "wind": 51,
+        "time": "2023-10-25 13:30:45"
+    },
+    {
+        "id": 423,
+        "temperature": 40,
+        "humidity": 72,
+        "light": 279,
+        "wind": 9,
+        "time": "2024-06-27 15:43:45"
+    },
+    {
+        "id": 424,
+        "temperature": 40,
+        "humidity": 26,
+        "light": 707,
+        "wind": 90,
+        "time": "2024-06-22 11:25:56"
+    },
+    {
+        "id": 425,
+        "temperature": 25,
+        "humidity": 2,
+        "light": 561,
+        "wind": 87,
+        "time": "2024-06-17 21:51:17"
+    },
+    {
+        "id": 426,
+        "temperature": 41,
+        "humidity": 23,
+        "light": 877,
+        "wind": 48,
+        "time": "2023-12-13 14:59:35"
+    },
+    {
+        "id": 427,
+        "temperature": 31,
+        "humidity": 47,
+        "light": 425,
+        "wind": 64,
+        "time": "2023-08-30 08:26:10"
+    },
+    {
+        "id": 428,
+        "temperature": 25,
+        "humidity": 58,
+        "light": 137,
+        "wind": 35,
+        "time": "2024-02-23 09:51:58"
+    },
+    {
+        "id": 429,
+        "temperature": 36,
+        "humidity": 15,
+        "light": 862,
+        "wind": 16,
+        "time": "2024-05-01 06:02:24"
+    },
+    {
+        "id": 430,
+        "temperature": 50,
+        "humidity": 42,
+        "light": 534,
+        "wind": 96,
+        "time": "2024-04-06 06:41:08"
+    },
+    {
+        "id": 431,
+        "temperature": 36,
+        "humidity": 98,
+        "light": 731,
+        "wind": 62,
+        "time": "2024-06-14 10:34:55"
+    },
+    {
+        "id": 432,
+        "temperature": 31,
+        "humidity": 20,
+        "light": 909,
+        "wind": 17,
+        "time": "2023-11-12 10:59:46"
+    },
+    {
+        "id": 433,
+        "temperature": 32,
+        "humidity": 97,
+        "light": 235,
+        "wind": 7,
+        "time": "2024-06-16 08:38:37"
+    },
+    {
+        "id": 434,
+        "temperature": 27,
+        "humidity": 23,
+        "light": 64,
+        "wind": 10,
+        "time": "2023-12-14 06:17:11"
+    },
+    {
+        "id": 435,
+        "temperature": 40,
+        "humidity": 33,
+        "light": 976,
+        "wind": 8,
+        "time": "2024-04-06 11:28:45"
+    },
+    {
+        "id": 436,
+        "temperature": 49,
+        "humidity": 51,
+        "light": 537,
+        "wind": 13,
+        "time": "2024-03-02 19:03:37"
+    },
+    {
+        "id": 437,
+        "temperature": 38,
+        "humidity": 79,
+        "light": 43,
+        "wind": 89,
+        "time": "2023-11-29 14:17:55"
+    },
+    {
+        "id": 438,
+        "temperature": 40,
+        "humidity": 45,
+        "light": 893,
+        "wind": 79,
+        "time": "2024-03-02 01:38:10"
+    },
+    {
+        "id": 439,
+        "temperature": 24,
+        "humidity": 22,
+        "light": 524,
+        "wind": 59,
+        "time": "2024-07-04 10:12:10"
+    },
+    {
+        "id": 440,
+        "temperature": 40,
+        "humidity": 39,
+        "light": 886,
+        "wind": 67,
+        "time": "2024-02-04 03:01:54"
+    },
+    {
+        "id": 441,
+        "temperature": 38,
+        "humidity": 19,
+        "light": 59,
+        "wind": 45,
+        "time": "2024-01-19 14:00:14"
+    },
+    {
+        "id": 442,
+        "temperature": 47,
+        "humidity": 3,
+        "light": 243,
+        "wind": 69,
+        "time": "2024-06-18 10:07:44"
+    },
+    {
+        "id": 443,
+        "temperature": 33,
+        "humidity": 62,
+        "light": 284,
+        "wind": 38,
+        "time": "2024-05-06 19:34:49"
+    },
+    {
+        "id": 444,
+        "temperature": 38,
+        "humidity": 70,
+        "light": 711,
+        "wind": 100,
+        "time": "2024-01-11 10:43:44"
+    },
+    {
+        "id": 445,
+        "temperature": 37,
+        "humidity": 15,
+        "light": 490,
+        "wind": 52,
+        "time": "2024-05-18 22:36:33"
+    },
+    {
+        "id": 446,
+        "temperature": 25,
+        "humidity": 47,
+        "light": 667,
+        "wind": 78,
+        "time": "2024-06-06 01:33:34"
+    },
+    {
+        "id": 447,
+        "temperature": 44,
+        "humidity": 23,
+        "light": 985,
+        "wind": 29,
+        "time": "2023-09-12 19:39:43"
+    },
+    {
+        "id": 448,
+        "temperature": 26,
+        "humidity": 62,
+        "light": 203,
+        "wind": 20,
+        "time": "2024-03-05 07:40:48"
+    },
+    {
+        "id": 449,
+        "temperature": 30,
+        "humidity": 36,
+        "light": 322,
+        "wind": 75,
+        "time": "2024-04-06 05:26:52"
+    },
+    {
+        "id": 450,
+        "temperature": 33,
+        "humidity": 80,
+        "light": 99,
+        "wind": 97,
+        "time": "2024-05-14 12:16:34"
+    },
+    {
+        "id": 451,
+        "temperature": 37,
+        "humidity": 27,
+        "light": 544,
+        "wind": 24,
+        "time": "2024-08-23 13:02:04"
+    },
+    {
+        "id": 452,
+        "temperature": 31,
+        "humidity": 39,
+        "light": 707,
+        "wind": 6,
+        "time": "2023-10-05 11:23:21"
+    },
+    {
+        "id": 453,
+        "temperature": 47,
+        "humidity": 45,
+        "light": 440,
+        "wind": 94,
+        "time": "2024-04-17 13:14:03"
+    },
+    {
+        "id": 454,
+        "temperature": 39,
+        "humidity": 6,
+        "light": 499,
+        "wind": 95,
+        "time": "2023-11-23 02:12:03"
+    },
+    {
+        "id": 455,
+        "temperature": 32,
+        "humidity": 90,
+        "light": 826,
+        "wind": 44,
+        "time": "2023-08-26 22:48:59"
+    },
+    {
+        "id": 456,
+        "temperature": 36,
+        "humidity": 80,
+        "light": 781,
+        "wind": 23,
+        "time": "2024-07-25 17:50:36"
+    },
+    {
+        "id": 457,
+        "temperature": 33,
+        "humidity": 27,
+        "light": 522,
+        "wind": 31,
+        "time": "2024-07-17 13:56:37"
+    },
+    {
+        "id": 458,
+        "temperature": 23,
+        "humidity": 39,
+        "light": 506,
+        "wind": 48,
+        "time": "2023-12-26 10:56:16"
+    },
+    {
+        "id": 459,
+        "temperature": 39,
+        "humidity": 21,
+        "light": 930,
+        "wind": 40,
+        "time": "2024-07-31 23:23:36"
+    },
+    {
+        "id": 460,
+        "temperature": 41,
+        "humidity": 48,
+        "light": 821,
+        "wind": 74,
+        "time": "2024-04-02 02:07:46"
+    },
+    {
+        "id": 461,
+        "temperature": 26,
+        "humidity": 8,
+        "light": 734,
+        "wind": 34,
+        "time": "2023-09-05 20:36:05"
+    },
+    {
+        "id": 462,
+        "temperature": 28,
+        "humidity": 1,
+        "light": 700,
+        "wind": 53,
+        "time": "2023-09-02 16:22:12"
+    },
+    {
+        "id": 463,
+        "temperature": 40,
+        "humidity": 37,
+        "light": 742,
+        "wind": 11,
+        "time": "2024-05-29 19:24:23"
+    },
+    {
+        "id": 464,
+        "temperature": 20,
+        "humidity": 66,
+        "light": 111,
+        "wind": 53,
+        "time": "2023-10-22 12:59:11"
+    },
+    {
+        "id": 465,
+        "temperature": 28,
+        "humidity": 11,
+        "light": 65,
+        "wind": 64,
+        "time": "2024-07-07 10:59:49"
+    },
+    {
+        "id": 466,
+        "temperature": 28,
+        "humidity": 90,
+        "light": 593,
+        "wind": 33,
+        "time": "2024-01-28 01:07:20"
+    },
+    {
+        "id": 467,
+        "temperature": 31,
+        "humidity": 24,
+        "light": 392,
+        "wind": 35,
+        "time": "2024-03-13 12:05:29"
+    },
+    {
+        "id": 468,
+        "temperature": 41,
+        "humidity": 51,
+        "light": 146,
+        "wind": 71,
+        "time": "2023-09-30 19:52:20"
+    },
+    {
+        "id": 469,
+        "temperature": 33,
+        "humidity": 66,
+        "light": 943,
+        "wind": 22,
+        "time": "2024-08-04 21:24:24"
+    },
+    {
+        "id": 470,
+        "temperature": 32,
+        "humidity": 49,
+        "light": 88,
+        "wind": 75,
+        "time": "2024-05-09 14:59:11"
+    },
+    {
+        "id": 471,
+        "temperature": 33,
+        "humidity": 84,
+        "light": 760,
+        "wind": 84,
+        "time": "2024-03-07 06:30:34"
+    },
+    {
+        "id": 472,
+        "temperature": 46,
+        "humidity": 40,
+        "light": 871,
+        "wind": 47,
+        "time": "2024-07-30 10:55:29"
+    },
+    {
+        "id": 473,
+        "temperature": 24,
+        "humidity": 14,
+        "light": 75,
+        "wind": 8,
+        "time": "2023-11-08 15:02:38"
+    },
+    {
+        "id": 474,
+        "temperature": 39,
+        "humidity": 21,
+        "light": 878,
+        "wind": 52,
+        "time": "2024-04-10 03:04:31"
+    },
+    {
+        "id": 475,
+        "temperature": 35,
+        "humidity": 42,
+        "light": 895,
+        "wind": 26,
+        "time": "2024-07-11 10:00:48"
+    },
+    {
+        "id": 476,
+        "temperature": 46,
+        "humidity": 49,
+        "light": 562,
+        "wind": 30,
+        "time": "2024-06-04 22:04:03"
+    },
+    {
+        "id": 477,
+        "temperature": 41,
+        "humidity": 5,
+        "light": 173,
+        "wind": 19,
+        "time": "2024-05-05 18:29:52"
+    },
+    {
+        "id": 478,
+        "temperature": 34,
+        "humidity": 48,
+        "light": 87,
+        "wind": 31,
+        "time": "2024-03-22 21:55:36"
+    },
+    {
+        "id": 479,
+        "temperature": 35,
+        "humidity": 37,
+        "light": 904,
+        "wind": 12,
+        "time": "2023-12-17 22:39:33"
+    },
+    {
+        "id": 480,
+        "temperature": 38,
+        "humidity": 83,
+        "light": 700,
+        "wind": 5,
+        "time": "2023-12-11 05:25:13"
+    },
+    {
+        "id": 481,
+        "temperature": 47,
+        "humidity": 81,
+        "light": 887,
+        "wind": 75,
+        "time": "2023-11-06 05:21:37"
+    },
+    {
+        "id": 482,
+        "temperature": 42,
+        "humidity": 1,
+        "light": 108,
+        "wind": 28,
+        "time": "2023-09-29 07:13:07"
+    },
+    {
+        "id": 483,
+        "temperature": 46,
+        "humidity": 6,
+        "light": 297,
+        "wind": 1,
+        "time": "2023-12-11 11:15:14"
+    },
+    {
+        "id": 484,
+        "temperature": 26,
+        "humidity": 16,
+        "light": 818,
+        "wind": 22,
+        "time": "2023-09-03 15:00:36"
+    },
+    {
+        "id": 485,
+        "temperature": 30,
+        "humidity": 8,
+        "light": 756,
+        "wind": 5,
+        "time": "2023-09-19 23:22:05"
+    },
+    {
+        "id": 486,
+        "temperature": 20,
+        "humidity": 45,
+        "light": 85,
+        "wind": 33,
+        "time": "2023-11-20 07:59:33"
+    },
+    {
+        "id": 487,
+        "temperature": 48,
+        "humidity": 63,
+        "light": 619,
+        "wind": 44,
+        "time": "2023-09-17 20:05:20"
+    },
+    {
+        "id": 488,
+        "temperature": 33,
+        "humidity": 4,
+        "light": 743,
+        "wind": 1,
+        "time": "2024-01-02 23:24:24"
+    },
+    {
+        "id": 489,
+        "temperature": 29,
+        "humidity": 90,
+        "light": 370,
+        "wind": 39,
+        "time": "2024-02-16 04:30:58"
+    },
+    {
+        "id": 490,
+        "temperature": 36,
+        "humidity": 36,
+        "light": 751,
+        "wind": 58,
+        "time": "2023-10-04 16:40:31"
+    },
+    {
+        "id": 491,
+        "temperature": 44,
+        "humidity": 100,
+        "light": 223,
+        "wind": 98,
+        "time": "2023-11-01 03:57:31"
+    },
+    {
+        "id": 492,
+        "temperature": 28,
+        "humidity": 79,
+        "light": 681,
+        "wind": 26,
+        "time": "2024-06-18 13:37:23"
+    },
+    {
+        "id": 493,
+        "temperature": 32,
+        "humidity": 71,
+        "light": 2,
+        "wind": 67,
+        "time": "2023-08-28 05:48:42"
+    },
+    {
+        "id": 494,
+        "temperature": 40,
+        "humidity": 66,
+        "light": 924,
+        "wind": 98,
+        "time": "2023-11-10 00:47:39"
+    },
+    {
+        "id": 495,
+        "temperature": 26,
+        "humidity": 10,
+        "light": 421,
+        "wind": 35,
+        "time": "2024-02-03 05:35:39"
+    },
+    {
+        "id": 496,
+        "temperature": 23,
+        "humidity": 60,
+        "light": 670,
+        "wind": 96,
+        "time": "2024-04-21 12:33:42"
+    },
+    {
+        "id": 497,
+        "temperature": 31,
+        "humidity": 23,
+        "light": 649,
+        "wind": 42,
+        "time": "2024-02-12 05:25:21"
+    },
+    {
+        "id": 498,
+        "temperature": 38,
+        "humidity": 48,
+        "light": 402,
+        "wind": 75,
+        "time": "2023-10-22 05:53:44"
+    },
+    {
+        "id": 499,
+        "temperature": 212,
+        "humidity": 63,
+        "light": 177,
+        "wind": 45,
+        "time": "2023-11-10 14:07:01"
+    },
+    {
+        "id": 500,
+        "temperature": 214,
+        "humidity": 27,
+        "light": 568,
+        "wind": 50,
+        "time": "2024-04-15 19:35:02"
+    }
+]
