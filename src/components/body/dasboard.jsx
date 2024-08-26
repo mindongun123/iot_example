@@ -51,7 +51,7 @@ function Dasboard(params) {
 
 
     return (
-        <Container>
+        <Container  >
             <Row className='row-item-sensor'>
                 <Col xs={12} md={4} className='item-sensor'>
                     <Box index={dataLastItem.temperature} params={"C"} />

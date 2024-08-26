@@ -1,9 +1,9 @@
 import React from 'react';
 import './box.css';
 import TableLineChart from './linechart';
+import ToggleButton from './togglebutton';
 
-
-function Box({index, params}) {
+function Box({ index, params }) {
     return (
         <div className="box">
             <h1>{index} {params}</h1>
@@ -11,19 +11,29 @@ function Box({index, params}) {
     )
 }
 
-function BoxTableLineChart({lastData}) {
+function BoxTableLineChart({ lastData }) {
     return (
         <div className="box">
-            <TableLineChart lastData={lastData}/>
+            <TableLineChart lastData={lastData} />
         </div>
     )
 }
 
-function BoxController({controller}) {
+function BoxController({ controller }) {
     return (
-        <div className="box">
+        <div className="box box-controller">
+            <ToggleButton />
+            <ToggleButton />
+            <ToggleButton />
         </div>
     )
 }
 
-export { Box, BoxTableLineChart, BoxController };
+function BoxImage({ index, params }) {
+    return (
+        <div className="box-image">
+        </div>
+    )
+}
+
+export { Box, BoxTableLineChart, BoxController, BoxImage };

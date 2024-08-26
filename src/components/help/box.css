@@ -5,3 +5,21 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 8px rgb(133, 132, 132);
 }
+
+
+.box-image
+{
+    border-radius: 10px;
+    min-width: 120px;
+    min-height: 120px;
+    background-color: rgb(222, 43, 43);
+    box-shadow: 0 0 8px rgb(133, 132, 132);
+}
+
+
+.box-controller
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

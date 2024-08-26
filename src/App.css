@@ -2,4 +2,5 @@ body {
     background-image: url('/src/image/admin-background.png');
     background-size: contain; /* Giữ kích thước gốc của hình ảnh */
     background-repeat: no-repeat; /* Ngăn hình ảnh lặp lại nếu lớn hơn phần tử */
+    background-color: rgba(232, 232, 232, 0.76);
 }
