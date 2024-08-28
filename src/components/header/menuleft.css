@@ -1,3 +1,4 @@
+/* CSS của bạn */
 .navbar {
     width: 240px;
     height: 90vh;
@@ -5,7 +6,7 @@
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: #ffffff70;
+    background-color: rgba(255, 255, 255, 0.8);
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -14,11 +15,12 @@
     border-radius: 20px;
     margin: 30px 0px 0px 20px;
     padding-top: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px var(--light);
+    transition: width 0.3s;
+    /* Thêm hiệu ứng chuyển đổi kích thước */
 }
 
-
-
+/* Container của các item trong navbar */
 .navbar-item-container {
     width: 80%;
     display: flex;
@@ -27,8 +29,9 @@
     justify-content: flex-start;
 }
 
+/* Link item */
 .item-link {
-    color: #121212;
+    color: var(--dark);
     text-decoration: none;
     font-size: 20px;
     list-style: none;
@@ -41,19 +44,59 @@
     margin-top: 10px;
     padding: 6px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgb(167, 166, 166);
     font-weight: bold;
-
+    display: flex;
+    align-items: center;
 }
 
+/* Khi hover hoặc focus vào item-link */
 .item-link:hover,
 .item-link:focus {
-    background-color: #ffffff;
-    color: #f51313;
+    background-color: var(--white);
+    color: var(--danger);
+}
 
+/* Icon trong các link */
+.icon-link {
+    width: 30px;
+    /* Kích thước icon khi sidebar nhỏ */
+    height: 30px;
+    /* Kích thước icon khi sidebar nhỏ */
+    margin-right: 10px;
+}
+
+/* Ẩn text và giảm kích thước sidebar khi chiều rộng màn hình nhỏ hơn 750px */
+@media (max-width: 750px) {
+    .navbar {
+        width: 60px;
+        /* Kích thước nhỏ hơn cho sidebar */
+    }
+
+    .item-link {
+        font-size: 0;
+        /* Ẩn text bằng cách đặt font-size thành 0 */
+        padding: 6px;
+        /* Đảm bảo padding cho icon */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        text-align: center;
+    }
+
+    .item-link .link-text {
+        display: none;
+    }
+}
+
+.logo {
+    min-height: 100px;
 }
 
 
-.logo{
-    min-height: 100px;
+/* Style cho link đang được chọn (active) */
+.item-link.active {
+    background-color: var(--white);
+    color: var(--danger);
+    /* Màu chữ khi chọn */
 }

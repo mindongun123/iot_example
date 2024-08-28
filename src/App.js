@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <MenuLeft />
-      <div style={{ marginLeft: '260px', padding: '20px' }}>
+      <div className='content'>
         <Routes>
           <Route path="/datasensor" element={<DataSensor />} />
           <Route path="/history" element={<History />} />

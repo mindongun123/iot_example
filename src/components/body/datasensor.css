@@ -1,3 +1,4 @@
+/* CSS chung */
 .table-data {
     margin-top: 50px;
 }
@@ -17,7 +18,7 @@
     min-height: 100%;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    color: rgb(0, 115, 255);
+    color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,10 +36,58 @@
     margin-left: 10px;
 }
 
-.search-bar{
+.search-bar {
     background-color: rgb(255, 255, 255);
-} 
+}
 
+/* Khi màn hình nhỏ hơn */
+@media (max-width: 768px) {
+
+    .search-bar,
+    .sort-bar {
+        flex-direction: column;
+        /* Chuyển thành hàng dọc */
+        align-items: stretch;
+        /* Để các phần tử chiếm hết chiều rộng của phần tử chứa */
+        margin: 0;
+        /* Loại bỏ margin để không bị tràn */
+    }
+
+    .search {
+        width: 100%;
+        /* Chiếm hết chiều rộng của phần tử chứa */
+        margin-bottom: 10px;
+        /* Khoảng cách giữa các phần tử */
+    }
+
+    .btn-search {
+        width: 100%;
+        /* Chiếm hết chiều rộng của phần tử chứa */
+    }
+
+    .topic-search,
+    .items-per-page {
+        width: 100%;
+        /* Chiếm hết chiều rộng của phần tử chứa */
+        margin-bottom: 10px;
+        /* Khoảng cách giữa các phần tử */
+    }
+
+    .pagination-button {
+        flex-direction: column;
+        /* Chuyển thành hàng dọc cho phân trang */
+    }
+
+
+    .item-page {
+        text-align: center;
+        border-radius: 10px;
+    }
+}
+
+
+
+/* Các phần tử còn lại */
 .search {
     max-width: 400px;
     min-width: 300px;
@@ -57,35 +106,37 @@
 }
 
 .btn-search {
-    background-color: #007bff;  
+    background-color: var(--primary);
     border: none;
-    border-radius:20px ;
-    color: white;  
-  }
+    border-radius: 20px;
+    color: var(--light);
+}
 
-  .btn-search:hover,
-  .btn-search:focus,
-  .btn-search:active {
-    background-color: #007bff;
-    color: white;
-    box-shadow: none; 
-    outline: none;  
-  }
-  .icon-btn-search {
-    color: white; 
-  }
+.btn-search:hover,
+.btn-search:focus,
+.btn-search:active {
+    background-color: var(--primary);
+    color: var(--light);
+    box-shadow: none;
+    outline: none;
+}
 
-.topic-search, 
-.items-per-page{
+.icon-btn-search {
+    color: var(--light);
+}
+
+.topic-search,
+.items-per-page {
     min-width: 100px;
     max-width: 180px;
-    background-color: rgb(13, 0, 255);
+    background-color: var(--primary);
     border-radius: 20px;
     margin-right: 10px;
     border: none;
 }
-.topic-search:focus, 
-.items-per-page:focus{
+
+.topic-search:focus,
+.items-per-page:focus {
     border: none;
     box-shadow: none;
 }
@@ -97,18 +148,21 @@
     justify-content: center;
     align-self: center;
 }
-.table-content{
+
+.table-content {
     border-radius: 100px;
 }
 
-.item-page:focus{
+.item-page:focus {
     border: none;
     box-shadow: none;
 }
 
+.item-page {
+    text-align: center;
+}
 
-.td-item
-{
-    color: rgb(0, 115, 255);
+.td-item {
+    color: var(--primary);
     text-align: center;
 }

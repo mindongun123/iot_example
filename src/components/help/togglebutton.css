@@ -1,40 +1,23 @@
-.toggle-button {
+.row-switch-controller {
     display: flex;
     align-items: center;
-    box-shadow: none;
-    margin: 10px;
-    margin-left: 20px;
-}
-
-.toggle-button .form-check-input {
-    cursor: pointer;
-    background-color: rgb(108, 108, 108);
-    border: none;
-    border-radius: 20px;
-    box-shadow: none;
-    width: 60px;
-    height: 30px;
-}
-
-.toggle-button .form-check-input:checked {
-    box-shadow: none;
-    background-color: rgb(0, 136, 255);
-    border: none;
-    width: 60px;
-    height: 30px;
-}
-
-.toggle-button .form-check-label {
-    margin-left: 10px;
-    font-weight: bold;
-    box-shadow: none;
-}
-
-
-
-.row-switch-controller{
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 5px var(--light);
+    width: 100%;
     border-radius: 10px;
+    padding: 5px;
+}
+
+.toggle-button {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.on {
+    color:var(--yellow);
+}
+
+.off {
+    color:var(--dark);
 }

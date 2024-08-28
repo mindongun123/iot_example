@@ -7,12 +7,24 @@ import './dasboard.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Box, BoxTableLineChart, BoxController } from '../help/box';
+import { Box, BoxTableLineChart, BoxController, BoxHim, BoxTem, BoxLig } from '../help/box';
 import { useState, useEffect, } from 'react';
 
 
+
+import { MdDashboard, MdOutlineLightMode, MdOutlineLightbulb } from 'react-icons/md';
+import { FaDatabase, FaThermometerEmpty, FaRegLightbulb } from "react-icons/fa";
+import { IoWaterOutline } from "react-icons/io5";
+import { GoSun, GoClockFill } from "react-icons/go";
+import { IoMdPerson } from "react-icons/io";
+import { CiTempHigh } from "react-icons/ci";
+import { WiNightCloudyWindy } from "react-icons/wi";
+import { BsFan } from "react-icons/bs";
+import { TbAirConditioningDisabled, TbAirConditioning } from "react-icons/tb";
+
 // data
 import initialData from '../data/data.json';
+import { CgPacman } from 'react-icons/cg';
 
 function Dasboard(params) {
 
@@ -54,17 +66,17 @@ function Dasboard(params) {
         <Container  >
             <Row className='row-item-sensor'>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.temperature} params={"C"} />
+                    <Box index={dataLastItem.temperature} params={"°C"} icon={<CiTempHigh className='icon-sensor' style={{ color: 'red' }} />} bg={"linear-gradient(135deg, #f88c8c 0%, #fa0101 100%)"} />
                 </Col>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.humidity} params={"ML"} />
-
+                    <Box index={dataLastItem.humidity} params={"%"} icon={<IoWaterOutline className='icon-sensor' style={{ color: 'blue' }} />} bg={"linear-gradient(135deg, #8cd5f8 20%, #01abfa 80%)"} />
                 </Col>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.light} params={"LUV"} />
+                    <Box index={dataLastItem.light} params={"LUX"} icon={<MdOutlineLightMode className='icon-sensor' style={{ color: 'yellow' }} />} bg={"linear-gradient(135deg, #f8ec8c 20%, #fadd01 80%)"} />
                 </Col>
-                {/* <Col xs={12} md={3} className='item-sensor'>
-                    <Box />
+                {/*                 
+                <Col xs={12} md={3} className='item-sensor'>
+                    <Box index={dataLastItem.light} params={"LUV"} icon={<MdOutlineLightMode className='icon-sensor'  style={{color: 'yellow'}} />} />
                 </Col> */}
             </Row>
             <Row className='row-item-data'>

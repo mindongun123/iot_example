@@ -4,8 +4,8 @@ import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
 
 
-function TableLineChart({lastData}) {
-  
+function TableLineChart({ lastData }) {
+
 
   const data = {
     labels: lastData.map(item => item.time),
@@ -30,8 +30,7 @@ function TableLineChart({lastData}) {
         borderColor: 'rgba(255, 159, 64, 1)',
         backgroundColor: 'rgba(255, 159, 64, 0.2)',
         fill: true,
-      },
-    ],
+      },]
   };
 
   const options = {
@@ -42,7 +41,7 @@ function TableLineChart({lastData}) {
       },
       title: {
         display: true,
-        text: 'Sensor Data Over Time',
+        text: 'Data Sensor',
       },
     },
     scales: {
@@ -67,7 +66,6 @@ function TableLineChart({lastData}) {
 
   return (
     <div>
-      <h3>Sensor Data Line Chart</h3>
       <Line data={data} options={options} />
     </div>
   );

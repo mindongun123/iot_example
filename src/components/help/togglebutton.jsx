@@ -4,7 +4,10 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { BoxImage } from './box';
 
-const ToggleButton = () => {
+
+
+
+function ToggleButton({ img }) {
   const [isOn, setIsOn] = useState(false);
 
   const handleToggle = () => {
@@ -12,18 +15,19 @@ const ToggleButton = () => {
   };
 
   return (
-    <div className="d-flex row-switch-controller m-2">
-      <BoxImage index={1} params={22} />
-      <Form className="toggle-button ">
-        <Form.Check
-          type="switch"
-          id="custom-switch"
-          checked={isOn}
-          onChange={handleToggle}
-        />
-      </Form>
+    <div className="toggle-button row-switch-controller">
+      <div className={isOn ? 'img-container on' : 'img-container off'}>
+        {img}
+      </div>
+      <Form.Check
+        type="switch"
+        id="custom-switch"
+        checked={isOn}
+        onChange={handleToggle}
+      />
     </div>
   );
-};
+}
 
 export default ToggleButton;
+
