@@ -8,7 +8,7 @@ function TableLineChart({ lastData }) {
 
 
   const data = {
-    labels: lastData.map(item => item.time),
+    labels: lastData.map(item => item.id),
     datasets: [
       {
         label: 'Temperature',

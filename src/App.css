@@ -4,7 +4,7 @@ body {
   /* Giữ kích thước gốc của hình ảnh */
   background-repeat: no-repeat;
   /* Ngăn hình ảnh lặp lại nếu lớn hơn phần tử */
-  background-color: rgba(232, 232, 232, 0.76);
+  background-color: rgba(232, 232, 232, 0.721);
 }
 
 :root {

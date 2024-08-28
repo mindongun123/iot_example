@@ -77,9 +77,9 @@ function BoxController({ controller }) {
         <div className="box box-controller">
             <p className='header-text'>Action</p>
             <div className='container-button'>
-                <ToggleButton img={<TbAirConditioningDisabled className='box-image-icon' />} />
-                <ToggleButton img={<PiFanBold className='box-image-icon' />} />
-                <ToggleButton img={<RiLightbulbFlashLine className='box-image-icon' />} />
+                <ToggleButton img={<TbAirConditioningDisabled className='box-image-icon' />} bg={" background: linear-gradient(135deg, #cee1f8 10%, #60c7fa 90%)"} />
+                <ToggleButton img={<PiFanBold className='box-image-icon' />} bg={"linear-gradient(135deg, #cef8e5 10%, #60faa3 90%)"} />
+                <ToggleButton img={<RiLightbulbFlashLine className='box-image-icon' />} bg={"linear-gradient(135deg, #f8cef5 10%, #fa60d4 90%)"} />
             </div>
         </div>
     )

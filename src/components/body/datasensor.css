@@ -156,10 +156,16 @@
 .item-page:focus {
     border: none;
     box-shadow: none;
+    border: solid 1px var(--primary);
+}
+
+.item-page:hover{
+    border: solid 1px var(--primary);
 }
 
 .item-page {
     text-align: center;
+    border: solid 1px var(--primary);
 }
 
 .td-item {

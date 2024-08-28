@@ -27,6 +27,9 @@ function Profile() {
                         <Button variant="primary" href="https://facebook.com/md.6823" target="_blank">
                             Facebook
                         </Button>
+                        <Button variant="primary" href="#" target="_blank">
+                            PDF
+                        </Button>
                     </div>
                 </Col>
             </Row>
@@ -35,9 +38,11 @@ function Profile() {
                 <Col md={6}>
                     <h3>Thông tin cá nhân</h3>
                     <ListGroup>
-                        <ListGroup.Item><strong>Địa chỉ:</strong> 123 Đường ABC, Thành phố XYZ</ListGroup.Item>
                         <ListGroup.Item><strong>Tuổi:</strong> 21</ListGroup.Item>
+                        <ListGroup.Item><strong>Ma:</strong> B21DCCN230</ListGroup.Item>
                         <ListGroup.Item><strong>Ngành:</strong> CNTT</ListGroup.Item>
+                        <ListGroup.Item><strong>Lop:</strong> D21DCCN02-B</ListGroup.Item>
+                        <ListGroup.Item><strong>Địa chỉ:</strong> Nam Tu Liem - Ha Noi</ListGroup.Item>
                     </ListGroup>
                 </Col>
                 <Col md={6}>

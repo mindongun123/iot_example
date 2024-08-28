@@ -13,11 +13,11 @@ import initialData from '../data/data.json';
 function DataSensor() {
     const [sensorData, setSensorData] = useState(initialData);
     const [sortConfig, setSortConfig] = useState({ key: '', direction: 'asc' });
-    const [itemsPerPage, setItemsPerPage] = useState(10); // Số dòng hiển thị mặc định
+    const [itemsPerPage, setItemsPerPage] = useState(10); 
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchQuery, setSearchQuery] = useState(''); // Từ khóa tìm kiếm
-    const [searchType, setSearchType] = useState('temperature'); // Loại thông số tìm kiếm
-    const [filteredData, setFilteredData] = useState(initialData); // Dữ liệu đã lọc
+    const [searchQuery, setSearchQuery] = useState(''); 
+    const [searchType, setSearchType] = useState('temperature');
+    const [filteredData, setFilteredData] = useState(initialData); 
     const [startTime, setStartTime] = useState('');
     const [endTime, setEndTime] = useState('');
 
@@ -56,7 +56,7 @@ function DataSensor() {
         }
 
         setFilteredData(result);
-        setCurrentPage(1); // Reset trang khi tìm kiếm
+        setCurrentPage(1); 
     };
 
     // Hàm thay đổi cột sắp xếp
@@ -71,7 +71,7 @@ function DataSensor() {
     // Hàm thay đổi số lượng dòng hiển thị
     const handleItemsPerPageChange = (count) => {
         setItemsPerPage(count);
-        setCurrentPage(1); // Reset trang khi thay đổi số dòng hiển thị
+        setCurrentPage(1); 
     };
 
     // Hàm xử lý phân trang
@@ -102,7 +102,7 @@ function DataSensor() {
 
     const handleSearchTypeChange = (type) => {
         setSearchType(type);
-        setSearchQuery(''); // Reset từ khóa tìm kiếm khi thay đổi loại tìm kiếm
+        setSearchQuery('');
         setStartTime('');
         setEndTime('');
     };

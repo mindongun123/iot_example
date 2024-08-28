@@ -7,7 +7,7 @@ import { BoxImage } from './box';
 
 
 
-function ToggleButton({ img }) {
+function ToggleButton({ img , bg}) {
   const [isOn, setIsOn] = useState(false);
 
   const handleToggle = () => {
@@ -15,7 +15,7 @@ function ToggleButton({ img }) {
   };
 
   return (
-    <div className="toggle-button row-switch-controller">
+    <div className="toggle-button row-switch-controller" style={{background: bg}}>
       <div className={isOn ? 'img-container on' : 'img-container off'}>
         {img}
       </div>
