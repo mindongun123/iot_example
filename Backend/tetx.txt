@@ -1,0 +1,78 @@
+const mqtt = require('mqtt');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
+const PORT = 3800;
+
+// Kết nối đến MongoDB Atlas
+mongoose.connect(DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+app.use(cors());
+
+// Schema và model cho dữ liệu ánh sáng
+const lightDataSchema = new mongoose.Schema({
+    value: Number,
+    timestamp: { type: Date, default: Date.now }
+});
+
+const LightData = mongoose.model('LightData', lightDataSchema);
+
+// Kết nối đến broker MQTT
+const mqttServer = 'mqtt://192.168.1.11';
+const client = mqtt.connect(mqttServer, {
+    username: 'dong',
+    password: 'dong'
+});
+
+// Lưu trữ dữ liệu nhận được
+let lightData = null;
+
+// Kết nối thành công với MQTT broker
+client.on('connect', () => {
+    console.log('Connected to MQTT broker');
+    client.subscribe('iot/light', (err) => {
+        if (!err) {
+            console.log('Subscribed to topic: iot/light');
+        } else {
+            console.error('Failed to subscribe to topic:', err);
+        }
+    });
+});
+
+// Nhận dữ liệu từ MQTT
+client.on('message', async (topic, message) => {
+    lightData = message.toString();
+    console.log(`[${new Date().toISOString()}] Received data on topic '${topic}': ${lightData}`);
+
+    // Lưu dữ liệu vào MongoDB
+    const lightDataEntry = new LightData({ value: lightData });
+    try {
+        await lightDataEntry.save();
+        console.log('Data saved to MongoDB successfully');
+    } catch (err) {
+        console.error('Error saving data to MongoDB:', err);
+    }
+});
+
+// API để lấy dữ liệu ánh sáng
+app.get('/light', (req, res) => {
+    if (lightData) {
+        res.json({ lightValue: lightData });
+    } else {
+        res.status(404).json({ message: 'No data available' });
+    }
+});
+
+app.get('/', (req, res) => {
+    res.send('Hello from IoT Express server');
+});
+
+// Khởi động server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});

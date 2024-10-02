@@ -1,0 +1,66 @@
+.row-switch-controller {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 5px var(--light);
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    background: linear-gradient(135deg, #cee1f8 10%, #60c7fa 90%);
+}
+
+.toggle-button {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.on {
+    color:var(--yellow);
+}
+
+.off {
+    color:var(--dark);
+}
+
+.img-container{
+    transition: all 0.4s linear;
+    color: var(--gray-dark);
+}
+
+
+
+
+
+/* effect icon controller dasboard */
+
+@keyframes effect-fan-rotate {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.effect-fan {
+    color: var(--green);
+    animation: effect-fan-rotate 1s linear infinite;
+}
+
+.effect-light {
+    color: var(--yellow);
+    filter: drop-shadow(0 0 10px #fafa2dde) drop-shadow(0 0 20px rgba(252, 252, 92, 0.863));
+}
+
+@keyframes gradientMove {
+    0% {
+      color: var(--white);
+    }
+    100% {
+        color: var(--primary);
+      }
+  }
+  
+  .effect-air {
+    animation: gradientMove 2s ease-in-out infinite alternate;
+    display: inline-block;
+  }
+  

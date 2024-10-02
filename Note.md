@@ -1,1 +1,0 @@
-# trong grid: xs ={6}, md={3}: trong grid thi cac cot duoc chia lam 12 phan tren 1 hang, neu man hinh nho se lay ti le xs, neu man hinh lon se lay ti le md -> xs={6} no se lay 6 phan trong 12 phan cua cot -> md = 3 nghia la no se lay 3 phan trong 12 phan cua cot --> xs={6} se duoc 2 cot va md={3} se duoc 4 cot 
