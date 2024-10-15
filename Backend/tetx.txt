@@ -76,3 +76,163 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+-------------------------------------
+
+const mqtt = require('mqtt');
+
+// import model data
+const LightData = require('../db/lightDB');
+
+
+
+const mqttServer = 'mqtt://192.168.1.11';
+const client = mqtt.connect(mqttServer, {
+    username: 'dong',
+    password: 'b21dccn230'
+});
+
+let lightData = null;
+
+client.on('connect', () => {
+    console.log('Connected to MQTT broker');
+    client.subscribe('iot/light', (err) => {
+        if (!err) {
+            console.log('Subscribed to topic: iot/light');
+        } else {
+            console.error('Failed to subscribe to topic:', err);
+        }
+    });
+});
+
+client.on('message', async (topic, message) => {
+    lightData = parseFloat(message.toString());   
+    console.log(`[${new Date().toISOString()}] Received data on topic '${topic}': ${lightData}`);
+
+    // Lưu dữ liệu vào MongoDB
+    const lightDataEntry = new LightData({ value: lightData });
+    try {
+        await lightDataEntry.save();
+        console.log('Data saved to MongoDB successfully');
+    } catch (err) {
+        console.error('Error saving data to MongoDB:', err);
+    }
+});
+
+module.exports = client;
+
+
+
+//// Gui Data từ code adruino lên mosquitto
+char lightStr[8];
+char tempStr[8];
+char humStr[8];
+
+// Chuyển giá trị float thành chuỗi với 2 chữ số thập phân
+dtostrf(lightValue, 1, 2, lightStr);
+dtostrf(temperature, 1, 2, tempStr);
+dtostrf(humidity, 1, 2, humStr);
+
+// Định dạng chuỗi
+char sendStr[100];  // Kích thước chuỗi đủ lớn để chứa thông tin
+sprintf(sendStr, "Light: %s, Temperature: %s, Humidity: %s\n", lightStr, tempStr, humStr);
+
+// Gửi chuỗi lên MQTT
+if (client.publish("iot/sensor", sendStr)) {
+    Serial.println("Data sent to MQTT broker!");
+} else {
+    Serial.println("Failed to send data to MQTT broker.");
+}
+
+
+
+Light: 34.50, Temperature: 22.30, Humidity: 60.00
+
+
+------------------------ Bat tat den
+
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+
+// Định nghĩa thông tin Wi-Fi và MQTT
+const char* ssid = "Your_SSID";
+const char* password = "Your_Password";
+
+const char* mqttServer = "192.168.1.11";  // Địa chỉ IP của MQTT broker
+const int mqttPort = 1993;
+const char* mqttUser = "dong";  // Username
+const char* mqttPassword = "b21dccn230";  // Password
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+const int LED_PIN5 = 5; // Ví dụ chân điều khiển đèn
+
+void setup() {
+  Serial.begin(115200);
+
+  // Kết nối với Wi-Fi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+
+  // Kết nối với MQTT Broker
+  client.setServer(mqttServer, mqttPort);
+  client.setCallback(mqttCallback);
+
+  while (!client.connected()) {
+    Serial.println("Connecting to MQTT...");
+    if (client.connect("ArduinoClient", mqttUser, mqttPassword)) {
+      Serial.println("Connected to MQTT");
+    } else {
+      delay(1000);
+    }
+  }
+
+  // Đăng ký lắng nghe topic
+  client.subscribe("data/light1");
+}
+
+void loop() {
+  client.loop();  // Lắng nghe và xử lý MQTT messages
+}
+
+void mqttCallback(char* topic, byte* payload, unsigned int length) {
+  String messageStr = "";
+  for (int i = 0; i < length; i++) {
+    messageStr += (char)payload[i];
+  }
+
+  Serial.println("Message received: " + messageStr);
+  
+  // Nếu nhận từ topic "data/light1"
+  if (String(topic) == "data/light1") {
+    if (messageStr == "OFF") {
+      digitalWrite(LED_PIN5, LOW);  // Tắt đèn
+      Serial.println("LED turned OFF");
+
+      // Gửi thông báo "OFF" lên Mosquitto về trạng thái đèn light1
+      client.publish("iot/action/light1", "OFF");
+    } 
+    else if (messageStr == "ON") {
+      digitalWrite(LED_PIN5, HIGH);  // Bật đèn
+      Serial.println("LED turned ON");
+
+      // Gửi thông báo "ON" lên Mosquitto về trạng thái đèn light1
+      client.publish("iot/action/light1", "ON");
+    }
+  }
+}
+
+
+
+mosquitto_pub -h localhost -p 1993 -t data/light1 -m "ON"
+mosquitto_pub -h localhost -p 1993 -t data/light1 -m "OFF"
+
+--
+mosquitto_sub -h localhost -p 1993 -t iot/action/light1
+ON
+OFF
