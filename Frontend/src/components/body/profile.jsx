@@ -24,8 +24,8 @@ function Profile() {
                             GitHub
                         </Button>
                         {' '}
-                        <Button variant="primary" href="POSMAN" target="_blank">
-                            Posmant
+                        <Button variant="primary" href="POSTMAN" target="_blank">
+                            Postman
                         </Button>
                         <Button variant="primary" href="#" target="_blank">
                             PDF

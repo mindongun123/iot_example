@@ -10,7 +10,7 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, T
 
 function TableLineChart({ lastData }) {
   const data = {
-    labels: lastData.map(item => item.id),
+    labels: lastData.map(item => item.time),
     datasets: [
       {
         label: 'Temperature',

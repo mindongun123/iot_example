@@ -236,3 +236,32 @@ mosquitto_pub -h localhost -p 1993 -t data/light1 -m "OFF"
 mosquitto_sub -h localhost -p 1993 -t iot/action/light1
 ON
 OFF
+
+
+-------------------------------------
+
+
+Mosquitto
+
+if (isnan(lightValue))
+  {
+    Serial.println("Failed to read from DHT sensor!");
+  }
+  else
+  {
+    char lightStr[8];
+    dtostrf(lightValue, 1, 2, lightStr);
+
+    Serial.printf("Light: %s", lightStr);
+
+    client.publish("sensor/light", lightStr);
+
+    char jsonStr[100];
+    snprintf(jsonStr, sizeof(jsonStr), "{\"light\": %s}", lightStr);
+
+    client.publish("data/light1", jsonStr);
+    client.publish("data/light2", jsonStr);
+    client.publish("data/light3", jsonStr);
+    client.publish("data/lightall", jsonStr);
+  }
+ /////

@@ -1,30 +1,41 @@
-// styles
 import './datasensor.css';
 
 // components
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Table from 'react-bootstrap/Table';
 import { Container, Dropdown, Form, Button, InputGroup } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 
-// data
-import initialData from '../data/data.json';
+// axios to fetch data
+import axios from 'axios';
 
 function DataSensor() {
-    const [sensorData, setSensorData] = useState(initialData);
     const [sortConfig, setSortConfig] = useState({ key: '', direction: 'asc' });
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchType, setSearchType] = useState('temperature');
-    const [filteredData, setFilteredData] = useState(initialData);
+    const [filteredData, setFilteredData] = useState([]);
     const [startTime, setStartTime] = useState('');
-    const [endTime, setEndTime] = useState('');
+    const [endTime, setEndTime] = useState([]);
 
-    // Hàm sắp xếp dữ liệu
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:3800/sensor');
+            setFilteredData(response.data);
+        } catch (error) {
+            console.error('Error fetching sensor data:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
     const sortedData = useMemo(() => {
         let sortableItems = [...filteredData];
-        if (sortConfig !== null) {
+        if (sortConfig.key) {
             sortableItems.sort((a, b) => {
                 if (a[sortConfig.key] < b[sortConfig.key]) {
                     return sortConfig.direction === 'asc' ? -1 : 1;
@@ -38,44 +49,42 @@ function DataSensor() {
         return sortableItems;
     }, [filteredData, sortConfig]);
 
-    // Hàm lọc dữ liệu dựa trên từ khóa tìm kiếm, loại thông số và khoảng thời gian
-    const handleSearch = () => {
-        let result = sensorData;
+    /// Ham search tim chua hoan thien
+    const handleSearch = async () => {
+        try {
+            console.log(startTime, endTime);
 
-        if (searchType === 'time') {
-            if (startTime && endTime) {
-                result = result.filter(item => {
-                    const itemTime = new Date(item.time);
-                    return itemTime >= new Date(startTime) && itemTime <= new Date(endTime);
-                });
-            }
-        } else if (searchQuery) {
-            result = result.filter(item =>
-                item[searchType].toString().toLowerCase().includes(searchQuery.toLowerCase())
-            );
+            const params = {
+                temperature: searchType === 'temperature' ? searchQuery : undefined,
+                humidity: searchType === 'humidity' ? searchQuery : undefined,
+                light: searchType === 'light' ? searchQuery : undefined,
+                startDate: searchType === 'time' ? startTime : undefined,
+                endDate: searchType === 'time' ? endTime : undefined,
+            };
+
+            console.log('Search params:', params);
+
+            const response = await axios.get('http://localhost:3800/sensor/search', { params });
+            console.log('Search response:', response.data);
+
+            setFilteredData(Array.isArray(response.data.sensors) ? response.data.sensors : []);
+            setCurrentPage(1);
+
+        } catch (error) {
+            console.error('Error searching sensor data:', error);
         }
-
-        setFilteredData(result);
-        setCurrentPage(1);
     };
 
-    // Hàm thay đổi cột sắp xếp
     const requestSort = (key) => {
-        let direction = 'asc';
-        if (sortConfig.key === key && sortConfig.direction === 'asc') {
-            direction = 'desc';
-        }
-      
+        const direction = sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc';
         setSortConfig({ key, direction });
     };
 
-    // Hàm thay đổi số lượng dòng hiển thị
     const handleItemsPerPageChange = (count) => {
         setItemsPerPage(count);
         setCurrentPage(1);
     };
 
-    // Hàm xử lý phân trang
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -126,24 +135,22 @@ function DataSensor() {
                             className={`${searchType === 'time' ? 'd-none' : ''} search`}
                         />
                         {searchType === 'time' && (
-                            <>
-                                <InputGroup className="mb-2">
-                                    <Form.Control
-                                        className='search'
-                                        type="datetime-local"
-                                        placeholder="Start Time"
-                                        value={startTime}
-                                        onChange={(e) => setStartTime(e.target.value)}
-                                    />
-                                    <Form.Control
-                                        className='search'
-                                        type="datetime-local"
-                                        placeholder="End Time"
-                                        value={endTime}
-                                        onChange={(e) => setEndTime(e.target.value)}
-                                    />
-                                </InputGroup>
-                            </>
+                            <InputGroup className="mb-2">
+                                <Form.Control
+                                    className='search'
+                                    type="datetime-local"
+                                    placeholder="Start Time"
+                                    value={startTime}
+                                    onChange={(e) => setStartTime(e.target.value)}
+                                />
+                                <Form.Control
+                                    className='search'
+                                    type="datetime-local"
+                                    placeholder="End Time"
+                                    value={endTime}
+                                    onChange={(e) => setEndTime(e.target.value)}
+                                />
+                            </InputGroup>
                         )}
 
                         {/* Button Search */}
@@ -152,7 +159,6 @@ function DataSensor() {
                         </Button>
                     </div>
                     <div className='sort-bar'>
-
                         {/* Topic Search */}
                         <Dropdown>
                             <Dropdown.Toggle className="topic-search">
@@ -167,8 +173,8 @@ function DataSensor() {
                         </Dropdown>
 
                         {/* Items per page */}
-                        <Dropdown >
-                            <Dropdown.Toggle className='items-per-page ' id="dropdown-basic">
+                        <Dropdown>
+                            <Dropdown.Toggle className='items-per-page' id="dropdown-basic">
                                 Show {itemsPerPage} rows
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -180,9 +186,8 @@ function DataSensor() {
                     </div>
                 </div>
 
-
                 <div className='table-content'>
-                    <Table striped bordered hover variant="light" >
+                    <Table striped bordered hover variant="light">
                         <thead>
                             <tr>
                                 <th className='td-item'>#</th>
@@ -195,9 +200,6 @@ function DataSensor() {
                                 <th className='td-item' onClick={() => requestSort('light')}>
                                     Light {sortConfig.key === 'light' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
                                 </th>
-                                {/* <th className='td-item' onClick={() => requestSort('wind')}>
-                                    Wind {sortConfig.key === 'wind' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
-                                </th> */}
                                 <th className='td-item' onClick={() => requestSort('time')}>
                                     Time {sortConfig.key === 'time' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
                                 </th>
@@ -205,13 +207,12 @@ function DataSensor() {
                         </thead>
                         <tbody>
                             {
-                                paginatedData.map((item) => (
+                                paginatedData.map((item, index) => (
                                     <tr key={item.id}>
-                                        <td className='td-item'>{item.id}</td>
+                                        <td className='td-item'>{startIndex + index + 1}</td>
                                         <td className='td-item'>{item.temperature}</td>
                                         <td className='td-item'>{item.humidity}</td>
                                         <td className='td-item'>{item.light}</td>
-                                        {/* <td className='td-item'>{item.wind}</td> */}
                                         <td className='td-item'>{item.time}</td>
                                     </tr>
                                 ))
@@ -226,7 +227,7 @@ function DataSensor() {
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li className="page-item active ">
+                        <li className="page-item active">
                             <a className="page-link item-page" href="#">
                                 {currentPage}
                             </a>

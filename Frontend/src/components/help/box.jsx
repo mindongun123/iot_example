@@ -5,7 +5,7 @@ import ToggleButton from './togglebutton';
 
 import { PiFanBold } from "react-icons/pi";
 import { RiLightbulbFlashLine } from "react-icons/ri";
-import { TbSnowflake  } from "react-icons/tb";
+import { TbSnowflake } from "react-icons/tb";
 
 
 function Box({ index, params, icon }) {
@@ -35,13 +35,13 @@ function Box({ index, params, icon }) {
             endColor = "#fadd01";
             maxValue = 500;
         }
-        else{
+        else {
             return;
         }
 
         const factor = Math.min(index / maxValue, 1);
         const backgroundColor = interpolateColor(startColor, endColor, factor);
-        console.log(params + ":" + backgroundColor)
+        // console.log(params + ":" + backgroundColor)
         return backgroundColor;
     };
     const backgroundGradient = `linear-gradient(-135deg, #ffffff 10%, ${getGradient()} 100%)`;
@@ -68,14 +68,14 @@ function BoxTableLineChart({ lastData }) {
 
 
 
-function BoxController({ controller }) {
+function BoxController({ av1, av2, av3 }) {
     return (
         <div className="box box-controller">
             <p className='header-text'>Action</p>
             <div className='container-button'>
-                <ToggleButton img={<TbSnowflake className='box-image-icon' />} bg={" background: linear-gradient(135deg, #cee1f8 10%, #60c7fa 90%)"} effect={"effect-air"} />
-                <ToggleButton img={<PiFanBold className='box-image-icon' />} bg={"linear-gradient(135deg, #cef8e5 10%, #60faa3 90%)" } effect={"effect-fan"}/>
-                <ToggleButton img={<RiLightbulbFlashLine className='box-image-icon' />} bg={"linear-gradient(135deg, #f3f3cfde 10%, #fafa53de 90%)"} effect={"effect-light"} />
+                <ToggleButton img={<TbSnowflake className='box-image-icon' />} bg={" background: linear-gradient(135deg, #cee1f8 10%, #60c7fa 90%)"} effect={"effect-air"} lightId={"light1"} action={av1} />
+                <ToggleButton img={<PiFanBold className='box-image-icon' />} bg={"linear-gradient(135deg, #cef8e5 10%, #60faa3 90%)"} effect={"effect-fan"} lightId={"light2"}action={av2} />
+                <ToggleButton img={<RiLightbulbFlashLine className='box-image-icon' />} bg={"linear-gradient(135deg, #f3f3cfde 10%, #fafa53de 90%)"} effect={"effect-light"} lightId={"light3"} action={av3}/>
             </div>
         </div>
     )

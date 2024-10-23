@@ -15,31 +15,73 @@ import { MdOutlineLightMode } from 'react-icons/md';
 import { IoWaterOutline } from "react-icons/io5";
 import { CiTempHigh } from "react-icons/ci";
 
-// data
-import initialData from '../data/data.json';
-
 
 
 function Dasboard(params) {
 
-    const [dataImport, setSensorData] = useState(initialData);
+
+
+    const [dataImport, setSensorData] = useState([]);
     const lastData = dataImport.slice(-10);
-    const dataLastItem = lastData[lastData.length - 1];
+    const [fetchCount, setFetchCount] = useState(0);
+
+
+
+    const [actionLast, setActionLast] = useState(["OFF", "OFF", "OFF"]);
+
+    // Hàm fetch dữ liệu từ API
+    const fetchAction = async () => {
+        try {
+            console.log('Fetching action data...');
+            const response = await fetch('http://localhost:3800/action/aclast');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setActionLast(data);
+        } catch (error) {
+            console.error('Error fetching action data:', error);
+        }
+    };
+
+
+    useEffect(() => {
+        console.log("Updated actionLast:", actionLast);
+        if (actionLast.length > 0) {
+            console.log("Device 1 action: " + actionLast[0]);
+            console.log("Device 2 action: " + actionLast[1]);
+            console.log("Device 3 action: " + actionLast[2]);
+        }
+    }, [actionLast]);
+
+
+
+
+    const dataLastItem = lastData[lastData.length - 1] || {
+        id: "6717c2d7d91647270d6193d5",
+        light: 437,
+        temperature: 29.8,
+        humidity: 70,
+        time: "2024-10-22 22:20:55"
+    };
+
 
     const fetchData = async () => {
         try {
             console.log('Fetching data...');
-            const response = await fetch('https://raw.githubusercontent.com/mindongun123/iot_example/main/data.json');
+            const response = await fetch('http://localhost:3800/sensor');
             const data = await response.json();
-            console.log('Data fetched:', data);
             setSensorData(data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
-    const [fetchCount, setFetchCount] = useState(0);
+
+
 
     useEffect(() => {
+        fetchData();
+        fetchAction();
         const intervalId = setInterval(() => {
             setFetchCount(prevCount => {
                 const newCount = prevCount + 1;
@@ -49,7 +91,6 @@ function Dasboard(params) {
                 }
                 return newCount;
             });
-            // fetchData();
         }, 5000);
 
         return () => clearInterval(intervalId);
@@ -60,27 +101,26 @@ function Dasboard(params) {
         <Container  >
             <Row className='row-item-sensor'>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.temperature} params={"°C"} icon={<CiTempHigh className='icon-sensor' style={{ color: 'red' }} />} bg={"linear-gradient(135deg, #f88c8c 0%, #fa0101 100%)"} />
+                    <Box index={dataLastItem.temperature} params={"°C"}
+                        icon={<CiTempHigh className='icon-sensor'
+                            style={{ color: 'red' }} />}
+                        bg={"linear-gradient(135deg, #f88c8c 0%, #fa0101 100%)"}
+                    />
                 </Col>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.humidity} params={"%"} icon={<IoWaterOutline className='icon-sensor' style={{ color: 'blue' }} />} bg={"linear-gradient(135deg, #8cd5f8 20%, #01abfa 80%)"} />
+                    <Box index={dataLastItem.humidity} params={"%"}
+                        icon={<IoWaterOutline className='icon-sensor'
+                            style={{ color: 'blue' }} />}
+                        bg={"linear-gradient(135deg, #8cd5f8 20%, #01abfa 80%)"}
+                    />
                 </Col>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.light} params={"LUX"} icon={<MdOutlineLightMode className='icon-sensor' style={{ color: 'yellow' }} />} bg={"linear-gradient(135deg, #f8ec8c 20%, #fadd01 80%)"} />
+                    <Box index={dataLastItem.light} params={"LUX"}
+                        icon={<MdOutlineLightMode className='icon-sensor'
+                            style={{ color: 'yellow' }} />}
+                        bg={"linear-gradient(135deg, #f8ec8c 20%, #fadd01 80%)"}
+                    />
                 </Col>
-                {/*                                 
-                <Col xs={12} md={3} className='item-sensor'>
-                    <Box index={dataLastItem.temperature} params={"°C"} icon={<CiTempHigh className='icon-sensor' style={{ color: 'red' }} />} bg={"linear-gradient(135deg, #f88c8c 0%, #fa0101 100%)"} />
-                </Col>
-                <Col xs={12} md={3} className='item-sensor'>
-                    <Box index={dataLastItem.humidity} params={"%"} icon={<IoWaterOutline className='icon-sensor' style={{ color: 'blue' }} />} bg={"linear-gradient(135deg, #8cd5f8 20%, #01abfa 80%)"} />
-                </Col>
-                <Col xs={12} md={3} className='item-sensor'>
-                    <Box index={dataLastItem.light} params={"LUX"} icon={<MdOutlineLightMode className='icon-sensor' style={{ color: 'yellow' }} />} bg={"linear-gradient(135deg, #f8ec8c 20%, #fadd01 80%)"} />
-                </Col>
-                <Col xs={12} md={3} className='item-sensor'>
-                    <Box index={dataLastItem.wind} params={"KM/H"} icon={<MdOutlineLightMode className='icon-sensor' style={{ color: 'green' }} />} bg={"linear-gradient(135deg, #f8ec8c 20%, #fadd01 80%)"} />
-                </Col> */}
             </Row>
 
             <Row className='row-item-data'>
@@ -88,7 +128,10 @@ function Dasboard(params) {
                     <BoxTableLineChart lastData={lastData} />
                 </Col>
                 <Col xs={12} md={4} className='item-data'>
-                    <BoxController />
+                    <BoxController
+                        av1={actionLast[0]}
+                        av2={actionLast[1]}
+                        av3={actionLast[2]} />
                 </Col>
             </Row>
         </Container>

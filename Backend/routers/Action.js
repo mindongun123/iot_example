@@ -2,31 +2,13 @@ const express = require("express");
 const ActionData = require("../db/actionDB");
 const router = express.Router();
 
-router.get("/new", async (req, res) => {
-    try {
-        const action = await ActionData.findOne().sort({ timestamp: -1 });
-
-        if (action) {
-            res.json({
-                device: action.device,
-                action: action.action,
-                timestamp: action.timestamp,
-            });
-        } else {
-            res.status(404).json({ message: 'No action data available' });
-        }
-    } catch (error) {
-        console.error("Error retrieving action data:", error);
-        res.status(500).json({ message: 'Error retrieving action data', error });
-    }
-});
 
 
 
-/// /search?device=light1
-// /search?action=on
-// /search?startDate=2021-10-01&endDate=2021-10-10
+
+
 router.get("/search", async (req, res) => {
+    console.log(req.query);
     const device = req.query.device ? req.query.device : null;
     const action = req.query.action ? req.query.action : null;
     const startDate = req.query.startDate ? new Date(req.query.startDate) : null;
@@ -43,11 +25,11 @@ router.get("/search", async (req, res) => {
     }
 
     if (startDate && endDate) {
-        filter.timestamp = { $gte: startDate, $lte: endDate };
+        filter.time = { $gte: startDate, $lte: endDate };
     } else if (startDate) {
-        filter.timestamp = { $gte: startDate };
+        filter.time = { $gte: startDate };
     } else if (endDate) {
-        filter.timestamp = { $lte: endDate };
+        filter.time = { $lte: endDate };
     }
 
     try {
@@ -56,9 +38,10 @@ router.get("/search", async (req, res) => {
         if (actionData.length > 0) {
             res.json({
                 actions: actionData.map(action => ({
+                    id: action._id,
                     device: action.device,
                     action: action.action,
-                    timestamp: action.timestamp,
+                    time: action.time,
                 })),
             });
         } else {
@@ -71,26 +54,52 @@ router.get("/search", async (req, res) => {
 });
 
 
+
+router.get('/aclast', async (req, res) => {
+    try {
+
+        const actions1 = await ActionData.find({ device: "light1" }).sort({ time: -1 }).limit(1);
+        const actions2 = await ActionData.find({ device: "light2" }).sort({ time: -1 }).limit(1);
+        const actions3 = await ActionData.find({ device: "light3" }).sort({ time: -1 }).limit(1);
+
+        const actionDevice1 = actions1.length > 0 ? actions1[0].action : null;
+        const actionDevice2 = actions2.length > 0 ? actions2[0].action : null;
+        const actionDevice3 = actions3.length > 0 ? actions3[0].action : null;
+
+        res.json([actionDevice1, actionDevice2, actionDevice3]);
+        
+    } catch (error) {
+        console.error("Last Data action Error", error);
+        res.status(500).json({ message: 'Error retrieving action data', error });
+    }
+});
+
+
 router.get("/", async (req, res) => {
     try {
+
         const actions = await ActionData.find();
 
         if (actions.length > 0) {
-            res.json({
-                actions: actions.map(action => ({
-                    device: action.device,
-                    action: action.action,
-                    timestamp: action.timestamp,
-                })),
-            });
+            const formattedData = actions.map(data => ({
+                id: data._id,
+                device: data.device,
+                action: data.action,
+                time: data.time,
+            }));
+
+            res.json(formattedData);
         } else {
-            res.status(404).json({ message: 'No action data available' });
+            res.status(404).json({ message: "No sensor data available" });
         }
+
     } catch (error) {
         console.error("Error retrieving action data:", error);
         res.status(500).json({ message: 'Error retrieving action data', error });
     }
 });
+
+
 
 
 

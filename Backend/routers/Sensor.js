@@ -3,17 +3,17 @@ const SensorData = require("../db/sensorDB");
 const router = express.Router();
 
 
-// moi nhat
 router.get("/new", async (req, res) => {
     try {
-        const sensorData = await SensorData.findOne().sort({ timestamp: -1 });
+        const sensorData = await SensorData.findOne().sort({ time: -1 });
 
         if (sensorData) {
             res.json({
+                id: sensorData._id,
                 light: sensorData.light,
-                temp: sensorData.temp,
-                humi: sensorData.humi,
-                timestamp: sensorData.timestamp,
+                temperature: sensorData.temperature,
+                humidity: sensorData.humidity,
+                time: sensorData.time,
             });
         } else {
             res.status(404).json({ message: "No sensor data available" });
@@ -26,22 +26,23 @@ router.get("/new", async (req, res) => {
 
 
 
-// tim kiem 
+// tim kiem  
 router.get("/search", async (req, res) => {
-    const temp = req.query.temp ? parseFloat(req.query.temp) : null;
-    const humi = req.query.humi ? parseFloat(req.query.humi) : null;
+
+    const temperature = req.query.temperature ? parseFloat(req.query.temperature) : null;
+    const humidity = req.query.humidity ? parseFloat(req.query.humidity) : null;
     const light = req.query.light ? parseFloat(req.query.light) : null;
     const startDate = req.query.startDate ? new Date(req.query.startDate) : null;
     const endDate = req.query.endDate ? new Date(req.query.endDate) : null;
 
     let filter = {};
 
-    if (temp !== null) {
-        filter.temp = temp;
+    if (temperature !== null) {
+        filter.temperature = temperature;
     }
 
-    if (humi !== null) {
-        filter.humi = humi;
+    if (humidity !== null) {
+        filter.humidity = humidity;
     }
 
     if (light !== null) {
@@ -49,11 +50,11 @@ router.get("/search", async (req, res) => {
     }
 
     if (startDate && endDate) {
-        filter.timestamp = { $gte: startDate, $lte: endDate };
+        filter.time = { $gte: startDate, $lte: endDate };
     } else if (startDate) {
-        filter.timestamp = { $gte: startDate };
+        filter.time = { $gte: startDate };
     } else if (endDate) {
-        filter.timestamp = { $lte: endDate };
+        filter.time = { $lte: endDate };
     }
 
     try {
@@ -62,21 +63,24 @@ router.get("/search", async (req, res) => {
         if (sensorData.length > 0) {
             res.json({
                 sensors: sensorData.map(sensor => ({
-                    temp: sensor.temp,
-                    humi: sensor.humi,
+                    id: sensor._id,
+                    temperature: sensor.temperature,
+                    humidity: sensor.humidity,
                     light: sensor.light,
-                    timestamp: sensor.timestamp,
+                    time: sensor.time,
                 })),
             });
-        } else {
-            res.status(404).json({ message: "No sensor data found with the given conditions" });
+        }
+        else
+        {
+            res.json({ sensors: [], message: "No sensor data found" });
         }
     } catch (error) {
         console.error("Error retrieving sensor data:", error);
         res.status(500).json({ message: "Error retrieving sensor data", error });
     }
-});
 
+});
 
 
 // tat ca
@@ -85,7 +89,15 @@ router.get("/", async (req, res) => {
         const sensorData = await SensorData.find();
 
         if (sensorData.length > 0) {
-            res.json(sensorData);
+            const formattedData = sensorData.map(data => ({
+                id: data._id,
+                light: data.light,
+                temperature: data.temperature,
+                humidity: data.humidity,
+                time: data.time
+            }));
+
+            res.json(formattedData);
         } else {
             res.status(404).json({ message: "No sensor data available" });
         }

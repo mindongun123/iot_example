@@ -1,30 +1,41 @@
-// styles
 import './datasensor.css';
 
 // components
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Table from 'react-bootstrap/Table';
 import { Container, Dropdown, Form, Button, InputGroup } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 
-// data
-import initialData from '../data/sensor.json';
+// axios to fetch data
+import axios from 'axios';
 
 function History() {
-    const [sensorData, setSensorData] = useState(initialData);
     const [sortConfig, setSortConfig] = useState({ key: '', direction: 'asc' });
-    const [itemsPerPage, setItemsPerPage] = useState(10); // Số dòng hiển thị mặc định
+    const [itemsPerPage, setItemsPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchQuery, setSearchQuery] = useState(''); // Từ khóa tìm kiếm
-    const [searchType, setSearchType] = useState('device'); // Loại thông số tìm kiếm
-    const [filteredData, setFilteredData] = useState(initialData); // Dữ liệu đã lọc
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchType, setSearchType] = useState('device');
+    const [filteredData, setFilteredData] = useState([]);
     const [startTime, setStartTime] = useState('');
-    const [endTime, setEndTime] = useState('');
+    const [endTime, setEndTime] = useState([]);
 
-    // Hàm sắp xếp dữ liệu
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:3800/action');
+            setFilteredData(response.data);
+        } catch (error) {
+            console.error('Error fetching sensor data:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
     const sortedData = useMemo(() => {
         let sortableItems = [...filteredData];
-        if (sortConfig !== null) {
+        if (sortConfig.key) {
             sortableItems.sort((a, b) => {
                 if (a[sortConfig.key] < b[sortConfig.key]) {
                     return sortConfig.direction === 'asc' ? -1 : 1;
@@ -38,43 +49,42 @@ function History() {
         return sortableItems;
     }, [filteredData, sortConfig]);
 
-    // Hàm lọc dữ liệu dựa trên từ khóa tìm kiếm, loại thông số và khoảng thời gian
-    const handleSearch = () => {
-        let result = sensorData;
+    /// Ham search tim chua hoan thien
+    const handleSearch = async () => {
+        try {
+            console.log(startTime, endTime);
 
-        if (searchType === 'time') {
-            if (startTime && endTime) {
-                result = result.filter(item => {
-                    const itemTime = new Date(item.time);
-                    return itemTime >= new Date(startTime) && itemTime <= new Date(endTime);
-                });
-            }
-        } else if (searchQuery) {
-            result = result.filter(item =>
-                item[searchType].toString().toLowerCase().includes(searchQuery.toLowerCase())
-            );
+            const params = {
+                device: searchType === 'device' ? searchQuery : undefined,
+                action: searchType === 'action' ? searchQuery : undefined,
+                startDate: searchType === 'time' ? startTime : undefined,
+                endDate: searchType === 'time' ? endTime : undefined,
+            };
+
+            console.log('Search params:', params);
+
+            const response = await axios.get('http://localhost:3800/action/search', { params });
+            console.log('Search response:', response.data);
+
+            setFilteredData(Array.isArray(response.data.actions) ? response.data.actions : []);
+
+            setCurrentPage(1);
+
+        } catch (error) {
+            console.error('Error searching sensor data:', error);
         }
-
-        setFilteredData(result);
-        setCurrentPage(1); // Reset trang khi tìm kiếm
     };
 
-    // Hàm thay đổi cột sắp xếp
     const requestSort = (key) => {
-        let direction = 'asc';
-        if (sortConfig.key === key && sortConfig.direction === 'asc') {
-            direction = 'desc';
-        }
+        const direction = sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc';
         setSortConfig({ key, direction });
     };
 
-    // Hàm thay đổi số lượng dòng hiển thị
     const handleItemsPerPageChange = (count) => {
         setItemsPerPage(count);
-        setCurrentPage(1); // Reset trang khi thay đổi số dòng hiển thị
+        setCurrentPage(1);
     };
 
-    // Hàm xử lý phân trang
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -102,7 +112,7 @@ function History() {
 
     const handleSearchTypeChange = (type) => {
         setSearchType(type);
-        setSearchQuery(''); // Reset từ khóa tìm kiếm khi thay đổi loại tìm kiếm
+        setSearchQuery('');
         setStartTime('');
         setEndTime('');
     };
@@ -111,7 +121,7 @@ function History() {
         <Container>
             <div className='table-data'>
                 <div className='table-header'>
-                    <p className='text-header'>HISTORY</p>
+                    <p className='text-header'>TABLE ACTION</p>
                 </div>
 
                 <div className='d-flex justify-content-between mb-4 mt-3'>
@@ -125,25 +135,22 @@ function History() {
                             className={`${searchType === 'time' ? 'd-none' : ''} search`}
                         />
                         {searchType === 'time' && (
-                            <>
-                                <InputGroup className="mb-2">
-                                    <Form.Control
+                            <InputGroup className="mb-2">
+                                <Form.Control
                                     className='search'
-                                        type="datetime-local"
-                                        placeholder="Start Time"
-                                        value={startTime}
-                                        onChange={(e) => setStartTime(e.target.value)}
-                                    />
-                                    <Form.Control
+                                    type="datetime-local"
+                                    placeholder="Start Time"
+                                    value={startTime}
+                                    onChange={(e) => setStartTime(e.target.value)}
+                                />
+                                <Form.Control
                                     className='search'
-
-                                        type="datetime-local"
-                                        placeholder="End Time"
-                                        value={endTime}
-                                        onChange={(e) => setEndTime(e.target.value)}
-                                    />
-                                </InputGroup>
-                            </>
+                                    type="datetime-local"
+                                    placeholder="End Time"
+                                    value={endTime}
+                                    onChange={(e) => setEndTime(e.target.value)}
+                                />
+                            </InputGroup>
                         )}
 
                         {/* Button Search */}
@@ -152,10 +159,9 @@ function History() {
                         </Button>
                     </div>
                     <div className='sort-bar'>
-
                         {/* Topic Search */}
                         <Dropdown>
-                            <Dropdown.Toggle  className="topic-search">
+                            <Dropdown.Toggle className="topic-search">
                                 {searchType.charAt(0).toUpperCase() + searchType.slice(1)}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -166,8 +172,8 @@ function History() {
                         </Dropdown>
 
                         {/* Items per page */}
-                        <Dropdown >
-                            <Dropdown.Toggle className='items-per-page ' id="dropdown-basic">
+                        <Dropdown>
+                            <Dropdown.Toggle className='items-per-page' id="dropdown-basic">
                                 Show {itemsPerPage} rows
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -179,14 +185,13 @@ function History() {
                     </div>
                 </div>
 
-
                 <div className='table-content'>
-                    <Table striped bordered hover variant="light" >
+                    <Table striped bordered hover variant="light">
                         <thead>
                             <tr>
                                 <th className='td-item'>#</th>
                                 <th className='td-item' onClick={() => requestSort('device')}>
-                                Device {sortConfig.key === 'device' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
+                                    Device {sortConfig.key === 'device' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
                                 </th>
                                 <th className='td-item' onClick={() => requestSort('action')}>
                                     Action {sortConfig.key === 'action' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}
@@ -198,9 +203,9 @@ function History() {
                         </thead>
                         <tbody>
                             {
-                                paginatedData.map((item) => (
+                                paginatedData.map((item, index) => (
                                     <tr key={item.id}>
-                                        <td className='td-item'>{item.id}</td>
+                                        <td className='td-item'>{startIndex + index + 1}</td>
                                         <td className='td-item'>{item.device}</td>
                                         <td className='td-item'>{item.action}</td>
                                         <td className='td-item'>{item.time}</td>
@@ -212,12 +217,12 @@ function History() {
                 </div>
                 <nav aria-label="Page navigation example">
                     <ul className="pagination pagination-button">
-                        <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}` }>
+                        <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
                             <a className="page-link item-page" href="#" aria-label="Previous" onClick={handlePrevious}>
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li className="page-item active ">
+                        <li className="page-item active">
                             <a className="page-link item-page" href="#">
                                 {currentPage}
                             </a>
