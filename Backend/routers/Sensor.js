@@ -28,12 +28,13 @@ router.get("/new", async (req, res) => {
 
 // tim kiem  
 router.get("/search", async (req, res) => {
-
+    console.log("Query params:");
+    console.log(req.query);
     const temperature = req.query.temperature ? parseFloat(req.query.temperature) : null;
     const humidity = req.query.humidity ? parseFloat(req.query.humidity) : null;
     const light = req.query.light ? parseFloat(req.query.light) : null;
-    const startDate = req.query.startDate ? new Date(req.query.startDate) : null;
-    const endDate = req.query.endDate ? new Date(req.query.endDate) : null;
+    const startDate = req.query.startDate ? (req.query.startDate) : null;
+    const endDate = req.query.endDate ? (req.query.endDate) : null;
 
     let filter = {};
 
@@ -71,8 +72,7 @@ router.get("/search", async (req, res) => {
                 })),
             });
         }
-        else
-        {
+        else {
             res.json({ sensors: [], message: "No sensor data found" });
         }
     } catch (error) {

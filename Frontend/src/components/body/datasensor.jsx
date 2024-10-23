@@ -49,7 +49,6 @@ function DataSensor() {
         return sortableItems;
     }, [filteredData, sortConfig]);
 
-    /// Ham search tim chua hoan thien
     const handleSearch = async () => {
         try {
             console.log(startTime, endTime);
@@ -117,6 +116,10 @@ function DataSensor() {
         setEndTime('');
     };
 
+    const formatDateTime = (datetime) => {
+        return datetime.replace('T', ' ') + ':00';
+    };
+
     return (
         <Container>
             <div className='table-data'>
@@ -141,14 +144,14 @@ function DataSensor() {
                                     type="datetime-local"
                                     placeholder="Start Time"
                                     value={startTime}
-                                    onChange={(e) => setStartTime(e.target.value)}
+                                    onChange={(e) => setStartTime(formatDateTime(e.target.value))}
                                 />
                                 <Form.Control
                                     className='search'
                                     type="datetime-local"
                                     placeholder="End Time"
                                     value={endTime}
-                                    onChange={(e) => setEndTime(e.target.value)}
+                                    onChange={(e) => setEndTime(formatDateTime(e.target.value))}
                                 />
                             </InputGroup>
                         )}

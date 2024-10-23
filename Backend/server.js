@@ -21,11 +21,6 @@ app.use('/action', Action);
 app.use('/sensor', Sensor);
 
 
-app.get('/', (req, res) => {
-    res.send('Hello from IoT Express server');
-});
-
-
 
 
 app.post("/action", async (req, res) => {
@@ -53,6 +48,13 @@ app.post("/action", async (req, res) => {
         res.status(500).json({ message: "Error saving action data", error });
     }
 });
+
+
+
+app.get('/', (req, res) => {
+    res.send('Hello from IoT Express server');
+});
+
 
 
 app.listen(3800, () => {
