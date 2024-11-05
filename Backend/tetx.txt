@@ -265,3 +265,24 @@ if (isnan(lightValue))
     client.publish("data/lightall", jsonStr);
   }
  /////
+
+
+ {time: {$gte: "2024-10-28 00:58:26", $lte:"2024-10-31 00:58:26"}}
+
+[
+  { "$match": { device: "light1", action: "ON"} },  // Điều kiện tìm kiếm
+  // { "$count": "total_count" },
+  { "$limit": 5},
+  {"$sort": {time :-1}}
+]
+
+
+[
+  { "$match": {time: {$gte: "2024-10-28 00:58:26", $lte:"2024-10-31 00:58:26"}} },  // Điều kiện tìm kiếm
+  // { "$count": "total_count" },
+  { "$limit": 1},
+  {"$sort": {time :-1}}
+]
+
+
+

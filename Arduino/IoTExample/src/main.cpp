@@ -25,8 +25,8 @@ PubSubClient client(espClient);
 
 int lightSensorPin = A0;
 
-unsigned long lastSensorUpdate = 0; // Thời điểm lần cập nhật sensor cuối cùng
-const long sensorUpdateInterval = 10000; // Khoảng thời gian giữa các lần cập nhật sensor (10 giây)
+unsigned long lastSensorUpdate = 0;      
+const long sensorUpdateInterval = 10000; 
 
 void setup_wifi();
 void reconnect();
@@ -35,7 +35,7 @@ void callback(char *topic, byte *message, unsigned int length);
 void setup()
 {
   Serial.begin(9600);
-  
+
   pinMode(LED_PIN5, OUTPUT);
   digitalWrite(LED_PIN5, LOW);
 

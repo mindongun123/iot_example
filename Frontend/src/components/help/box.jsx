@@ -1,6 +1,7 @@
 import React from 'react';
 import './box.css';
 import TableLineChart from './linechart';
+import TableLineChartTest from './linechartTest';
 import ToggleButton from './togglebutton';
 
 import { PiFanBold } from "react-icons/pi";
@@ -66,6 +67,14 @@ function BoxTableLineChart({ lastData }) {
     )
 }
 
+function BoxTableLineChartTest({ lastData }) {
+    return (
+        <div className="box">
+            <TableLineChartTest lastData={lastData} />
+        </div>
+    )
+}
+
 
 
 function BoxController({ av1, av2, av3 }) {
@@ -81,4 +90,4 @@ function BoxController({ av1, av2, av3 }) {
     )
 }
 
-export { Box, BoxTableLineChart, BoxController };
+export { Box, BoxTableLineChart, BoxController ,BoxTableLineChartTest};

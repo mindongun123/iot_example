@@ -12,6 +12,7 @@ import { MdDashboard } from 'react-icons/md';
 import { FaDatabase } from "react-icons/fa";
 import { GoClockFill } from "react-icons/go";
 import { IoMdPerson } from "react-icons/io";
+import { FaNoteSticky } from "react-icons/fa6";
 
 
 
@@ -45,10 +46,17 @@ function Sidebar() {
           <span className='link-text'>History</span>
         </Link>
 
+        <Link to="/test" className={`item-link ${activeLink === '/test' ? 'active' : ''}`} onClick={() => handleLinkClick('/test')}>
+          <FaNoteSticky className='icon-link' />
+          <span className='link-text'>Test</span>
+        </Link>
+
         <Link to="/profile" className={`item-link ${activeLink === '/profile' ? 'active' : ''}`} onClick={() => handleLinkClick('/profile')}>
           <IoMdPerson className='icon-link' />
           <span className='link-text'>Profile</span>
         </Link>
+
+
 
       </div>
     </nav>
