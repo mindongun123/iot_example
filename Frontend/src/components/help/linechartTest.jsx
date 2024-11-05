@@ -13,8 +13,8 @@ function TableLineChartTest({ lastData }) {
     labels: lastData.map(item => item.time),
     datasets: [
       {
-        label: 'Wind',
-        data: lastData.map(item => item.temperature),
+        label: 'Fake',
+        data: lastData.map(item => item.light),
         borderColor: 'rgba(75,192,192,1)',
         backgroundColor: 'rgba(75,192,192,0.2)',
         fill: true,

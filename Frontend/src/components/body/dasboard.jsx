@@ -27,7 +27,7 @@ function Dasboard(params) {
 
 
 
-    const [actionLast, setActionLast] = useState(["OFF", "OFF", "OFF"]);
+    const [actionLast, setActionLast] = useState(["OFF", "OFF", "OFF", "OFF"]);
 
     // Hàm fetch dữ liệu từ API
     const fetchAction = async () => {
@@ -51,6 +51,7 @@ function Dasboard(params) {
             console.log("Device 1 action: " + actionLast[0]);
             console.log("Device 2 action: " + actionLast[1]);
             console.log("Device 3 action: " + actionLast[2]);
+            console.log("Device 4 action: " + actionLast[3]);
         }
     }, [actionLast]);
 
@@ -91,7 +92,7 @@ function Dasboard(params) {
                 }
                 return newCount;
             });
-        }, 5000);
+        }, 2000);
 
         return () => clearInterval(intervalId);
     }, []);

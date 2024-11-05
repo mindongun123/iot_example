@@ -29,6 +29,7 @@ app.post("/action", async (req, res) => {
     console.log(device, action);
     try {
         const topic = `iot/action/${device}`;
+        console.log(topic);
         const formattedTime = `${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}-${String(new Date().getDate()).padStart(2, '0')} ${String(new Date().getHours()).padStart(2, '0')}:${String(new Date().getMinutes()).padStart(2, '0')}:${String(new Date().getSeconds()).padStart(2, '0')}`;
 
         await new Promise((resolve, reject) => {

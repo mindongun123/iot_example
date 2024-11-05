@@ -9,6 +9,7 @@
 #define LED_PIN5 5   // Chân nối với đèn LED (GPIO5 - D1)
 #define LED_PIN12 12 // Chân nối với đèn LED (GPIO12 - D6)
 #define LED_PIN16 16 // Chân nối với đèn LED (GPIO16 - D0)
+#define LED_PIN13 13 // Chân nối với đèn LED (GPIO13 - D7)
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -25,8 +26,8 @@ PubSubClient client(espClient);
 
 int lightSensorPin = A0;
 
-unsigned long lastSensorUpdate = 0;      
-const long sensorUpdateInterval = 10000; 
+unsigned long lastSensorUpdate = 0;
+const long sensorUpdateInterval = 10000;
 
 void setup_wifi();
 void reconnect();
@@ -44,6 +45,9 @@ void setup()
 
   pinMode(LED_PIN16, OUTPUT);
   digitalWrite(LED_PIN16, LOW);
+
+  pinMode(LED_PIN13, OUTPUT);
+  digitalWrite(LED_PIN13, LOW);
 
   setup_wifi();
   client.setServer(mqtt_server, mqtt_port);
@@ -64,7 +68,6 @@ void setup_wifi()
     delay(1000);
     Serial.print(".");
   }
-  Serial.println("");
   Serial.println("WiFi connected");
 }
 
@@ -79,6 +82,7 @@ void reconnect()
       client.subscribe("iot/action/light1");
       client.subscribe("iot/action/light2");
       client.subscribe("iot/action/light3");
+      client.subscribe("iot/action/light4");
       client.subscribe("iot/action/lightall");
     }
     else
@@ -94,6 +98,7 @@ void reconnect()
 bool led1State = LOW;
 bool led2State = LOW;
 bool led3State = LOW;
+bool led4State = LOW;
 
 void callback(char *topic, byte *message, unsigned int length)
 {
@@ -104,13 +109,13 @@ void callback(char *topic, byte *message, unsigned int length)
     if (messageStr == "OFF" && led1State == HIGH)
     {
       digitalWrite(LED_PIN5, LOW);
-      led1State = LOW; // Cập nhật trạng thái đèn
+      led1State = LOW;
       Serial.println("\nLED 1 OFF");
     }
     else if (messageStr == "ON" && led1State == LOW)
     {
       digitalWrite(LED_PIN5, HIGH);
-      led1State = HIGH; // Cập nhật trạng thái đèn
+      led1State = HIGH;
       Serial.println("\nLED 1 ON");
     }
   }
@@ -120,13 +125,13 @@ void callback(char *topic, byte *message, unsigned int length)
     if (messageStr == "OFF" && led2State == HIGH)
     {
       digitalWrite(LED_PIN12, LOW);
-      led2State = LOW; // Cập nhật trạng thái đèn
+      led2State = LOW;
       Serial.println("\nLED 2 OFF");
     }
     else if (messageStr == "ON" && led2State == LOW)
     {
       digitalWrite(LED_PIN12, HIGH);
-      led2State = HIGH; // Cập nhật trạng thái đèn
+      led2State = HIGH;
       Serial.println("\nLED 2 ON");
     }
   }
@@ -136,14 +141,30 @@ void callback(char *topic, byte *message, unsigned int length)
     if (messageStr == "OFF" && led3State == HIGH)
     {
       digitalWrite(LED_PIN16, LOW);
-      led3State = LOW; // Cập nhật trạng thái đèn
+      led3State = LOW;
       Serial.println("\nLED 3 OFF");
     }
     else if (messageStr == "ON" && led3State == LOW)
     {
       digitalWrite(LED_PIN16, HIGH);
-      led3State = HIGH; // Cập nhật trạng thái đèn
+      led3State = HIGH;
       Serial.println("\nLED 3 ON");
+    }
+  }
+
+  if (String(topic) == "iot/action/light4")
+  {
+    if (messageStr == "OFF" && led4State == HIGH)
+    {
+      digitalWrite(LED_PIN13, LOW);
+      led4State = LOW;
+      Serial.println("\nLED 4 OFF");
+    }
+    else if (messageStr == "ON" && led4State == LOW)
+    {
+      digitalWrite(LED_PIN13, HIGH);
+      led4State = HIGH;
+      Serial.println("\nLED 4 ON");
     }
   }
 
@@ -154,9 +175,11 @@ void callback(char *topic, byte *message, unsigned int length)
       digitalWrite(LED_PIN5, LOW);
       digitalWrite(LED_PIN12, LOW);
       digitalWrite(LED_PIN16, LOW);
+      digitalWrite(LED_PIN13, LOW);
       led1State = LOW;
       led2State = LOW;
       led3State = LOW;
+      led4State = LOW;
       Serial.println("\nALL LED OFF");
     }
     else if (messageStr == "ON")
@@ -164,9 +187,11 @@ void callback(char *topic, byte *message, unsigned int length)
       digitalWrite(LED_PIN5, HIGH);
       digitalWrite(LED_PIN12, HIGH);
       digitalWrite(LED_PIN16, HIGH);
+      digitalWrite(LED_PIN13, HIGH);
       led1State = HIGH;
       led2State = HIGH;
       led3State = HIGH;
+      led4State = HIGH;
       Serial.println("\nALL LED ON");
     }
   }
@@ -191,6 +216,9 @@ void loop()
     float humidity = dht.readHumidity();
     float temperature = dht.readTemperature();
 
+    // data fake
+    float dataFake = random(20, 100);
+
     if (isnan(humidity) || isnan(temperature) || isnan(lightValue))
     {
       Serial.println("Failed to read from DHT sensor!");
@@ -200,14 +228,16 @@ void loop()
       char lightStr[8];
       char tempStr[8];
       char humStr[8];
+      char fakeStr[8];
       dtostrf(lightValue, 1, 2, lightStr);
       dtostrf(temperature, 1, 2, tempStr);
       dtostrf(humidity, 1, 2, humStr);
+      dtostrf(dataFake, 1, 2, fakeStr);
 
       char jsonStr[100];
-      snprintf(jsonStr, sizeof(jsonStr), "{\"light\": %s, \"temperature\": %s, \"humidity\": %s}", lightStr, tempStr, humStr);
+      snprintf(jsonStr, sizeof(jsonStr), "{\"light\": %s, \"temperature\": %s, \"humidity\": %s, \"datafake\": %s}", lightStr, tempStr, humStr, fakeStr);
 
-      Serial.printf("\nLight: %s, Temperature: %s, Humidity: %s\n", lightStr, tempStr, humStr);
+      Serial.printf("\nLight: %s, Temperature: %s, Humidity: %s, DataFake: %s\n", lightStr, tempStr, humStr, fakeStr);
       Serial.printf(jsonStr);
 
       // Gửi dữ liệu sensor lên MQTT
@@ -215,3 +245,6 @@ void loop()
     }
   }
 }
+
+
+// Cam bien gia --> dataFake, tuong ung voi Action light4 

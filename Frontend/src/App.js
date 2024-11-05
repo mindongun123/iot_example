@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Sidebar from './components/sidebar/sidebar';
 
 //styles
-import './App.css'
+import './App.css';
 
 // components
 import Dasboard from './components/body/dasboard';
@@ -12,10 +12,15 @@ import DataSensor from './components/body/datasensor';
 import Profile from './components/body/profile';
 import Test from './components/body/test';
 
+const App = () => {
+  const location = useLocation();
 
-function App() {
+  useEffect(() => {
+    document.body.classList.remove("alert-background");
+  }, [location]);
+
   return (
-    <Router>
+    <>
       <Sidebar />
       <div className='content'>
         <Routes>
@@ -26,8 +31,14 @@ function App() {
           <Route path="/" element={<Dasboard />} />
         </Routes>
       </div>
-    </Router>
+    </>
   );
-}
+};
 
-export default App;
+const MainApp = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default MainApp;

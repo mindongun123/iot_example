@@ -1,35 +1,39 @@
 import '../help/togglebutton.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import axios from 'axios';
-import { useEffect } from 'react';
 
 function ToggleButton({ img, bg, effect, normal, lightId, action }) {
   const [isOn, setIsOn] = useState(action === 'ON');
+  const [isLoading, setIsLoading] = useState(false); // Trạng thái chờ phản hồi từ backend
 
   useEffect(() => {
     setIsOn(action === 'ON');
   }, [action]);
 
   const handleToggle = async () => {
+    if (isLoading) return;  
     const newStatus = !isOn;
     const msg = newStatus ? 'ON' : 'OFF';
-    setIsOn(newStatus); 
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ device: lightId, action: msg })
-    };
+    setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:3800/action/', requestOptions);
+      const response = await fetch('http://localhost:3800/action', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ device: lightId, action: msg })
+      });
+
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`HTTP error! status: ${response.status}. Response: ${errorText}`);
       }
+
+      setIsOn(newStatus);
     } catch (error) {
       console.error('Error toggling light:', error.message);
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -43,6 +47,7 @@ function ToggleButton({ img, bg, effect, normal, lightId, action }) {
         id="custom-switch"
         checked={isOn}
         onChange={handleToggle}
+        disabled={isLoading}  
       />
     </div>
   );

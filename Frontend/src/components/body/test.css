@@ -1,4 +1,33 @@
 .test-container {
     width: 100%;
     height: 100%;
+
+    /*  */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /*  */
+
+}
+/* 
+body{
+    background-color: var(--danger);
+} */
+
+
+.box-test {
+    min-height: 100%;
+    border-radius: 10px;
+    background-color: var(--light);
+    box-shadow: 0 0 8px var(--secondary);
+}
+
+.box-test-controller {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color: #a041f9fa;
 }
