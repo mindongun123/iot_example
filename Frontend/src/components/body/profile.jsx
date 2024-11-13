@@ -20,7 +20,7 @@ function Profile() {
                         Tôi là một lập trình viên đam mê với kinh nghiệm trong phát triển web và ứng dụng di động.
                     </p>
                     <div className="profile-social-links">
-                        <Button variant="primary" href="https://github.com/mindongun123" target="_blank">
+                        <Button variant="primary" href="https://github.com/mindongun123/iot_example" target="_blank">
                             GitHub
                         </Button>
                         {' '}
