@@ -13,6 +13,7 @@ router.get("/new", async (req, res) => {
                 light: sensorData.light,
                 temperature: sensorData.temperature,
                 humidity: sensorData.humidity,
+                wind: sensorData.wind,
                 time: sensorData.time,
             });
         } else {
@@ -68,6 +69,7 @@ router.get("/search", async (req, res) => {
                     temperature: sensor.temperature,
                     humidity: sensor.humidity,
                     light: sensor.light,
+                    wind: sensor.wind,
                     time: sensor.time,
                 })),
             });
@@ -94,6 +96,7 @@ router.get("/", async (req, res) => {
                 light: data.light,
                 temperature: data.temperature,
                 humidity: data.humidity,
+                wind: data.wind,
                 time: data.time
             }));
 

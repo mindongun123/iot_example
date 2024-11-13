@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './test.css';
-import { BoxTableLineChartTest } from '../help/box';
+import { BoxTableLineChartTest, Box } from '../help/box';
 import { FiWind } from "react-icons/fi";
 import ToggleButton from '../help/togglebutton';
-
+import Row from 'react-bootstrap/Row';
+import { IoIosWarning } from "react-icons/io";
+import Col from 'react-bootstrap/Col';
 
 function Test() {
 
@@ -15,6 +17,17 @@ function Test() {
     const [fetchCount, setFetchCount] = useState(0);
 
     const [actionLast, setActionLast] = useState(["OFF", "OFF", "OFF", "OFF"]);
+
+    const boxTestRef = useRef(null);
+
+    const dataLastItem = lastData[lastData.length - 1] || {
+        id: "6717c2d7d91647270d6193d5",
+        light: 437,
+        temperature: 29.8,
+        humidity: 70,
+        wind: 10,
+        time: "2024-10-22 22:20:55"
+    };
 
     useEffect(() => {
     }, [actionLast]);
@@ -57,7 +70,6 @@ function Test() {
                 const newCount = prevCount + 1;
                 if (newCount >= 1) {
                     fetchDataTest();
-                    fetchAction();
                     return 0;
                 }
                 return newCount;
@@ -71,10 +83,10 @@ function Test() {
         const handleAlertBackground = () => {
             if (dataTest.length > 0) {
                 const latestData = dataTest[dataTest.length - 1];
-                if (latestData.light > 400 && actionLast[3] === "ON") {
-                    document.body.classList.add("alert-background");
+                if (latestData.wind > 6) {
+                    boxTestRef.current.classList.add("alert-background");
                 } else {
-                    document.body.classList.remove("alert-background");
+                    boxTestRef.current.classList.remove("alert-background");
                 }
             }
         };
@@ -86,10 +98,30 @@ function Test() {
 
     return (
         <Container className="test-container">
-            <BoxTableLineChartTest lastData={lastData} />
-            <div className="box-test" style={{ width: "350px", padding: "10px", marginTop: "10px" }}>
-                <ToggleButton img={<FiWind className='box-image-icon' />} bg={"linear-gradient(135deg, #e3cef6fa 10%, #a041f9fa 90%)"} effect={"effect-wind"} lightId={"light4"} action={actionLast[3]} />
-            </div>
+
+
+            <Row className='row-item-data'>
+                <Col xs={12} md={8} className='item-data'>
+                    <BoxTableLineChartTest lastData={lastData} />
+                </Col>
+
+
+                <Col xs={12} md={4} className='item-data'>
+                    <Col className='item-sensor'>
+                        <Box index={dataLastItem.temperature} params={"°C"}
+                            icon={<FiWind className='icon-sensor'
+                                style={{ color: 'red' }} />}
+                            bg={"linear-gradient(135deg, #f88c8c 0%, #fa0101 100%)"}
+                        />
+                    </Col>
+                    
+                    <Col className='item-sensor'>
+                        <div ref={boxTestRef} className="box-test" style={{ padding: "15px", marginTop: "15px" }}>
+                            <ToggleButton img={<IoIosWarning className='box-image-icon' />} bg={"linear-gradient(135deg, #e3cef6fa 10%, #a041f9fa 90%)"} effect={"effect-wind"} lightId={"light4"} action={actionLast[3]} />
+                        </div>
+                    </Col>
+                </Col>
+            </Row>
         </Container>
     );
 }

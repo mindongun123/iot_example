@@ -16,14 +16,14 @@
 
 
 .on {
-    color:var(--yellow);
+    color: var(--yellow);
 }
 
 .off {
-    color:var(--dark);
+    color: var(--dark);
 }
 
-.img-container{
+.img-container {
     transition: all 0.4s linear;
     color: var(--gray-dark);
 }
@@ -46,12 +46,6 @@
 }
 
 
-.effect-wind
-{
-    color: var(--purple);
-    filter: drop-shadow(0 0 10px #b10af8de) drop-shadow(0 0 20px rgba(206, 74, 218, 0.863));
-
-}
 
 .effect-light {
     color: var(--yellow);
@@ -60,15 +54,45 @@
 
 @keyframes gradientMove {
     0% {
-      color: var(--white);
+        color: var(--white);
     }
+
     100% {
         color: var(--primary);
-      }
-  }
-  
-  .effect-air {
+    }
+}
+
+.effect-air {
     animation: gradientMove 2s ease-in-out infinite alternate;
     display: inline-block;
-  }
-  
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+        color: var(--warning);  
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+ 
+
+.effect-wind {
+    animation: shake 0.5s infinite; 
+    display: inline-block;
+}

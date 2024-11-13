@@ -56,13 +56,3 @@ body {
   }
 }
 
-/* file test.css */
-@keyframes blinkRed {
-  0% { background-color: white; }
-  50% { background-color: red; }
-  100% { background-color: white; }
-}
-
-.alert-background {
-  animation: blinkRed 1s infinite;
-}

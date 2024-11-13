@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/sidebar/sidebar';
 
 //styles
@@ -12,15 +12,9 @@ import DataSensor from './components/body/datasensor';
 import Profile from './components/body/profile';
 import Test from './components/body/test';
 
-const App = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    document.body.classList.remove("alert-background");
-  }, [location]);
-
+function App() {
   return (
-    <>
+    <Router>
       <Sidebar />
       <div className='content'>
         <Routes>
@@ -31,14 +25,7 @@ const App = () => {
           <Route path="/" element={<Dasboard />} />
         </Routes>
       </div>
-    </>
+    </Router>
   );
 };
-
-const MainApp = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default MainApp;
+export default App;

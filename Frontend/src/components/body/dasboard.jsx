@@ -7,7 +7,7 @@ import './dasboard.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Box, BoxTableLineChart, BoxController, BoxHim, BoxTem, BoxLig } from '../help/box';
+import { Box, BoxTableLineChart, BoxController  } from '../help/box';
 import { useState, useEffect, } from 'react';
 
 //icon
@@ -25,7 +25,14 @@ function Dasboard(params) {
     const lastData = dataImport.slice(-10);
     const [fetchCount, setFetchCount] = useState(0);
 
-
+    const dataLastItem = lastData[lastData.length - 1] || {
+        id: "6717c2d7d91647270d6193d5",
+        light: 437,
+        temperature: 29.8,
+        humidity: 70,
+        wind:10,
+        time: "2024-10-22 22:20:55"
+    };
 
     const [actionLast, setActionLast] = useState(["OFF", "OFF", "OFF", "OFF"]);
 
@@ -48,23 +55,13 @@ function Dasboard(params) {
     useEffect(() => {
         console.log("Updated actionLast:", actionLast);
         if (actionLast.length > 0) {
-            console.log("Device 1 action: " + actionLast[0]);
-            console.log("Device 2 action: " + actionLast[1]);
-            console.log("Device 3 action: " + actionLast[2]);
-            console.log("Device 4 action: " + actionLast[3]);
         }
     }, [actionLast]);
 
 
 
 
-    const dataLastItem = lastData[lastData.length - 1] || {
-        id: "6717c2d7d91647270d6193d5",
-        light: 437,
-        temperature: 29.8,
-        humidity: 70,
-        time: "2024-10-22 22:20:55"
-    };
+
 
 
     const fetchData = async () => {

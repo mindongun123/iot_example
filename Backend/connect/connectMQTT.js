@@ -34,15 +34,16 @@ client.on('message', async (topic, message) => {
         const light = parseFloat(sensorDataParts[0].split(': ')[1]);
         const temperature = parseFloat(sensorDataParts[1].split(': ')[1]);
         const humidity = parseFloat(sensorDataParts[2].split(': ')[1]);
-        const datafake = parseFloat(sensorDataParts[3].split(': ')[1]);
-        console.log('datafake: ', datafake);
+        const wind = parseFloat(sensorDataParts[3].split(': ')[1]);
 
         const sensorDataEntry = new SensorData({
             temperature: temperature,
             humidity: humidity,
             light: light,
+            wind: wind,
             time: formattedTime
         });
+
 
         try {
             await sensorDataEntry.save();

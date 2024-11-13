@@ -49,12 +49,6 @@ function History() {
         return sortableItems;
     }, [filteredData, sortConfig]);
 
-    const formatDateTime = (datetime) => {
-        return datetime.replace('T', ' ') + ':00';
-    };
-
-
-    /// Ham search tim chua hoan thien
     const handleSearch = async () => {
         try {
             console.log(startTime, endTime);
@@ -62,17 +56,20 @@ function History() {
             const params = {
                 device: searchType === 'device' ? searchQuery : undefined,
                 action: searchType === 'action' ? searchQuery : undefined,
-                startDate: searchType === 'time' ? startTime : undefined,
-                endDate: searchType === 'time' ? endTime : undefined,
+                time: searchType === 'time' ? searchQuery : undefined,
             };
 
-            console.log('Search params:', params);
+            console.log('params:', params);
 
             const response = await axios.get('http://localhost:3800/action/search', { params });
-            console.log('Search response:', response.data);
+            console.log('response:', response);
+            let data = Array.isArray(response.data.actions) ? response.data.actions : [];
 
-            setFilteredData(Array.isArray(response.data.actions) ? response.data.actions : []);
+            if (searchType === 'time' && searchQuery) {
+                data = data.filter((item) => item.time.startsWith(searchQuery));
+            }
 
+            setFilteredData(data);
             setCurrentPage(1);
 
         } catch (error) {
@@ -118,8 +115,6 @@ function History() {
     const handleSearchTypeChange = (type) => {
         setSearchType(type);
         setSearchQuery('');
-        setStartTime('');
-        setEndTime('');
     };
 
     return (
@@ -134,29 +129,11 @@ function History() {
                         {/* Search */}
                         <Form.Control
                             type="text"
-                            placeholder="Search..."
+                            placeholder={`Search ${searchType}...`}
                             value={searchQuery}
                             onChange={handleSearchChange}
-                            className={`${searchType === 'time' ? 'd-none' : ''} search`}
+                            className='search'
                         />
-                        {searchType === 'time' && (
-                            <InputGroup className="mb-2">
-                                <Form.Control
-                                    className='search'
-                                    type="datetime-local"
-                                    placeholder="Start Time"
-                                    value={startTime}
-                                    onChange={(e) => setStartTime(formatDateTime(e.target.value))}
-                                />
-                                <Form.Control
-                                    className='search'
-                                    type="datetime-local"
-                                    placeholder="End Time"
-                                    value={endTime}
-                                    onChange={(e) => setEndTime(formatDateTime(e.target.value))}
-                                />
-                            </InputGroup>
-                        )}
 
                         {/* Button Search */}
                         <Button className='btn-search' onClick={handleSearch}>

@@ -3,19 +3,28 @@
 #include <DHT.h>
 #include <Adafruit_Sensor.h>
 
-#define DHTPIN 4      // Chân tín hiệu của DHT11 (GPIO5 - D2)
+// #define DHTPIN 4      // Chân tín hiệu của DHT11 (GPIO5 - D2) 
+// #define DHTTYPE DHT11 // Loại cảm biến DHT11
+
+// #define LED_PIN5 5   // Chân nối với đèn LED (GPIO5 - D1)   
+// #define LED_PIN12 12 // Chân nối với đèn LED (GPIO12 - D6) 
+// #define LED_PIN16 16 // Chân nối với đèn LED (GPIO16 - D0) 
+// #define LED_PIN13 13 // Chân nối với đèn LED (GPIO13 - D7)
+
+
+#define DHTPIN 5     // Chân tín hiệu của DHT11  (D1)
 #define DHTTYPE DHT11 // Loại cảm biến DHT11
 
-#define LED_PIN5 5   // Chân nối với đèn LED (GPIO5 - D1)
-#define LED_PIN12 12 // Chân nối với đèn LED (GPIO12 - D6)
-#define LED_PIN16 16 // Chân nối với đèn LED (GPIO16 - D0)
-#define LED_PIN13 13 // Chân nối với đèn LED (GPIO13 - D7)
+#define LED_PIN5 12   // Chân nối với đèn LED  (D6)
+#define LED_PIN12 13 // Chân nối với đèn LED  (D7)
+#define LED_PIN16 15 // Chân nối với đèn LED  (D8)
+#define LED_PIN13 16 // Chân nối với đèn LED (D0)
 
 DHT dht(DHTPIN, DHTTYPE);
 
-const char *ssid = "jk";
-const char *password = "12345687@";
-const char *mqtt_server = "192.168.1.11";
+const char *ssid = "dong";
+const char *password = "12345678";
+const char *mqtt_server = "10.21.102.113";
 const int mqtt_port = 1993;
 
 const char *mqtt_user = "dong";
@@ -212,12 +221,13 @@ void loop()
   {
     lastSensorUpdate = currentMillis;
 
-    float lightValue = analogRead(lightSensorPin);
+    float lightValue = (1024 - analogRead(lightSensorPin));
     float humidity = dht.readHumidity();
     float temperature = dht.readTemperature();
 
-    // data fake
-    float dataFake = random(20, 100);
+    // float humidity = random(30, 100);
+    // float temperature = random(23, 32);
+    float wind = random(0, 100);
 
     if (isnan(humidity) || isnan(temperature) || isnan(lightValue))
     {
@@ -228,16 +238,16 @@ void loop()
       char lightStr[8];
       char tempStr[8];
       char humStr[8];
-      char fakeStr[8];
+      char windStr[8];
       dtostrf(lightValue, 1, 2, lightStr);
       dtostrf(temperature, 1, 2, tempStr);
       dtostrf(humidity, 1, 2, humStr);
-      dtostrf(dataFake, 1, 2, fakeStr);
+      dtostrf(wind, 1, 2, windStr);
 
       char jsonStr[100];
-      snprintf(jsonStr, sizeof(jsonStr), "{\"light\": %s, \"temperature\": %s, \"humidity\": %s, \"datafake\": %s}", lightStr, tempStr, humStr, fakeStr);
+      snprintf(jsonStr, sizeof(jsonStr), "{\"light\": %s, \"temperature\": %s, \"humidity\": %s, \"wind\": %s}", lightStr, tempStr, humStr, windStr);
 
-      Serial.printf("\nLight: %s, Temperature: %s, Humidity: %s, DataFake: %s\n", lightStr, tempStr, humStr, fakeStr);
+      Serial.printf("\nLight: %s, Temperature: %s, Humidity: %s, Wind: %s\n", lightStr, tempStr, humStr, windStr);
       Serial.printf(jsonStr);
 
       // Gửi dữ liệu sensor lên MQTT
@@ -246,5 +256,4 @@ void loop()
   }
 }
 
-
-// Cam bien gia --> dataFake, tuong ung voi Action light4 
+// Cam bien gia --> dataFake, tuong ung voi Action light4

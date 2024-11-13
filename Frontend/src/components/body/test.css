@@ -2,14 +2,15 @@
     width: 100%;
     height: 100%;
 
-    /*  */
-    display: flex;
+     /* */
+    /* display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     /*  */
 
 }
+
 /* 
 body{
     background-color: var(--danger);
@@ -19,6 +20,7 @@ body{
 .box-test {
     min-height: 100%;
     border-radius: 10px;
+    width: 100%;
     background-color: var(--light);
     box-shadow: 0 0 8px var(--secondary);
 }
@@ -30,4 +32,24 @@ body{
     align-items: center;
     width: 100px;
     background-color: #a041f9fa;
+}
+
+
+/* file test.css */
+@keyframes blinkRed {
+    0% {
+        background-color: var(--white);
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: var(--white);
+    }
+}
+
+.alert-background {
+    animation: blinkRed 1s infinite;
 }
