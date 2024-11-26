@@ -286,3 +286,26 @@ if (isnan(lightValue))
 
 
 
+[
+  { "$match": { time: { $gte: "2024-11-13", $lte: "2024-11-31 00:58:26" } } }, 
+  { "$sort": { time: -1 } },
+  { "$limit": 10 }, 
+  { "$count": "total_count" }
+]
+
+
+// tim kiem action trong ngay hom nay (Action ON)
+[
+  {
+    $match: {
+      time: {
+        $gte: "2024-11-13",
+        $lte: "2024-11-14"
+      },
+      action:"ON"
+    }
+  },
+  {
+    $count: 'count'
+  }
+]

@@ -7,17 +7,16 @@ import './dasboard.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Box, BoxTableLineChart, BoxController } from '../help/box';
+import { Box, BoxTableLineChartBai5, BoxController } from '../help/box';
 import { useState, useEffect, } from 'react';
 
-//icon
-import { MdOutlineLightMode } from 'react-icons/md';
-import { IoWaterOutline } from "react-icons/io5";
-import { CiTempHigh } from "react-icons/ci";
+import { WiNightCloudyWindy } from "react-icons/wi";
+import { WiNightAltCloudyWindy } from "react-icons/wi";
+import { WiDayCloudyWindy } from "react-icons/wi";
 
 
 
-function Dasboard(params) {
+function Bai5(params) {
 
 
 
@@ -30,41 +29,13 @@ function Dasboard(params) {
         light: 437,
         temperature: 29.8,
         humidity: 70,
+
         wind: 10,
         wind1: 10,
         wind2: 10,
+
         time: "2024-10-22 22:20:55"
     };
-
-    const [actionLast, setActionLast] = useState(["OFF", "OFF", "OFF", "OFF"]);
-
-    // Hàm fetch dữ liệu từ API
-    const fetchAction = async () => {
-        try {
-            console.log('Fetching action data...');
-            const response = await fetch('http://localhost:3800/action/aclast');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            setActionLast(data);
-        } catch (error) {
-            console.error('Error fetching action data:', error);
-        }
-    };
-
-
-    useEffect(() => {
-        console.log("Updated actionLast:", actionLast);
-        if (actionLast.length > 0) {
-        }
-    }, [actionLast]);
-
-
-
-
-
-
 
     const fetchData = async () => {
         try {
@@ -81,7 +52,6 @@ function Dasboard(params) {
 
     useEffect(() => {
         fetchData();
-        fetchAction();
         const intervalId = setInterval(() => {
             setFetchCount(prevCount => {
                 const newCount = prevCount + 1;
@@ -101,22 +71,22 @@ function Dasboard(params) {
         <Container  >
             <Row className='row-item-sensor'>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.temperature} params={"°C"}
-                        icon={<CiTempHigh className='icon-sensor'
+                    <Box index={dataLastItem.wind} params={"wind"}
+                        icon={<WiNightAltCloudyWindy className='icon-sensor'
                             style={{ color: 'red' }} />}
                         bg={"linear-gradient(135deg, #f88c8c 0%, #fa0101 100%)"}
                     />
                 </Col>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.humidity} params={"%"}
-                        icon={<IoWaterOutline className='icon-sensor'
+                    <Box index={dataLastItem.wind1} params={"wind1"}
+                        icon={<WiNightCloudyWindy className='icon-sensor'
                             style={{ color: 'blue' }} />}
                         bg={"linear-gradient(135deg, #8cd5f8 20%, #01abfa 80%)"}
                     />
                 </Col>
                 <Col xs={12} md={4} className='item-sensor'>
-                    <Box index={dataLastItem.light} params={"LUX"}
-                        icon={<MdOutlineLightMode className='icon-sensor'
+                    <Box index={dataLastItem.wind2} params={"wind2"}
+                        icon={<WiDayCloudyWindy className='icon-sensor'
                             style={{ color: 'yellow' }} />}
                         bg={"linear-gradient(135deg, #f8ec8c 20%, #fadd01 80%)"}
                     />
@@ -125,13 +95,7 @@ function Dasboard(params) {
 
             <Row className='row-item-data'>
                 <Col xs={12} md={8} className='item-data'>
-                    <BoxTableLineChart lastData={lastData} />
-                </Col>
-                <Col xs={12} md={4} className='item-data'>
-                    <BoxController
-                        av1={actionLast[0]}
-                        av2={actionLast[1]}
-                        av3={actionLast[2]} />
+                    <BoxTableLineChartBai5 lastData={lastData} />
                 </Col>
             </Row>
 
@@ -139,4 +103,4 @@ function Dasboard(params) {
     );
 }
 
-export default Dasboard;
+export default Bai5;

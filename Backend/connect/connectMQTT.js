@@ -34,13 +34,20 @@ client.on('message', async (topic, message) => {
         const light = parseFloat(sensorDataParts[0].split(': ')[1]);
         const temperature = parseFloat(sensorDataParts[1].split(': ')[1]);
         const humidity = parseFloat(sensorDataParts[2].split(': ')[1]);
+        
         const wind = parseFloat(sensorDataParts[3].split(': ')[1]);
+        const wind1 = parseFloat(sensorDataParts[4].split(': ')[1]);
+        const wind2 = parseFloat(sensorDataParts[5].split(': ')[1]);
 
         const sensorDataEntry = new SensorData({
             temperature: temperature,
             humidity: humidity,
             light: light,
+
             wind: wind,
+            wind1: wind1,
+            wind2: wind2,
+
             time: formattedTime
         });
 

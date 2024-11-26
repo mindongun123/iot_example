@@ -52,6 +52,9 @@ function DataSensor() {
                 temperature: searchType === 'temperature' ? searchQuery : undefined,
                 humidity: searchType === 'humidity' ? searchQuery : undefined,
                 light: searchType === 'light' ? searchQuery : undefined,
+                wind: searchType === 'wind' ? searchQuery : undefined,
+                wind1: searchType === 'wind1' ? searchQuery : undefined,
+                wind2: searchType === 'wind2' ? searchQuery : undefined,
                 time: searchType === 'time' ? searchQuery : undefined,
             };
 
@@ -140,6 +143,9 @@ function DataSensor() {
                                 <Dropdown.Item onClick={() => handleSearchTypeChange('temperature')}>Temperature</Dropdown.Item>
                                 <Dropdown.Item onClick={() => handleSearchTypeChange('humidity')}>Humidity</Dropdown.Item>
                                 <Dropdown.Item onClick={() => handleSearchTypeChange('light')}>Light</Dropdown.Item>
+                                <Dropdown.Item onClick={() => handleSearchTypeChange('wind')}>Wind</Dropdown.Item>
+                                <Dropdown.Item onClick={() => handleSearchTypeChange('wind1')}>Wind1</Dropdown.Item>
+                                <Dropdown.Item onClick={() => handleSearchTypeChange('wind2')}>Wind2</Dropdown.Item>
                                 <Dropdown.Item onClick={() => handleSearchTypeChange('time')}>Time</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -166,6 +172,9 @@ function DataSensor() {
                                 <th className='td-item' onClick={() => requestSort('temperature')}>Temperature {sortConfig.key === 'temperature' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
                                 <th className='td-item' onClick={() => requestSort('humidity')}>Humidity {sortConfig.key === 'humidity' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
                                 <th className='td-item' onClick={() => requestSort('light')}>Light {sortConfig.key === 'light' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
+                                <th className='td-item' onClick={() => requestSort('wind')}>Wind {sortConfig.key === 'wind' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
+                                <th className='td-item' onClick={() => requestSort('wind1')}>Wind1 {sortConfig.key === 'wind1' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
+                                <th className='td-item' onClick={() => requestSort('wind2')}>Wind2 {sortConfig.key === 'wind2' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
                                 <th className='td-item' onClick={() => requestSort('time')}>Time {sortConfig.key === 'time' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : ''}</th>
                             </tr>
                         </thead>
@@ -177,6 +186,9 @@ function DataSensor() {
                                         <td className='td-item'>{item.temperature}</td>
                                         <td className='td-item'>{item.humidity}</td>
                                         <td className='td-item'>{item.light}</td>
+                                        <td className='td-item'>{item.wind}</td>
+                                        <td className='td-item'>{item.wind1}</td>
+                                        <td className='td-item'>{item.wind2}</td>
                                         <td className='td-item'>{item.time}</td>
                                     </tr>
                                 ))

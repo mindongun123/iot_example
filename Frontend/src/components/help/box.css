@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #ffffff 10%, #fa0101 90%);
+    background: linear-gradient(135deg, #ffffff 10%, rgb(246, 250, 1) 90%);
 }
 
 .info-sensor {

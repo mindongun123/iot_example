@@ -46,7 +46,7 @@ function Sidebar() {
           <span className='link-text'>History</span>
         </Link>
 
-        <Link to="/test" className={`item-link ${activeLink === '/test' ? 'active' : ''}`} onClick={() => handleLinkClick('/test')}>
+        <Link to="/bai5" className={`item-link ${activeLink === '/bai5' ? 'active' : ''}`} onClick={() => handleLinkClick('/bai5')}>
           <FaNoteSticky className='icon-link' />
           <span className='link-text'>Bai 5</span>
         </Link>

@@ -13,10 +13,20 @@ const sensorDTSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+
     wind: {
         type: Number,
         required: true
     },
+    wind1: {
+        type: Number,
+        required: true
+    },
+    wind2: {
+        type: Number,
+        required: true
+    },
+
     time: {
         type: String,
         default: () => {

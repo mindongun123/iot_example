@@ -10,7 +10,7 @@ import Dasboard from './components/body/dasboard';
 import History from './components/body/history';
 import DataSensor from './components/body/datasensor';
 import Profile from './components/body/profile';
-import Test from './components/body/test';
+import Bai5 from './components/body/bai5';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/datasensor" element={<DataSensor />} />
           <Route path="/history" element={<History />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/bai5" element={<Bai5 />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/" element={<Dasboard />} />
         </Routes>
