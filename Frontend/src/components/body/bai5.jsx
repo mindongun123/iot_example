@@ -61,7 +61,7 @@ function Bai5(params) {
                 }
                 return newCount;
             });
-        }, 2000);
+        }, 1000);
 
         return () => clearInterval(intervalId);
     }, []);

@@ -35,7 +35,7 @@ PubSubClient client(espClient);
 int lightSensorPin = A0;
 
 unsigned long lastSensorUpdate = 0;
-const long sensorUpdateInterval = 10000;
+const long sensorUpdateInterval = 2000;
 
 void setup_wifi();
 void reconnect();
@@ -97,8 +97,8 @@ void reconnect()
     {
       Serial.print("failed, rc=");
       Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
-      delay(5000);
+      Serial.println(" try again in 3 seconds");
+      delay(3000);
     }
   }
 }
@@ -215,7 +215,7 @@ void loop()
 
   unsigned long currentMillis = millis();
 
-  // Chỉ cập nhật dữ liệu sensor sau mỗi 10 giây
+  // Chỉ cập nhật dữ liệu sensor sau mỗi 2 giây
   if (currentMillis - lastSensorUpdate >= sensorUpdateInterval)
   {
     lastSensorUpdate = currentMillis;
