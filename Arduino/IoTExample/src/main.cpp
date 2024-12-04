@@ -221,11 +221,11 @@ void loop()
     lastSensorUpdate = currentMillis;
 
     float lightValue = (1024 - analogRead(lightSensorPin));
-    // float humidity = dht.readHumidity();
-    // float temperature = dht.readTemperature();
+    float humidity = dht.readHumidity();
+    float temperature = dht.readTemperature();
 
-    float humidity = random(30, 100);
-    float temperature = random(23, 32);
+    // float humidity = random(30, 100);
+    // float temperature = random(23, 32);
     float wind = random(0, 100);
     float wind1 = random(0, 100);
     float wind2 = random(0, 100);

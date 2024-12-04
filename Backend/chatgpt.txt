@@ -1,0 +1,249 @@
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+#include <DHT.h>
+#include <Adafruit_Sensor.h>
+#include <EEPROM.h>  // Thêm thư viện EEPROM
+
+#define DHTPIN 4      // Chân tín hiệu của DHT11 (GPIO5 - D2)
+#define DHTTYPE DHT11 // Loại cảm biến DHT11
+
+#define LED_PIN5 5    // Chân nối với đèn LED (GPIO5 - D1)
+#define LED_PIN12 12  // Chân nối với đèn LED (GPIO12 - D6)
+#define LED_PIN16 16  // Chân nối với đèn LED (GPIO16 - D0)
+#define LED_PIN13 13  // Chân nối với đèn LED (GPIO13 - D7)
+
+DHT dht(DHTPIN, DHTTYPE);
+
+// WiFi & MQTT setup
+const char *ssid = "jk";
+const char *password = "12345687@";
+const char *mqtt_server = "192.168.1.11";
+const int mqtt_port = 1993;
+const char *mqtt_user = "dong";
+const char *mqtt_password = "b21dccn230";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+// Variables for light sensor and states
+int lightSensorPin = A0;
+unsigned long lastSensorUpdate = 0;
+const long sensorUpdateInterval = 2000;
+bool led1State = LOW, led2State = LOW, led3State = LOW, led4State = LOW;
+
+void setup_wifi();
+void reconnect();
+void callback(char *topic, byte *message, unsigned int length);
+void readLedStatesFromEEPROM();
+void saveLedStateToEEPROM(int ledIndex, bool state);
+
+void setup()
+{
+  Serial.begin(9600);
+
+  // Khởi tạo EEPROM với dung lượng 512 byte (ESP8266 có dung lượng EEPROM tối đa là 1KB)
+  EEPROM.begin(512);
+
+  // Đọc trạng thái đèn từ EEPROM
+  readLedStatesFromEEPROM();
+
+  pinMode(LED_PIN5, OUTPUT);
+  pinMode(LED_PIN12, OUTPUT);
+  pinMode(LED_PIN16, OUTPUT);
+  pinMode(LED_PIN13, OUTPUT);
+
+  // Cập nhật trạng thái đèn theo thông tin từ EEPROM
+  digitalWrite(LED_PIN5, led1State);
+  digitalWrite(LED_PIN12, led2State);
+  digitalWrite(LED_PIN16, led3State);
+  digitalWrite(LED_PIN13, led4State);
+
+  setup_wifi();
+  client.setServer(mqtt_server, mqtt_port);
+  client.setCallback(callback);
+
+  dht.begin();
+}
+
+void setup_wifi()
+{
+  delay(10);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(1000);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+
+void reconnect()
+{
+  while (!client.connected())
+  {
+    Serial.print("Attempting MQTT connection...");
+    if (client.connect("ESP8266Client", mqtt_user, mqtt_password))
+    {
+      Serial.println("connected");
+      client.subscribe("iot/action/light1");
+      client.subscribe("iot/action/light2");
+      client.subscribe("iot/action/light3");
+      client.subscribe("iot/action/light4");
+      client.subscribe("iot/action/lightall");
+    }
+    else
+    {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 3 seconds");
+      delay(3000);
+    }
+  }
+}
+
+// Callback function to handle incoming MQTT messages
+void callback(char *topic, byte *message, unsigned int length)
+{
+  String messageStr = String((char *)message).substring(0, length);
+
+  if (String(topic) == "iot/action/light1")
+  {
+    if (messageStr == "OFF" && led1State == HIGH)
+    {
+      digitalWrite(LED_PIN5, LOW);
+      led1State = LOW;
+      saveLedStateToEEPROM(1, led1State);  // Lưu trạng thái
+      Serial.println("\nLED 1 OFF");
+    }
+    else if (messageStr == "ON" && led1State == LOW)
+    {
+      digitalWrite(LED_PIN5, HIGH);
+      led1State = HIGH;
+      saveLedStateToEEPROM(1, led1State);  // Lưu trạng thái
+      Serial.println("\nLED 1 ON");
+    }
+  }
+
+  // Tương tự cho các đèn khác (light2, light3, light4)
+
+  if (String(topic) == "iot/action/lightall")
+  {
+    if (messageStr == "OFF")
+    {
+      digitalWrite(LED_PIN5, LOW);
+      digitalWrite(LED_PIN12, LOW);
+      digitalWrite(LED_PIN16, LOW);
+      digitalWrite(LED_PIN13, LOW);
+      led1State = LOW;
+      led2State = LOW;
+      led3State = LOW;
+      led4State = LOW;
+      saveLedStateToEEPROM(1, led1State);  // Lưu trạng thái
+      saveLedStateToEEPROM(2, led2State);
+      saveLedStateToEEPROM(3, led3State);
+      saveLedStateToEEPROM(4, led4State);
+      Serial.println("\nALL LED OFF");
+    }
+    else if (messageStr == "ON")
+    {
+      digitalWrite(LED_PIN5, HIGH);
+      digitalWrite(LED_PIN12, HIGH);
+      digitalWrite(LED_PIN16, HIGH);
+      digitalWrite(LED_PIN13, HIGH);
+      led1State = HIGH;
+      led2State = HIGH;
+      led3State = HIGH;
+      led4State = HIGH;
+      saveLedStateToEEPROM(1, led1State);  // Lưu trạng thái
+      saveLedStateToEEPROM(2, led2State);
+      saveLedStateToEEPROM(3, led3State);
+      saveLedStateToEEPROM(4, led4State);
+      Serial.println("\nALL LED ON");
+    }
+  }
+}
+
+// Hàm đọc trạng thái đèn từ EEPROM
+void readLedStatesFromEEPROM()
+{
+  led1State = EEPROM.read(0);  // Đọc trạng thái LED1 từ EEPROM
+  led2State = EEPROM.read(1);  // Đọc trạng thái LED2 từ EEPROM
+  led3State = EEPROM.read(2);  // Đọc trạng thái LED3 từ EEPROM
+  led4State = EEPROM.read(3);  // Đọc trạng thái LED4 từ EEPROM
+}
+
+// Hàm lưu trạng thái đèn vào EEPROM
+void saveLedStateToEEPROM(int ledIndex, bool state)
+{
+  int address = 0;
+
+  switch (ledIndex)
+  {
+  case 1:
+    address = 0;
+    break;
+  case 2:
+    address = 1;
+    break;
+  case 3:
+    address = 2;
+    break;
+  case 4:
+    address = 3;
+    break;
+  }
+
+  EEPROM.write(address, state);  // Lưu trạng thái LED vào EEPROM
+  EEPROM.commit();               // Xác nhận lưu trữ vào EEPROM
+}
+
+void loop()
+{
+  if (!client.connected())
+  {
+    reconnect();
+  }
+  client.loop();
+
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - lastSensorUpdate >= sensorUpdateInterval)
+  {
+    lastSensorUpdate = currentMillis;
+    sendSensorData();
+  }
+}
+
+void sendSensorData()
+{
+  float lightValue = (1024 - analogRead(lightSensorPin));
+  float humidity = random(30, 100);
+  float temperature = random(23, 32);
+  float wind = random(0, 100);
+
+  if (isnan(humidity) || isnan(temperature) || isnan(lightValue) || isnan(wind))
+  {
+    Serial.println("Failed to read from sensors!");
+    return;
+  }
+
+  char lightStr[8];
+  char tempStr[8];
+  char humStr[8];
+  char windStr[8];
+
+  dtostrf(lightValue, 1, 2, lightStr);
+  dtostrf(temperature, 1, 2, tempStr);
+  dtostrf(humidity, 1, 2, humStr);
+  dtostrf(wind, 1, 2, windStr);
+
+  char jsonStr[200];
+  snprintf(jsonStr, sizeof(jsonStr), "{\"light\": %s, \"temperature\": %s, \"humidity\": %s, \"wind\": %s}", lightStr, tempStr, humStr, windStr);
+
+  Serial.println(jsonStr);
+  client.publish("iot/sensor", jsonStr);
+}
